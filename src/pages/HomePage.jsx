@@ -1,6 +1,13 @@
-import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { useLang } from '../context/LangContext';
 import './HomePage.css';
+
+const SERVICES_SECTION_ID = 'services';
+
+function scrollToServicesSection() {
+  document.getElementById(SERVICES_SECTION_ID)?.scrollIntoView({ behavior: 'smooth' });
+}
 
 const SERVICES = [
   {
@@ -106,6 +113,20 @@ const VALUE_PROPS = [
 
 export default function HomePage() {
   const { lang, t } = useLang();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === `#${SERVICES_SECTION_ID}`) {
+      requestAnimationFrame(scrollToServicesSection);
+    }
+  }, [location.pathname, location.hash]);
+
+  function handleServicesCtaClick(e) {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      scrollToServicesSection();
+    }
+  }
 
   return (
     <div className="homepage">
@@ -125,7 +146,7 @@ export default function HomePage() {
             </div>
             <p className="home-hero-sub">{t.home.heroSub}</p>
             <div className="home-hero-ctas">
-              <Link to="/services/website-development" className="btn-gold">{t.home.ctaPrimary}</Link>
+              <Link to="/#services" className="btn-gold" onClick={handleServicesCtaClick}>{t.home.ctaPrimary}</Link>
               <Link to="/contact" className="btn-outline">{t.home.ctaSecondary}</Link>
             </div>
           </div>
@@ -133,7 +154,7 @@ export default function HomePage() {
       </section>
 
       {/* SERVICES GRID */}
-      <section className="home-services">
+      <section id={SERVICES_SECTION_ID} className="home-services">
         <div className="container">
           <p className="section-label" style={{ textAlign: 'center' }}>{t.home.servicesTitle}</p>
           <p className="home-services-sub">{t.home.servicesSub}</p>
