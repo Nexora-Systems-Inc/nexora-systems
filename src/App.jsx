@@ -12,6 +12,9 @@ import {
 } from './pages/services/OtherServicePages';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import PrivacyPage from './pages/legal/PrivacyPage';
+import TermsPage from './pages/legal/TermsPage';
+import AccountDeletionPage from './pages/legal/AccountDeletionPage';
 import './index.css';
 
 export default function App() {
@@ -29,6 +32,9 @@ export default function App() {
             <Route path="/services/custom-solutions" element={<CustomSolutionsPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+            <Route path="/account-deletion" element={<AccountDeletionPage />} />
           </Routes>
         </Layout>
       </BrowserRouter>

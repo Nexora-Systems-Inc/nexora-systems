@@ -37,6 +37,13 @@ export default function Footer() {
             <Link to="/contact">{t.nav.contact}</Link>
             <a href="mailto:info@nexorasystems.ca">info@nexorasystems.ca</a>
           </div>
+
+          <div className="footer-col">
+            <p className="footer-col-title">Legal</p>
+            <Link to="/privacy">Privacy Policy</Link>
+            <Link to="/terms">Terms of Service</Link>
+            <Link to="/account-deletion">Account Deletion</Link>
+          </div>
         </div>
 
         <div className="footer-bottom">
