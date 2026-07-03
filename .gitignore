@@ -3,3 +3,6 @@ dist
 .vscode
 .env
 .env.local
+lighthouse-*.json
+*-before.png
+*-after.png

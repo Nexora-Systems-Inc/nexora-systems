@@ -16,11 +16,7 @@
 
 ---
 
-> Status: Version 1.0 – Legal Documentation Sprint
-
 This Privacy Policy describes how Nexora Systems collects, uses, stores, and protects information when you use the CrewPilot application.
-
-This document supports CrewPilot's Google Play release, website publication, and future Nexora product documentation.
 
 ---
 

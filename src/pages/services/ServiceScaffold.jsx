@@ -52,9 +52,7 @@ export default function ServiceScaffold({ titleEn, titleFr, subtitleEn, subtitle
                 : `Intéressé par ${titleFr}?`}
             </h2>
             <p className="scaffold-cta-sub">
-              {lang === 'en'
-                ? "This page is being expanded. Contact us to discuss your requirements."
-                : "Cette page est en cours d'expansion. Contactez-nous pour discuter de vos besoins."}
+              {t.common.scaffoldCtaSub}
             </p>
           </div>
           <Link to="/contact" className="btn-gold">

@@ -71,6 +71,12 @@ img { max-width: 100%; display: block; }
   transition: background var(--transition), transform var(--transition);
 }
 .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); }
+.btn-gold:focus-visible,
+.btn-outline:focus-visible,
+.btn-outline-dark:focus-visible {
+  outline: 2px solid var(--gold-light);
+  outline-offset: 3px;
+}
 
 .btn-outline {
   display: inline-flex;
@@ -183,4 +189,92 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 768px) {
   .container { padding: 0 20px; }
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 10000;
+  padding: 12px 20px;
+  background: var(--gold);
+  color: var(--black);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  transition: top var(--transition);
+}
+
+.skip-link:focus {
+  top: 16px;
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
+}
+
+/* Page loader */
+.page-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+}
+
+.page-loader-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  animation: page-loader-pulse 1s ease-in-out infinite;
+}
+
+@keyframes page-loader-pulse {
+  0%, 100% { opacity: 0.3; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+/* 404 */
+.not-found {
+  padding: 100px 0 120px;
+  background: var(--off-white);
+  min-height: 50vh;
+}
+
+.not-found-inner {
+  max-width: 560px;
+}
+
+.not-found-title {
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 500;
+  color: var(--black);
+  margin: 8px 0 0;
+}
+
+.not-found-divider {
+  margin: 20px 0;
+  max-width: 200px;
+}
+
+.not-found-desc {
+  font-size: 15px;
+  color: var(--gray-500);
+  line-height: 1.75;
+  font-weight: 300;
+  margin-bottom: 32px;
+}
+
+.not-found-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-loader-dot {
+    animation: none;
+    opacity: 0.6;
+  }
 }

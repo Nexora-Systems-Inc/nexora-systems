@@ -50,7 +50,9 @@ export default function Navbar() {
             <button
               className={`navbar-link ${location.pathname.startsWith('/services') ? 'active' : ''}`}
               onClick={() => setDropdownOpen(v => !v)}
+              onKeyDown={(e) => { if (e.key === 'Escape') setDropdownOpen(false); }}
               aria-expanded={dropdownOpen}
+              aria-haspopup="true"
             >
               {t.nav.services}
               <svg className={`navbar-chevron ${dropdownOpen ? 'rotated' : ''}`} width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -79,11 +81,13 @@ export default function Navbar() {
             <button
               className={`lang-btn ${lang === 'en' ? 'active' : ''}`}
               onClick={() => setLang('en')}
+              aria-pressed={lang === 'en'}
             >EN</button>
-            <span className="lang-sep">|</span>
+            <span className="lang-sep" aria-hidden="true">|</span>
             <button
               className={`lang-btn ${lang === 'fr' ? 'active' : ''}`}
               onClick={() => setLang('fr')}
+              aria-pressed={lang === 'fr'}
             >FR</button>
           </div>
         </div>

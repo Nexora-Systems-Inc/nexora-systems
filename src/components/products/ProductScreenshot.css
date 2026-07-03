@@ -1,0 +1,160 @@
+.product-screenshot {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-screenshot-frame {
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  flex: 1;
+}
+
+.product-screenshot-frame--mock:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+.product-screenshot-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+}
+
+/* Mock app frame */
+.product-screenshot-mock {
+  aspect-ratio: 16 / 10;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #f8f8f6 0%, var(--off-white) 100%);
+  position: relative;
+}
+
+.product-screenshot-chrome {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--black);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+}
+
+.product-screenshot-chrome-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.product-screenshot-chrome-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.product-screenshot-chrome-dots span:first-child {
+  background: rgba(201, 168, 76, 0.5);
+}
+
+.product-screenshot-chrome-bar {
+  flex: 1;
+  height: 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  max-width: 120px;
+}
+
+.product-screenshot-mock-body {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+  padding: 14px;
+  min-height: 0;
+}
+
+.product-screenshot-mock-sidebar {
+  width: 22%;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(180deg, rgba(201, 168, 76, 0.12) 0%, rgba(201, 168, 76, 0.04) 100%);
+  border: 1px solid rgba(201, 168, 76, 0.12);
+}
+
+.product-screenshot-mock-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 4px;
+}
+
+.product-screenshot-skeleton {
+  height: 10px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.04) 0%, rgba(0, 0, 0, 0.07) 50%, rgba(0, 0, 0, 0.04) 100%);
+  background-size: 200% 100%;
+}
+
+.product-screenshot-skeleton--header {
+  height: 14px;
+  width: 55%;
+  margin-bottom: 4px;
+  background: linear-gradient(90deg, rgba(201, 168, 76, 0.15) 0%, rgba(201, 168, 76, 0.25) 50%, rgba(201, 168, 76, 0.15) 100%);
+  background-size: 200% 100%;
+}
+
+.product-screenshot-skeleton--short {
+  width: 65%;
+}
+
+.product-screenshot-skeleton--medium {
+  width: 80%;
+}
+
+.product-screenshot-soon-badge {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.product-screenshot-caption {
+  margin-top: 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-700);
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .product-screenshot-skeleton,
+  .product-screenshot-skeleton--header {
+    animation: product-shimmer 2.4s ease-in-out infinite;
+  }
+}
+
+@keyframes product-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-screenshot-frame--mock:hover {
+    transform: none;
+  }
+}

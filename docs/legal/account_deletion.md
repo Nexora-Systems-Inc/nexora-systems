@@ -16,11 +16,7 @@
 
 ---
 
-> Status: Version 1.0 – Legal Documentation Sprint
-
 This Account Deletion Policy explains how users may request deletion of a CrewPilot account and what happens to personal and organizational information when an account is removed.
-
-This document supports Google Play account deletion requirements, customer transparency, and Nexora Systems support procedures.
 
 ---
 

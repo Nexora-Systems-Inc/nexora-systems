@@ -1,0 +1,95 @@
+import { SITE_NAME, SITE_URL, DEFAULT_OG_IMAGE } from '../config/site';
+
+const OG_IMAGE = `${SITE_URL}${DEFAULT_OG_IMAGE}`;
+
+const DEFAULT = {
+  title: `${SITE_NAME} — Where Intelligence Comes to Life`,
+  description:
+    'Nexora Systems helps Ontario and Quebec businesses grow through intelligent technology — websites, web applications, workflow automation, and AI solutions.',
+};
+
+/** Per-route SEO metadata. Keys match React Router paths. */
+export const PAGE_META = {
+  '/': {
+    title: DEFAULT.title,
+    description: DEFAULT.description,
+  },
+  '/services/website-development': {
+    title: `Website Development | ${SITE_NAME}`,
+    description:
+      'Professional website development packages for Ontario and Quebec businesses — from standard sites to e-commerce and custom solutions.',
+  },
+  '/services/web-applications': {
+    title: `Web Applications | ${SITE_NAME}`,
+    description:
+      'Purpose-built web applications including CrewPilot workforce management and custom business software for modern operations.',
+  },
+  '/services/workflow-automation': {
+    title: `Workflow Automation | ${SITE_NAME}`,
+    description:
+      'Automate scheduling, lead management, reporting, and core business processes so your team can focus on high-value work.',
+  },
+  '/services/ai-construction': {
+    title: `AI Construction | ${SITE_NAME}`,
+    description:
+      'AI-powered estimating, drawing analysis, quantity takeoffs, and field reporting tools for the construction industry.',
+  },
+  '/services/ai-receptionists': {
+    title: `AI Receptionists | ${SITE_NAME}`,
+    description:
+      'Meet Ashley — Nexora\'s AI receptionist for SMS booking, voice intake, and 24/7 customer support automation.',
+  },
+  '/services/custom-solutions': {
+    title: `Custom Solutions | ${SITE_NAME}`,
+    description:
+      'Discovery-led custom development for membership sites, booking systems, client portals, and specialized business requirements.',
+  },
+  '/products/crewpilot': {
+    title: `CrewPilot — Workforce Management for Field Crews | ${SITE_NAME}`,
+    description:
+      'CrewPilot is Nexora\'s flagship workforce management platform — time tracking, payroll, scheduling, offline mode, and AI assistance for contractors and service teams.',
+  },
+  '/about': {
+    title: `About | ${SITE_NAME}`,
+    description:
+      'Nexora Systems builds intelligent technology for serious businesses across Ontario and Quebec.',
+  },
+  '/contact': {
+    title: `Contact | ${SITE_NAME}`,
+    description:
+      'Get in touch with Nexora Systems. Every project starts with a conversation about your business and goals.',
+  },
+  '/privacy': {
+    title: `Privacy Policy | ${SITE_NAME}`,
+    description:
+      'CrewPilot Privacy Policy — how Nexora Systems collects, uses, stores, and protects your information.',
+  },
+  '/terms': {
+    title: `Terms of Service | ${SITE_NAME}`,
+    description:
+      'CrewPilot Terms of Service governing use of the Nexora Systems workforce management application.',
+  },
+  '/account-deletion': {
+    title: `Account Deletion | ${SITE_NAME}`,
+    description:
+      'How to request deletion of your CrewPilot account and associated personal information.',
+  },
+};
+
+export function resolvePageMeta(pathname) {
+  const meta = PAGE_META[pathname];
+  if (meta) {
+    return { ...meta, ogImage: OG_IMAGE };
+  }
+  return {
+    title: `Page Not Found | ${SITE_NAME}`,
+    description: DEFAULT.description,
+    ogImage: OG_IMAGE,
+    noindex: true,
+  };
+}
+
+export function buildCanonicalUrl(pathname) {
+  if (pathname === '/') return `${SITE_URL}/`;
+  return `${SITE_URL}${pathname}`;
+}

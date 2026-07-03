@@ -216,3 +216,12 @@
 
   .navbar-lang { margin-left: 0; padding-left: 16px; margin-top: 8px; }
 }
+
+.navbar-link:focus-visible,
+.navbar-dropdown-item:focus-visible,
+.lang-btn:focus-visible,
+.navbar-hamburger:focus-visible,
+.navbar-logo:focus-visible {
+  outline: 2px solid var(--gold-light);
+  outline-offset: 2px;
+}

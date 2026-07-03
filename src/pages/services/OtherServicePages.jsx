@@ -1,35 +1,6 @@
 import ServiceScaffold from './ServiceScaffold';
 
-export function WebApplicationsPage() {
-  return (
-    <ServiceScaffold
-      titleEn="Web Applications"
-      titleFr="Applications Web"
-      subtitleEn="Purpose-Built Tools for Modern Business Operations"
-      subtitleFr="Outils sur mesure pour les opérations d'affaires modernes"
-      features={[
-        {
-          titleEn: 'CrewPilot',
-          titleFr: 'CrewPilot',
-          descEn: 'A field operations management platform built for crews, contractors, and service teams. Manage job assignments, track field staff, communicate in real time, and keep every project on schedule.',
-          descFr: 'Une plateforme de gestion des opérations terrain conçue pour les équipes, entrepreneurs et techniciens. Gérez les affectations, suivez le personnel terrain et communiquez en temps réel.',
-        },
-        {
-          titleEn: 'CribLedger',
-          titleFr: 'CribLedger',
-          descEn: 'A property management application designed for landlords and property managers. Track leases, manage maintenance requests, automate rent collection reminders, and maintain clear financial records.',
-          descFr: 'Une application de gestion immobilière conçue pour les propriétaires. Suivez les baux, gérez les demandes d\'entretien et automatisez les rappels de loyer.',
-        },
-        {
-          titleEn: 'Custom Business Applications',
-          titleFr: 'Applications d\'affaires sur mesure',
-          descEn: 'Not every business fits an off-the-shelf solution. We design and build custom web applications scoped specifically to your workflows, team structure, and long-term goals.',
-          descFr: 'Toutes les entreprises ne correspondent pas à une solution prête à l\'emploi. Nous concevons des applications sur mesure adaptées à vos processus et objectifs à long terme.',
-        },
-      ]}
-    />
-  );
-}
+export { default as WebApplicationsPage } from './WebApplications';
 
 export function WorkflowAutomationPage() {
   return (

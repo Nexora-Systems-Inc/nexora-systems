@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import './LegalPage.css';
@@ -28,13 +27,6 @@ function MarkdownLink({ href, children }) {
 }
 
 export default function LegalPage({ content, pageTitle }) {
-  useEffect(() => {
-    document.title = `${pageTitle} | Nexora Systems`;
-    return () => {
-      document.title = 'Nexora Systems';
-    };
-  }, [pageTitle]);
-
   return (
     <div className="legal-page">
       <section className="page-hero legal-hero">

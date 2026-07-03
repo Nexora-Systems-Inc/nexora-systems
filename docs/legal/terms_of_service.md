@@ -16,11 +16,7 @@
 
 ---
 
-> Status: Version 1.0 – Legal Documentation Sprint
-
 These Terms of Service govern your use of the CrewPilot application operated by Nexora Systems.
-
-This document supports CrewPilot's Google Play release, website publication, and future Nexora product documentation.
 
 ---
 

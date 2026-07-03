@@ -39,10 +39,10 @@ export default function Footer() {
           </div>
 
           <div className="footer-col">
-            <p className="footer-col-title">Legal</p>
-            <Link to="/privacy">Privacy Policy</Link>
-            <Link to="/terms">Terms of Service</Link>
-            <Link to="/account-deletion">Account Deletion</Link>
+            <p className="footer-col-title">{t.footer.legal}</p>
+            <Link to="/privacy">{t.footer.privacy}</Link>
+            <Link to="/terms">{t.footer.terms}</Link>
+            <Link to="/account-deletion">{t.footer.accountDeletion}</Link>
           </div>
         </div>
 
