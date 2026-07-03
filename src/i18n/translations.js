@@ -13,8 +13,8 @@ export const translations = {
     },
     home: {
       tagline: 'Where intelligence comes to life.',
-      hero: 'Systems Built for\nSerious Business',
-      heroSub: 'Nexora Systems helps Ontario and Quebec businesses grow through intelligent technology — from professional websites to AI-powered operations.',
+      hero: 'Intelligent Software\nfor Growing Businesses',
+      heroSub: 'Nexora Systems designs intelligent software, AI solutions, and modern digital experiences that help businesses work smarter. Our flagship platform, CrewPilot, is transforming field operations while our team builds custom solutions for companies across Ontario and Quebec.',
       ctaPrimary: 'View Our Services',
       ctaSecondary: 'Contact Us',
       servicesTitle: 'What We Build',
@@ -316,8 +316,8 @@ export const translations = {
     },
     home: {
       tagline: 'Où l\'intelligence prend vie.',
-      hero: 'Des systèmes conçus\npour les entreprises sérieuses',
-      heroSub: 'Nexora Systems aide les entreprises de l\'Ontario et du Québec à croître grâce à des technologies intelligentes — des sites web professionnels aux opérations propulsées par l\'IA.',
+      hero: 'Logiciels intelligents\npour les entreprises en croissance',
+      heroSub: 'Nexora Systems conçoit des logiciels intelligents, des solutions d\'IA et des expériences numériques modernes qui aident les entreprises à travailler plus efficacement. Notre plateforme phare, CrewPilot, transforme les opérations sur le terrain, tandis que notre équipe développe des solutions sur mesure pour des entreprises en Ontario et au Québec.',
       ctaPrimary: 'Voir nos services',
       ctaSecondary: 'Nous contacter',
       servicesTitle: 'Ce que nous construisons',
