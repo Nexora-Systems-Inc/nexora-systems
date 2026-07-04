@@ -8,12 +8,12 @@ export const SERVICE_NAV_ORDER = [
   'customSolutions',
 ];
 
-/** Homepage services grid — ecosystem layout (3×2). */
+/** Homepage services grid — core services (top) + Nexora ecosystem (bottom). */
 export const HOME_SERVICES_GRID_ORDER = [
   'webApps',
   'websiteDev',
-  'crewpilot',
   'workflow',
+  'crewpilot',
   'ashley',
   'customSolutions',
 ];

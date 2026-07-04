@@ -140,23 +140,33 @@
   transform: translateX(4px);
 }
 
-/* CrewPilot flagship card */
-.service-card--crewpilot {
+/* Premium ecosystem cards (bottom row) */
+.service-card--premium {
   background: var(--black);
   border-color: rgba(201, 168, 76, 0.24);
 }
 
-.service-card--crewpilot:hover {
+.service-card--premium:hover {
   border-color: var(--gold);
   box-shadow: 0 8px 32px rgba(201, 168, 76, 0.2);
 }
 
-.service-card--crewpilot .service-card-title {
+.service-card--premium .service-card-title {
   color: var(--white);
 }
 
-.service-card--crewpilot .service-card-desc {
+.service-card--premium .service-card-desc {
   color: rgba(255, 255, 255, 0.62);
+}
+
+.service-card--premium .service-card-icon {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(201, 168, 76, 0.28);
+}
+
+/* CrewPilot flagship card */
+.service-card--crewpilot {
+  gap: 10px;
 }
 
 .service-card-crewpilot-top {
@@ -185,32 +195,43 @@
   white-space: nowrap;
 }
 
+.service-card-crewpilot-visual-wrap {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 4px -16px -12px;
+  min-height: 160px;
+}
+
 .service-card-crewpilot-visual {
-  width: 100%;
+  width: 118%;
+  max-width: none;
   height: auto;
-  border-radius: var(--radius-md);
-  margin-top: 4px;
   object-fit: contain;
+  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.35));
 }
 
 /* Ashley personality card */
 .service-card--ashley {
-  padding: 0;
+  padding: 12px;
   overflow: hidden;
   min-height: 100%;
-}
-
-.service-card--ashley:hover {
-  transform: translateY(-2px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .service-card-ashley-image {
   display: block;
   width: 100%;
   height: 100%;
-  min-height: 240px;
-  object-fit: cover;
+  flex: 1;
+  min-height: 220px;
+  object-fit: contain;
   object-position: center;
+  border-radius: calc(var(--radius-lg) - 4px);
 }
 
 /* VALUES */

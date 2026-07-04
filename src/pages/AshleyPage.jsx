@@ -36,7 +36,7 @@ export default function AshleyPage() {
       <section className="ashley-page-body">
         <div className="container ashley-page-inner">
           <img
-            src="/services/ashley-card.webp"
+            src="/services/ashley-card-portrait.webp"
             alt=""
             className="ashley-page-card"
             width={960}

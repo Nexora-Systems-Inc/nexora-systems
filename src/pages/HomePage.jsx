@@ -62,6 +62,7 @@ const SERVICE_CARDS = {
     fr: { title: 'Solutions sur mesure', desc: 'Votre entreprise a des besoins uniques. Nous concevons et construisons exactement ce qu\'il vous faut — avec précision et pérennité.' },
   },
   crewpilot: {
+    imageSrc: '/products/crewpilot/crewpilot-tablet-transparent.webp',
     en: {
       title: 'AI Construction',
       badge: 'Flagship Product',
@@ -74,9 +75,9 @@ const SERVICE_CARDS = {
     },
   },
   ashley: {
-    imageSrc: '/services/ashley-card.webp',
-    en: { alt: 'Meet Ashley — Ashley Sterling, Cognitive Interface Agent at Nexora Systems' },
-    fr: { alt: 'Rencontrez Ashley — Ashley Sterling, agente d\'interface cognitive chez Nexora Systems' },
+    imageSrc: '/services/ashley-card-portrait.webp',
+    en: { alt: 'Ashley Sterling — Cognitive Interface Agent at Nexora Systems' },
+    fr: { alt: 'Ashley Sterling — agente d\'interface cognitive chez Nexora Systems' },
   },
 };
 
@@ -98,9 +99,11 @@ const VALUE_PROPS = [
   },
 ];
 
-function StandardServiceCard({ card, path, lang }) {
+function StandardServiceCard({ card, path, lang, premium = false }) {
+  const className = premium ? 'service-card service-card--premium' : 'service-card';
+
   return (
-    <Link to={path} className="service-card">
+    <Link to={path} className={className}>
       <div className="service-card-icon">{card.icon}</div>
       <h3 className="service-card-title">{card[lang].title}</h3>
       <p className="service-card-desc">{card[lang].desc}</p>
@@ -113,22 +116,24 @@ function CrewPilotServiceCard({ card, path, lang }) {
   const copy = card[lang];
 
   return (
-    <Link to={path} className="service-card service-card--crewpilot">
+    <Link to={path} className="service-card service-card--premium service-card--crewpilot">
       <div className="service-card-crewpilot-top">
         <img src="/products/crewpilot-logo.png" alt="" className="service-card-crewpilot-logo" />
         <span className="service-card-crewpilot-badge">{copy.badge}</span>
       </div>
       <h3 className="service-card-title">{copy.title}</h3>
       <p className="service-card-desc">{copy.desc}</p>
-      <img
-        src="/products/crewpilot/crewpilot-tablet-hero.webp"
-        alt=""
-        className="service-card-crewpilot-visual"
-        width={960}
-        height={640}
-        loading="lazy"
-        decoding="async"
-      />
+      <div className="service-card-crewpilot-visual-wrap">
+        <img
+          src={card.imageSrc}
+          alt=""
+          className="service-card-crewpilot-visual"
+          width={1200}
+          height={940}
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
       <span className="service-card-arrow" aria-hidden="true">→</span>
     </Link>
   );
@@ -136,13 +141,13 @@ function CrewPilotServiceCard({ card, path, lang }) {
 
 function AshleyServiceCard({ card, path, lang }) {
   return (
-    <Link to={path} className="service-card service-card--ashley" aria-label={card[lang].alt}>
+    <Link to={path} className="service-card service-card--premium service-card--ashley" aria-label={card[lang].alt}>
       <img
         src={card.imageSrc}
         alt={card[lang].alt}
         className="service-card-ashley-image"
-        width={960}
-        height={639}
+        width={720}
+        height={900}
         loading="lazy"
         decoding="async"
       />
@@ -160,6 +165,10 @@ function HomeServiceCard({ serviceKey, lang }) {
 
   if (serviceKey === 'ashley') {
     return <AshleyServiceCard card={card} path={path} lang={lang} />;
+  }
+
+  if (serviceKey === 'customSolutions') {
+    return <StandardServiceCard card={card} path={path} lang={lang} premium />;
   }
 
   return <StandardServiceCard card={card} path={path} lang={lang} />;
