@@ -17,14 +17,51 @@ export default function WebApplicationsPage() {
     {
       titleEn: 'CribLedger',
       titleFr: 'CribLedger',
-      descEn: 'A property management application designed for landlords and property managers. Track leases, manage maintenance requests, automate rent collection reminders, and maintain clear financial records.',
-      descFr: 'Une application de gestion immobilière conçue pour les propriétaires. Suivez les baux, gérez les demandes d\'entretien et automatisez les rappels de loyer.',
+      taglineEn: 'Keep the game honest.',
+      taglineFr: 'Que le jeu reste honnête.',
+      descEn: 'CribLedger is a companion app for cribbage players who enjoy friendly wagers. Track matches, record wins and losses, maintain running balances between players, and settle up with confidence. Whether it\'s a casual game with friends or an ongoing rivalry, CribLedger keeps score long after the cards are put away.',
+      descFr: 'CribLedger est une application compagnon pour les joueurs de cribbage qui aiment les paris amicaux. Suivez les parties, enregistrez victoires et défaites, maintenez des soldes courants entre joueurs et réglez vos comptes en toute confiance. Que ce soit une partie décontractée entre amis ou une rivalité qui dure, CribLedger garde le score longtemps après que les cartes soient rangées.',
+      bulletsEn: [
+        'Match History',
+        'Running Player Balances',
+        'Win/Loss Statistics',
+        'Friendly Wager Tracking',
+        'Simple Settlement History',
+      ],
+      bulletsFr: [
+        'Historique des parties',
+        'Soldes courants entre joueurs',
+        'Statistiques victoires/défaites',
+        'Suivi des paris amicaux',
+        'Historique des règlements',
+      ],
     },
     {
       titleEn: 'Custom Business Applications',
       titleFr: 'Applications d\'affaires sur mesure',
-      descEn: 'Not every business fits an off-the-shelf solution. We design and build custom web applications scoped specifically to your workflows, team structure, and long-term goals.',
-      descFr: 'Toutes les entreprises ne correspondent pas à une solution prête à l\'emploi. Nous concevons des applications sur mesure adaptées à vos processus et objectifs à long terme.',
+      taglineEn: 'Built around your business.',
+      taglineFr: 'Conçu autour de votre entreprise.',
+      descEn: 'Every business has unique workflows that off-the-shelf software can\'t always support. Nexora designs and develops custom business applications tailored to your operations, your team, and your long-term goals. From internal tools and client portals to workflow automation and AI-powered platforms, we build software that fits your business instead of forcing your business to fit the software.',
+      descFr: 'Chaque entreprise a des processus uniques que les logiciels prêts à l\'emploi ne supportent pas toujours. Nexora conçoit et développe des applications d\'affaires sur mesure adaptées à vos opérations, votre équipe et vos objectifs à long terme. Des outils internes et portails clients à l\'automatisation des flux et aux plateformes propulsées par l\'IA, nous construisons des logiciels qui s\'adaptent à votre entreprise — pas l\'inverse.',
+      bulletsEn: [
+        'Custom Workflow Design',
+        'Internal Business Tools',
+        'Client & Employee Portals',
+        'AI-Powered Automation',
+        'Cloud & Mobile Applications',
+        'Long-Term Partnership',
+      ],
+      bulletsFr: [
+        'Conception de flux sur mesure',
+        'Outils internes d\'affaires',
+        'Portails clients et employés',
+        'Automatisation propulsée par l\'IA',
+        'Applications cloud et mobile',
+        'Partenariat à long terme',
+      ],
+      ctaEn: 'Start Your Project',
+      ctaFr: 'Démarrer votre projet',
+      ctaTo: '/contact',
     },
   ];
 
@@ -126,7 +163,24 @@ export default function WebApplicationsPage() {
                 <div className="scaffold-feature-num">{String(i + 3).padStart(2, '0')}</div>
                 <div>
                   <h3 className="scaffold-feature-title">{lang === 'en' ? f.titleEn : f.titleFr}</h3>
+                  {f.taglineEn && (
+                    <p className="scaffold-feature-tagline">
+                      {lang === 'en' ? f.taglineEn : f.taglineFr}
+                    </p>
+                  )}
                   <p className="scaffold-feature-desc">{lang === 'en' ? f.descEn : f.descFr}</p>
+                  {f.bulletsEn && (
+                    <ul className="scaffold-feature-bullets">
+                      {(lang === 'en' ? f.bulletsEn : f.bulletsFr).map((bullet) => (
+                        <li key={bullet}>{bullet}</li>
+                      ))}
+                    </ul>
+                  )}
+                  {f.ctaEn && (
+                    <Link to={f.ctaTo} className="btn-outline-dark scaffold-feature-cta">
+                      {lang === 'en' ? f.ctaEn : f.ctaFr}
+                    </Link>
+                  )}
                 </div>
               </div>
             ))}
