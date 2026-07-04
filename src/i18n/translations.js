@@ -40,11 +40,8 @@ export const translations = {
           'Scheduling',
           'Android Ready',
         ],
-        showcase: {
-          activeCrews: 'Active Crews',
-          hoursToday: 'Hours Today',
-          projects: 'Open Projects',
-        },
+        showcaseSrc: '/products/crewpilot/crewpilot-tablet-hero.webp',
+        showcaseAlt: 'CrewPilot workforce management dashboard on a tablet',
       },
     },
     websiteDev: {
@@ -423,11 +420,8 @@ export const translations = {
           'Planification',
           'Prêt pour Android',
         ],
-        showcase: {
-          activeCrews: 'Équipes actives',
-          hoursToday: 'Heures aujourd\'hui',
-          projects: 'Projets ouverts',
-        },
+        showcaseSrc: '/products/crewpilot/crewpilot-tablet-hero.webp',
+        showcaseAlt: 'Tableau de bord CrewPilot sur une tablette',
       },
     },
     websiteDev: {

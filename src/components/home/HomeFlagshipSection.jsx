@@ -5,7 +5,6 @@ import './HomeFlagshipSection.css';
 export default function HomeFlagshipSection() {
   const { t } = useLang();
   const f = t.home.flagship;
-  const cp = t.products.crewpilot;
   const demoUrl = '/contact?product=crewpilot&intent=demo';
 
   return (
@@ -20,44 +19,17 @@ export default function HomeFlagshipSection() {
 
         <div className="home-flagship-showcase">
           <div className="home-flagship-showcase-glow" aria-hidden="true" />
-          <div className="home-flagship-showcase-frame">
-            <div className="home-flagship-showcase-bar">
-              <span className="home-flagship-showcase-dot" />
-              <span className="home-flagship-showcase-dot" />
-              <span className="home-flagship-showcase-dot" />
-              <span className="home-flagship-showcase-url">app.nexorasystems.ca</span>
-            </div>
-            <div className="home-flagship-showcase-body">
-              <div className="home-flagship-showcase-sidebar">
-                <img src={cp.logoSrc} alt="" className="home-flagship-showcase-logo" />
-                <div className="home-flagship-showcase-nav-item home-flagship-showcase-nav-item--active" />
-                <div className="home-flagship-showcase-nav-item" />
-                <div className="home-flagship-showcase-nav-item" />
-                <div className="home-flagship-showcase-nav-item" />
-              </div>
-              <div className="home-flagship-showcase-main">
-                <div className="home-flagship-showcase-stats">
-                  <div className="home-flagship-stat">
-                    <span className="home-flagship-stat-label">{f.showcase.activeCrews}</span>
-                    <span className="home-flagship-stat-value">12</span>
-                  </div>
-                  <div className="home-flagship-stat">
-                    <span className="home-flagship-stat-label">{f.showcase.hoursToday}</span>
-                    <span className="home-flagship-stat-value">847</span>
-                  </div>
-                  <div className="home-flagship-stat">
-                    <span className="home-flagship-stat-label">{f.showcase.projects}</span>
-                    <span className="home-flagship-stat-value">34</span>
-                  </div>
-                </div>
-                <div className="home-flagship-showcase-grid">
-                  <div className="home-flagship-showcase-panel home-flagship-showcase-panel--wide" />
-                  <div className="home-flagship-showcase-panel" />
-                  <div className="home-flagship-showcase-panel" />
-                </div>
-              </div>
-            </div>
-          </div>
+          <figure className="home-flagship-tablet">
+            <img
+              src={f.showcaseSrc}
+              alt={f.showcaseAlt}
+              className="home-flagship-tablet-image"
+              width={1400}
+              height={933}
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
         </div>
 
         <ul className="home-flagship-badges">
