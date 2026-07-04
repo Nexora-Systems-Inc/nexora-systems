@@ -317,9 +317,9 @@ export const translations = {
             src: '/products/crewpilot/screenshots/07-estimate-pipeline.png',
           },
           {
-            id: 'payroll-queue',
-            caption: 'Payroll Queue',
-            src: '/products/crewpilot/screenshots/09-payroll-queue-unpaid-week.png',
+            id: 'payroll-preview',
+            caption: 'Payroll Preview',
+            src: '/products/crewpilot/screenshots/10-payroll-report-branded.png',
           },
           {
             id: 'invoice-preview',
@@ -700,9 +700,9 @@ export const translations = {
             src: '/products/crewpilot/screenshots/07-estimate-pipeline.png',
           },
           {
-            id: 'payroll-queue',
-            caption: 'File de paie',
-            src: '/products/crewpilot/screenshots/09-payroll-queue-unpaid-week.png',
+            id: 'payroll-preview',
+            caption: 'Aperçu de paie',
+            src: '/products/crewpilot/screenshots/10-payroll-report-branded.png',
           },
           {
             id: 'invoice-preview',

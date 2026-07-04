@@ -3,14 +3,14 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const SOURCE_ROOT = path.resolve(ROOT, '../../voice-intake-app/marketing/screenshots');
+const SOURCE_ROOT = path.resolve(ROOT, '../voice-intake-app/marketing/screenshots');
 const DEST_ROOT = path.join(ROOT, 'public/products/crewpilot/screenshots');
 
 const WEBSITE_GALLERY = [
   '02-kpi-dashboard-full.png',
   '03-projects-hub-portfolio.png',
   '07-estimate-pipeline.png',
-  '09-payroll-queue-unpaid-week.png',
+  '10-payroll-report-branded.png',
   '11-invoice-horizon-draft.png',
   '14-estimate-pdf-header.png',
 ];
