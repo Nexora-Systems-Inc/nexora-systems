@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLang } from '../context/LangContext';
 import { HOME_SERVICES_GRID_ORDER, SERVICE_PATHS } from '../config/services';
+import { ASHLEY_ASSETS } from '../config/ashleyAssets';
 import HomeFlagshipSection from '../components/home/HomeFlagshipSection';
 import './HomePage.css';
 
@@ -75,7 +76,7 @@ const SERVICE_CARDS = {
     },
   },
   ashley: {
-    imageSrc: '/services/ashley-card-portrait.webp',
+    imageSrc: ASHLEY_ASSETS.gridSrc,
     en: { alt: 'Ashley Sterling — Cognitive Interface Agent at Nexora Systems' },
     fr: { alt: 'Ashley Sterling — agente d\'interface cognitive chez Nexora Systems' },
   },
@@ -146,8 +147,8 @@ function AshleyServiceCard({ card, path, lang }) {
         src={card.imageSrc}
         alt={card[lang].alt}
         className="service-card-ashley-image"
-        width={720}
-        height={900}
+        width={ASHLEY_ASSETS.gridWidth}
+        height={ASHLEY_ASSETS.gridHeight}
         loading="lazy"
         decoding="async"
       />

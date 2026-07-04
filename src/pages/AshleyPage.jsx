@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LangContext';
+import { ASHLEY_ASSETS } from '../config/ashleyAssets';
 import './AshleyPage.css';
 
 export default function AshleyPage() {
@@ -36,11 +37,11 @@ export default function AshleyPage() {
       <section className="ashley-page-body">
         <div className="container ashley-page-inner">
           <img
-            src="/services/ashley-card-portrait.webp"
+            src={ASHLEY_ASSETS.presentationSrc}
             alt=""
             className="ashley-page-card"
-            width={960}
-            height={640}
+            width={ASHLEY_ASSETS.presentationWidth}
+            height={ASHLEY_ASSETS.presentationHeight}
             loading="lazy"
             decoding="async"
           />
