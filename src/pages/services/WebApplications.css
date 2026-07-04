@@ -1,0 +1,216 @@
+.web-apps-flagship {
+  padding: 96px 0;
+  background: var(--black);
+  position: relative;
+  overflow: hidden;
+}
+
+.web-apps-flagship-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(201, 168, 76, 0.1) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 35% at 85% 20%, rgba(201, 168, 76, 0.06) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.web-apps-flagship-header {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin-bottom: 56px;
+}
+
+.web-apps-flagship-brand {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 16px 0 20px;
+}
+
+.web-apps-flagship-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 24px rgba(201, 168, 76, 0.2));
+}
+
+.web-apps-flagship-name {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 500;
+  color: var(--white);
+  line-height: 1.05;
+  margin-bottom: 6px;
+}
+
+.web-apps-flagship-tagline {
+  font-size: clamp(15px, 2vw, 18px);
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-style: italic;
+}
+
+.web-apps-flagship-built {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(201, 168, 76, 0.75);
+  margin-bottom: 20px;
+}
+
+.web-apps-flagship-desc {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.58);
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+
+.web-apps-flagship-positioning {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.42);
+  line-height: 1.75;
+  font-weight: 300;
+  font-style: italic;
+  border-left: 2px solid rgba(201, 168, 76, 0.4);
+  padding-left: 16px;
+}
+
+.web-apps-features-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.web-apps-feature-card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  min-height: 160px;
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.web-apps-feature-card:hover {
+  border-color: rgba(201, 168, 76, 0.35);
+  background: rgba(201, 168, 76, 0.06);
+  transform: translateY(-3px);
+}
+
+.web-apps-feature-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: rgba(201, 168, 76, 0.12);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.web-apps-feature-title {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+
+.web-apps-feature-desc {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.48);
+  line-height: 1.65;
+  font-weight: 300;
+  flex: 1;
+}
+
+.web-apps-flagship-ctas {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.web-apps-positioning {
+  padding: 88px 0;
+  background: var(--white);
+}
+
+.web-apps-positioning-title {
+  font-size: clamp(26px, 3.5vw, 38px);
+  font-weight: 500;
+  color: var(--black);
+  margin: 8px 0 24px;
+  max-width: 560px;
+  line-height: 1.2;
+}
+
+.web-apps-positioning-text {
+  font-size: 15px;
+  color: var(--gray-500);
+  line-height: 1.85;
+  font-weight: 300;
+  max-width: 680px;
+}
+
+.web-apps-secondary {
+  padding: 80px 0;
+  background: var(--off-white);
+}
+
+@media (max-width: 1024px) {
+  .web-apps-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .web-apps-flagship {
+    padding: 72px 0;
+  }
+
+  .web-apps-flagship-brand {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .web-apps-flagship-ctas {
+    flex-direction: column;
+  }
+
+  .web-apps-flagship-ctas .btn-gold,
+  .web-apps-flagship-ctas .btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .web-apps-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .web-apps-feature-card {
+    min-height: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .web-apps-feature-card:hover {
+    transform: none;
+  }
+}

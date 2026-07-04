@@ -31,8 +31,8 @@ export default function AboutPage() {
           </h2>
           <p style={{ fontSize: 16, color: 'var(--gray-500)', lineHeight: 1.9, marginBottom: 20, fontWeight: 300 }}>
             {lang === 'en'
-              ? 'Nexora Systems is a technology solutions company serving businesses across Ontario and Quebec. We design, build, and deploy intelligent systems — from professional websites to AI-powered operations — with a focus on long-term value and real business results.'
-              : 'Nexora Systems est une entreprise de solutions technologiques qui sert des entreprises à travers l\'Ontario et le Québec. Nous concevons, construisons et déployons des systèmes intelligents — des sites web professionnels aux opérations propulsées par l\'IA — avec un accent sur la valeur à long terme et les résultats concrets.'}
+              ? 'Nexora Systems is a technology company serving businesses across Ontario and Quebec. We design, build, and ship production software — including CrewPilot, our flagship workforce management platform — alongside custom solutions for websites, AI, and business operations.'
+              : 'Nexora Systems est une entreprise technologique qui sert des entreprises à travers l\'Ontario et le Québec. Nous concevons, développons et livrons des logiciels de production — dont CrewPilot, notre plateforme phare de gestion de la main-d\'œuvre — aux côtés de solutions sur mesure pour sites web, IA et opérations d\'affaires.'}
           </p>
           <p style={{ fontSize: 16, color: 'var(--gray-500)', lineHeight: 1.9, fontWeight: 300 }}>
             {lang === 'en'

@@ -1,12 +1,16 @@
 import { Link } from 'react-router-dom';
 import { useLang } from '../../context/LangContext';
-import ProductSpotlight from '../../components/products/ProductSpotlight';
+import { PRODUCT_FEATURE_ICONS } from '../../components/products/productFeatureIcons';
 import './ServiceScaffold.css';
+import './WebApplications.css';
 
 export default function WebApplicationsPage() {
   const { lang, t } = useLang();
+  const wa = t.webApplications;
   const cp = t.products.crewpilot;
+  const common = t.products.common;
   const spotlight = cp.spotlight;
+  const demoUrl = '/contact?product=crewpilot&intent=demo';
 
   const otherFeatures = [
     {
@@ -24,7 +28,7 @@ export default function WebApplicationsPage() {
   ];
 
   return (
-    <div className="scaffold-page">
+    <div className="scaffold-page web-apps-page">
       <section className="page-hero">
         <div className="container">
           <h1 style={{ fontSize: 'clamp(36px, 5vw, 64px)', color: 'var(--white)', marginTop: 8, marginBottom: 16 }}>
@@ -33,31 +37,60 @@ export default function WebApplicationsPage() {
           <div className="gold-divider" style={{ margin: '12px 0 20px', maxWidth: 400 }}>
             <div className="gold-divider-diamond" />
           </div>
-          <p style={{ fontSize: 17, color: 'var(--gold)', fontFamily: 'var(--font-display)', fontStyle: 'italic' }}>
-            {lang === 'en'
-              ? 'Purpose-Built Tools for Modern Business Operations'
-              : 'Outils sur mesure pour les opérations d\'affaires modernes'}
+          <p style={{ fontSize: 17, color: 'var(--gold)', fontFamily: 'var(--font-display)', fontStyle: 'italic', marginBottom: 16 }}>
+            {wa.heroSub}
+          </p>
+          <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.55)', maxWidth: 640, lineHeight: 1.75, fontWeight: 300 }}>
+            {wa.heroDesc}
           </p>
         </div>
       </section>
 
-      <section style={{ padding: '80px 0', background: 'var(--white)' }}>
+      <section className="web-apps-flagship">
+        <div className="web-apps-flagship-glow" aria-hidden="true" />
         <div className="container">
-          <p className="section-label">{t.webApplications.spotlightLabel}</p>
-          <ProductSpotlight
-            badge={spotlight.badge}
-            name={cp.name}
-            logoSrc={cp.logoSrc}
-            tagline={spotlight.tagline}
-            description={spotlight.description}
-            highlights={spotlight.highlights}
-            ctaLabel={t.products.common.seeDemo}
-            ctaTo="/products/crewpilot"
-          />
+          <div className="web-apps-flagship-header">
+            <p className="section-label">{wa.spotlightLabel}</p>
+            <div className="web-apps-flagship-brand">
+              <img src={cp.logoSrc} alt="" className="web-apps-flagship-logo" />
+              <div>
+                <h2 className="web-apps-flagship-name">{cp.name}</h2>
+                <p className="web-apps-flagship-tagline">{spotlight.tagline}</p>
+              </div>
+            </div>
+            <p className="web-apps-flagship-built">{cp.builtBy}</p>
+            <p className="web-apps-flagship-desc">{cp.heroDesc}</p>
+            <p className="web-apps-flagship-positioning">{cp.positioning}</p>
+          </div>
 
-          <p className="section-label" style={{ marginTop: 16 }}>
-            {t.products.common.moreProducts}
-          </p>
+          <div className="web-apps-features-grid">
+            {cp.features.map((feature) => (
+              <article key={feature.key} className="web-apps-feature-card">
+                <div className="web-apps-feature-icon">{PRODUCT_FEATURE_ICONS[feature.key]}</div>
+                <h3 className="web-apps-feature-title">{feature.title}</h3>
+                <p className="web-apps-feature-desc">{feature.desc}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="web-apps-flagship-ctas">
+            <Link to="/products/crewpilot" className="btn-gold">{wa.exploreCta}</Link>
+            <Link to={demoUrl} className="btn-outline">{common.bookDemo}</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="web-apps-positioning">
+        <div className="container">
+          <p className="section-label">{common.productOverview}</p>
+          <h2 className="web-apps-positioning-title">{wa.positioningTitle}</h2>
+          <p className="web-apps-positioning-text">{wa.positioningText}</p>
+        </div>
+      </section>
+
+      <section className="web-apps-secondary">
+        <div className="container">
+          <p className="section-label">{common.moreProducts}</p>
           <div className="scaffold-features">
             {otherFeatures.map((f, i) => (
               <div key={i} className="scaffold-feature">

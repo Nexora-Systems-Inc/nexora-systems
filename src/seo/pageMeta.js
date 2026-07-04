@@ -5,7 +5,7 @@ const OG_IMAGE = `${SITE_URL}${DEFAULT_OG_IMAGE}`;
 const DEFAULT = {
   title: `${SITE_NAME} — Where Intelligence Comes to Life`,
   description:
-    'Nexora Systems helps Ontario and Quebec businesses grow through intelligent technology — websites, web applications, workflow automation, and AI solutions.',
+    'Nexora Systems builds production software — including CrewPilot, our flagship workforce management platform — and custom technology solutions for Ontario and Quebec businesses.',
 };
 
 /** Per-route SEO metadata. Keys match React Router paths. */
@@ -22,7 +22,7 @@ export const PAGE_META = {
   '/services/web-applications': {
     title: `Web Applications | ${SITE_NAME}`,
     description:
-      'Purpose-built web applications including CrewPilot workforce management and custom business software for modern operations.',
+      'Nexora Systems builds production web applications — starting with CrewPilot workforce management and extending to custom business software.',
   },
   '/services/workflow-automation': {
     title: `Workflow Automation | ${SITE_NAME}`,
@@ -52,7 +52,7 @@ export const PAGE_META = {
   '/about': {
     title: `About | ${SITE_NAME}`,
     description:
-      'Nexora Systems builds intelligent technology for serious businesses across Ontario and Quebec.',
+      'Nexora Systems builds production software including CrewPilot, and delivers custom technology for serious businesses across Ontario and Quebec.',
   },
   '/contact': {
     title: `Contact | ${SITE_NAME}`,

@@ -1,12 +1,14 @@
 import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLang } from '../context/LangContext';
+import HomeFlagshipSection from '../components/home/HomeFlagshipSection';
 import './HomePage.css';
 
 const SERVICES_SECTION_ID = 'services';
+const FLAGSHIP_SECTION_ID = 'flagship';
 
-function scrollToServicesSection() {
-  document.getElementById(SERVICES_SECTION_ID)?.scrollIntoView({ behavior: 'smooth' });
+function scrollToSection(id) {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 }
 
 const SERVICES = [
@@ -36,8 +38,8 @@ const SERVICES = [
         <rect x="15" y="15" width="10" height="10" rx="2" stroke="currentColor" strokeWidth="1.5"/>
       </svg>
     ),
-    en: { title: 'Web Applications', desc: 'Custom-built tools including CrewPilot for field teams and CribLedger for property management — purpose-built for your industry.' },
-    fr: { title: 'Applications Web', desc: 'Outils sur mesure dont CrewPilot pour les équipes terrain et CribLedger pour la gestion immobilière — conçus pour votre secteur.' },
+    en: { title: 'Web Applications', desc: 'Custom web applications scoped to your workflows — from industry platforms to enterprise tools built with production-grade engineering.' },
+    fr: { title: 'Applications Web', desc: 'Applications web sur mesure adaptées à vos processus — des plateformes sectorielles aux outils d\'entreprise conçus avec une ingénierie de niveau production.' },
   },
   {
     key: 'workflow',
@@ -117,14 +119,24 @@ export default function HomePage() {
 
   useEffect(() => {
     if (location.hash === `#${SERVICES_SECTION_ID}`) {
-      requestAnimationFrame(scrollToServicesSection);
+      requestAnimationFrame(() => scrollToSection(SERVICES_SECTION_ID));
+    }
+    if (location.hash === `#${FLAGSHIP_SECTION_ID}`) {
+      requestAnimationFrame(() => scrollToSection(FLAGSHIP_SECTION_ID));
     }
   }, [location.pathname, location.hash]);
 
   function handleServicesCtaClick(e) {
     if (location.pathname === '/') {
       e.preventDefault();
-      scrollToServicesSection();
+      scrollToSection(SERVICES_SECTION_ID);
+    }
+  }
+
+  function handleFlagshipCtaClick(e) {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      scrollToSection(FLAGSHIP_SECTION_ID);
     }
   }
 
@@ -146,12 +158,14 @@ export default function HomePage() {
             </div>
             <p className="home-hero-sub">{t.home.heroSub}</p>
             <div className="home-hero-ctas">
-              <Link to="/#services" className="btn-gold" onClick={handleServicesCtaClick}>{t.home.ctaPrimary}</Link>
-              <Link to="/contact" className="btn-outline">{t.home.ctaSecondary}</Link>
+              <Link to="/#flagship" className="btn-gold" onClick={handleFlagshipCtaClick}>{t.home.ctaPrimary}</Link>
+              <Link to="/#services" className="btn-outline" onClick={handleServicesCtaClick}>{t.home.ctaSecondary}</Link>
             </div>
           </div>
         </div>
       </section>
+
+      <HomeFlagshipSection />
 
       {/* SERVICES GRID */}
       <section id={SERVICES_SECTION_ID} className="home-services">
@@ -171,14 +185,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* VALUE PROPS */}
+      {/* WHY NEXORA */}
       <section className="home-values">
         <div className="container">
-          <h2 className="home-values-title">
-            {lang === 'en'
-              ? 'Built to Remove Bottlenecks and Drive Growth'
-              : 'Conçu pour éliminer les obstacles et stimuler la croissance'}
-          </h2>
+          <p className="section-label">{t.home.valuesTitle}</p>
+          <h2 className="home-values-title">{t.home.valuesSub}</h2>
           <div className="home-values-list">
             {VALUE_PROPS.map((v, i) => (
               <div key={i} className="value-row">
@@ -197,14 +208,8 @@ export default function HomePage() {
       <section className="home-cta-band">
         <div className="container home-cta-inner">
           <div>
-            <h2 className="home-cta-title">
-              {lang === 'en' ? 'Ready to build something serious?' : 'Prêt à construire quelque chose de sérieux?'}
-            </h2>
-            <p className="home-cta-sub">
-              {lang === 'en'
-                ? 'Every project starts with a conversation. Tell us about your business.'
-                : 'Chaque projet commence par une conversation. Parlez-nous de votre entreprise.'}
-            </p>
+            <h2 className="home-cta-title">{t.home.ctaTitle}</h2>
+            <p className="home-cta-sub">{t.home.ctaSub}</p>
           </div>
           <Link to="/contact" className="btn-gold">{t.common.contactUs}</Link>
         </div>
