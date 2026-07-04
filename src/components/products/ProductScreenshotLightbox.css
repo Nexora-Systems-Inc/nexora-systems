@@ -1,0 +1,138 @@
+.product-screenshot-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(8, 10, 12, 0.92);
+  backdrop-filter: blur(8px);
+}
+
+.product-screenshot-lightbox-panel {
+  position: relative;
+  width: min(100%, 420px);
+  max-height: calc(100vh - 48px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-screenshot-lightbox-figure {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.product-screenshot-lightbox-image {
+  width: 100%;
+  max-height: calc(100vh - 140px);
+  object-fit: contain;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+  background: #0f1114;
+}
+
+.product-screenshot-lightbox-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+  text-align: center;
+}
+
+.product-screenshot-lightbox-counter {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.product-screenshot-lightbox-close {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  background: rgba(15, 17, 20, 0.85);
+  color: var(--white);
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.product-screenshot-lightbox-close:hover {
+  background: rgba(201, 168, 76, 0.18);
+  border-color: rgba(201, 168, 76, 0.45);
+}
+
+.product-screenshot-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  background: rgba(15, 17, 20, 0.75);
+  color: var(--white);
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.product-screenshot-lightbox-nav:hover {
+  background: rgba(201, 168, 76, 0.18);
+  border-color: rgba(201, 168, 76, 0.45);
+}
+
+.product-screenshot-lightbox-nav--prev {
+  left: -56px;
+}
+
+.product-screenshot-lightbox-nav--next {
+  right: -56px;
+}
+
+@media (max-width: 640px) {
+  .product-screenshot-lightbox {
+    padding: 16px;
+  }
+
+  .product-screenshot-lightbox-nav {
+    width: 36px;
+    height: 36px;
+    font-size: 24px;
+  }
+
+  .product-screenshot-lightbox-nav--prev {
+    left: 4px;
+  }
+
+  .product-screenshot-lightbox-nav--next {
+    right: 4px;
+  }
+
+  .product-screenshot-lightbox-close {
+    top: 8px;
+    right: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-screenshot-lightbox-close,
+  .product-screenshot-lightbox-nav {
+    transition: none;
+  }
+}

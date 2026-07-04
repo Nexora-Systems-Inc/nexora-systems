@@ -92,6 +92,7 @@ export default function ProductPage({ productKey }) {
             title={product.screenshotsTitle}
             screenshots={product.screenshots}
             comingSoonLabel={common.screenshotsComingSoon}
+            closeLabel={common.closeGallery}
           />
         </div>
       </section>

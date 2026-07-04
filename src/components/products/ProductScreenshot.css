@@ -11,20 +11,35 @@
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
   flex: 1;
+  position: relative;
 }
 
-.product-screenshot-frame--mock:hover {
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+.product-screenshot-frame--interactive {
+  cursor: zoom-in;
+}
+
+.product-screenshot-frame--mock:hover,
+.product-screenshot-frame--live:hover,
+.product-screenshot-frame--interactive:focus-visible {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
   transform: translateY(-3px);
+  border-color: rgba(201, 168, 76, 0.35);
+}
+
+.product-screenshot-frame--interactive:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
 }
 
 .product-screenshot-image {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 390 / 844;
   object-fit: cover;
+  object-position: top center;
   display: block;
+  background: #0f1114;
 }
 
 /* Mock app frame */
@@ -132,6 +147,31 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
+.product-screenshot-expand-hint {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: rgba(15, 17, 20, 0.72);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.product-screenshot-frame--interactive:hover .product-screenshot-expand-hint,
+.product-screenshot-frame--interactive:focus-visible .product-screenshot-expand-hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .product-screenshot-caption {
   margin-top: 14px;
   font-size: 13px;
@@ -154,7 +194,15 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .product-screenshot-frame--mock:hover {
+  .product-screenshot-frame--mock:hover,
+  .product-screenshot-frame--live:hover,
+  .product-screenshot-frame--interactive:focus-visible {
     transform: none;
+  }
+
+  .product-screenshot-expand-hint {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
