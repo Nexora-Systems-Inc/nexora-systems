@@ -63,16 +63,21 @@ const SERVICE_CARDS = {
     fr: { title: 'Solutions sur mesure', desc: 'Votre entreprise a des besoins uniques. Nous concevons et construisons exactement ce qu\'il vous faut — avec précision et pérennité.' },
   },
   crewpilot: {
-    imageSrc: '/products/crewpilot/crewpilot-tablet-transparent.webp',
     en: {
-      title: 'AI Construction',
       badge: 'Flagship Product',
-      desc: 'CrewPilot is Nexora\'s flagship construction platform — offline-first workforce management built for contractors and field teams.',
+      name: 'CrewPilot',
+      tagline: 'Offline-First Workforce Platform',
+      desc: 'CrewPilot is Nexora Systems\' flagship platform for contractors, combining workforce management, estimating, payroll, materials, and AI into one modern, offline-first solution.',
+      pills: ['Time Tracking', 'Payroll', 'Estimating', 'Materials', 'AI Assistant', 'Offline First'],
+      attribution: 'Designed & Built by Nexora Systems',
     },
     fr: {
-      title: 'IA Construction',
       badge: 'Produit phare',
-      desc: 'CrewPilot est la plateforme phare de Nexora pour la construction — gestion de main-d\'œuvre hors ligne conçue pour entrepreneurs et équipes terrain.',
+      name: 'CrewPilot',
+      tagline: 'Plateforme de main-d\'œuvre hors ligne',
+      desc: 'CrewPilot est la plateforme phare de Nexora Systems pour les entrepreneurs — gestion de la main-d\'œuvre, estimation, paie, matériaux et IA réunis dans une solution moderne hors ligne.',
+      pills: ['Suivi du temps', 'Paie', 'Estimation', 'Matériaux', 'Assistant IA', 'Hors ligne'],
+      attribution: 'Conçu et développé par Nexora Systems',
     },
   },
   ashley: {
@@ -118,23 +123,20 @@ function CrewPilotServiceCard({ card, path, lang }) {
 
   return (
     <Link to={path} className="service-card service-card--premium service-card--crewpilot">
-      <div className="service-card-crewpilot-top">
+      <div className="service-card-crewpilot-bg" aria-hidden="true" />
+      <div className="service-card-crewpilot-header">
         <img src="/products/crewpilot-logo.png" alt="" className="service-card-crewpilot-logo" />
         <span className="service-card-crewpilot-badge">{copy.badge}</span>
       </div>
-      <h3 className="service-card-title">{copy.title}</h3>
-      <p className="service-card-desc">{copy.desc}</p>
-      <div className="service-card-crewpilot-visual-wrap">
-        <img
-          src={card.imageSrc}
-          alt=""
-          className="service-card-crewpilot-visual"
-          width={1200}
-          height={940}
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
+      <h3 className="service-card-crewpilot-name">{copy.name}</h3>
+      <p className="service-card-crewpilot-tagline">{copy.tagline}</p>
+      <p className="service-card-desc service-card-crewpilot-desc">{copy.desc}</p>
+      <ul className="service-card-crewpilot-pills">
+        {copy.pills.map((pill) => (
+          <li key={pill} className="service-card-crewpilot-pill">{pill}</li>
+        ))}
+      </ul>
+      <p className="service-card-crewpilot-attribution">{copy.attribution}</p>
       <span className="service-card-arrow" aria-hidden="true">→</span>
     </Link>
   );

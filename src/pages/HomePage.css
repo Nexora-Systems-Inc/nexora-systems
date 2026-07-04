@@ -164,23 +164,53 @@
   border: 1px solid rgba(201, 168, 76, 0.28);
 }
 
-/* CrewPilot flagship card */
+/* CrewPilot identity card */
 .service-card--crewpilot {
-  gap: 10px;
+  position: relative;
+  overflow: hidden;
+  gap: 12px;
 }
 
-.service-card-crewpilot-top {
+.service-card-crewpilot-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 90% 70% at 50% -10%, rgba(201, 168, 76, 0.14) 0%, transparent 68%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 23px,
+      rgba(201, 168, 76, 0.035) 23px,
+      rgba(201, 168, 76, 0.035) 24px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 23px,
+      rgba(201, 168, 76, 0.035) 23px,
+      rgba(201, 168, 76, 0.035) 24px
+    );
+  pointer-events: none;
+}
+
+.service-card--crewpilot > :not(.service-card-crewpilot-bg) {
+  position: relative;
+  z-index: 1;
+}
+
+.service-card-crewpilot-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
 }
 
 .service-card-crewpilot-logo {
-  width: 40px;
-  height: 40px;
+  width: 72px;
+  height: 72px;
   object-fit: contain;
   flex-shrink: 0;
+  filter: drop-shadow(0 8px 24px rgba(201, 168, 76, 0.22));
 }
 
 .service-card-crewpilot-badge {
@@ -195,21 +225,54 @@
   white-space: nowrap;
 }
 
-.service-card-crewpilot-visual-wrap {
-  flex: 1;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  margin: 4px -16px -12px;
-  min-height: 160px;
+.service-card-crewpilot-name {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 3.2vw, 38px);
+  font-weight: 500;
+  color: var(--white);
+  line-height: 1.05;
+  margin: 0;
 }
 
-.service-card-crewpilot-visual {
-  width: 118%;
-  max-width: none;
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.35));
+.service-card-crewpilot-tagline {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--gold);
+  margin: -4px 0 0;
+}
+
+.service-card-crewpilot-desc {
+  margin: 0;
+}
+
+.service-card-crewpilot-pills {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 4px 0 0;
+}
+
+.service-card-crewpilot-pill {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(201, 168, 76, 0.28);
+  border-radius: 100px;
+  padding: 6px 12px;
+  line-height: 1.2;
+}
+
+.service-card-crewpilot-attribution {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(201, 168, 76, 0.72);
+  margin: auto 0 0;
 }
 
 /* Ashley personality card */
