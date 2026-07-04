@@ -53,17 +53,16 @@ export default function WebApplicationsPage() {
           <div className="web-apps-flagship-row">
             <div className="web-apps-product-num">01</div>
             <div className="web-apps-flagship-header">
-            <p className="section-label">{wa.spotlightLabel}</p>
-            <div className="web-apps-flagship-brand">
-              <img src={cp.logoSrc} alt="" className="web-apps-flagship-logo" />
-              <div>
-                <h2 className="web-apps-flagship-name">{cp.name}</h2>
-                <p className="web-apps-flagship-tagline">{spotlight.tagline}</p>
+              <p className="section-label">{wa.spotlightLabel}</p>
+              <div className="web-apps-flagship-brand">
+                <img src={cp.logoSrc} alt="" className="web-apps-flagship-logo" />
+                <div>
+                  <h2 className="web-apps-flagship-name">{cp.name}</h2>
+                  <p className="web-apps-flagship-tagline">{spotlight.tagline}</p>
+                </div>
               </div>
-            </div>
-            <p className="web-apps-flagship-built">{cp.builtBy}</p>
-            <p className="web-apps-flagship-desc">{cp.heroDesc}</p>
-            <p className="web-apps-flagship-positioning">{cp.positioning}</p>
+              <p className="web-apps-flagship-built">{cp.builtBy}</p>
+              <p className="web-apps-flagship-desc">{cp.heroDesc}</p>
             </div>
           </div>
 
@@ -81,22 +80,22 @@ export default function WebApplicationsPage() {
             <Link to="/products/crewpilot" className="btn-gold">{wa.exploreCta}</Link>
             <Link to={demoUrl} className="btn-outline">{common.bookDemo}</Link>
           </div>
+
+          <div className="web-apps-bridge">
+            <p className="section-label">{wa.bridgeLabel}</p>
+            <h2 className="web-apps-bridge-title">{wa.positioningTitle}</h2>
+            <p className="web-apps-bridge-text">{wa.positioningText}</p>
+          </div>
         </div>
       </section>
 
-      <section className="web-apps-positioning">
+      <section className="web-apps-ecosystem" aria-labelledby="ecosystem-heading">
         <div className="container">
-          <p className="section-label">{common.productOverview}</p>
-          <h2 className="web-apps-positioning-title">{wa.positioningTitle}</h2>
-          <p className="web-apps-positioning-text">{wa.positioningText}</p>
-        </div>
-      </section>
+          <p id="ecosystem-heading" className="section-label">{wa.ecosystemLabel}</p>
 
-      <section className="web-apps-upcoming" aria-labelledby="accord-heading">
-        <div className="container">
-          <div className="web-apps-upcoming-row">
+          <div className="web-apps-ecosystem-row">
             <div className="web-apps-product-num web-apps-product-num--light">02</div>
-            <article className="web-apps-upcoming-card">
+            <article className="web-apps-upcoming-card" aria-labelledby="accord-heading">
               <p className="section-label">{accord.badge}</p>
               <div className="web-apps-upcoming-brand">
                 <img src={accord.logoSrc} alt="" className="web-apps-upcoming-logo" />
@@ -120,13 +119,8 @@ export default function WebApplicationsPage() {
               </button>
             </article>
           </div>
-        </div>
-      </section>
 
-      <section className="web-apps-secondary">
-        <div className="container">
-          <p className="section-label">{common.moreProducts}</p>
-          <div className="scaffold-features">
+          <div className="scaffold-features web-apps-ecosystem-more">
             {otherFeatures.map((f, i) => (
               <div key={i} className="scaffold-feature">
                 <div className="scaffold-feature-num">{String(i + 3).padStart(2, '0')}</div>
