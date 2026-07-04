@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useLang } from '../context/LangContext';
+import { CONTACT_SERVICE_LABELS } from '../config/services';
 import './ContactPage.css';
 
 const PRODUCT_SERVICE_MAP = {
@@ -119,7 +120,7 @@ export default function ContactPage() {
                     className="contact-input"
                   >
                     <option value="">{c.selectService}</option>
-                    {c.services.map((s) => <option key={s} value={s}>{s}</option>)}
+                    {CONTACT_SERVICE_LABELS[lang].map((s) => <option key={s} value={s}>{s}</option>)}
                   </select>
                 </div>
                 <div className="contact-field">

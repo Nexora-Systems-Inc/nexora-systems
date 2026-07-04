@@ -1,16 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLang } from '../../context/LangContext';
+import { SERVICE_NAV_ITEMS } from '../../config/services';
 import './Navbar.css';
-
-const SERVICES = [
-  { key: 'websiteDev', path: '/services/website-development' },
-  { key: 'webApps', path: '/services/web-applications' },
-  { key: 'workflow', path: '/services/workflow-automation' },
-  { key: 'aiConstruction', path: '/services/ai-construction' },
-  { key: 'aiReceptionists', path: '/services/ai-receptionists' },
-  { key: 'customSolutions', path: '/services/custom-solutions' },
-];
 
 export default function Navbar() {
   const { lang, setLang, t } = useLang();
@@ -61,7 +53,7 @@ export default function Navbar() {
             </button>
             {dropdownOpen && (
               <div className="navbar-dropdown-menu">
-                {SERVICES.map(s => (
+                {SERVICE_NAV_ITEMS.map(s => (
                   <Link key={s.key} to={s.path} className="navbar-dropdown-item">
                     {t.nav[s.key]}
                   </Link>

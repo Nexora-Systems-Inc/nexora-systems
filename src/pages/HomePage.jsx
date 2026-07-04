@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLang } from '../context/LangContext';
+import { SERVICE_NAV_ORDER, SERVICE_PATHS } from '../config/services';
 import HomeFlagshipSection from '../components/home/HomeFlagshipSection';
 import './HomePage.css';
 
@@ -11,25 +12,8 @@ function scrollToSection(id) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 }
 
-const SERVICES = [
-  {
-    key: 'websiteDev',
-    path: '/services/website-development',
-    icon: (
-      <svg width="28" height="28" fill="none" viewBox="0 0 28 28">
-        <rect x="2" y="5" width="24" height="17" rx="2" stroke="currentColor" strokeWidth="1.5"/>
-        <line x1="2" y1="10" x2="26" y2="10" stroke="currentColor" strokeWidth="1.5"/>
-        <line x1="9" y1="22" x2="9" y2="26" stroke="currentColor" strokeWidth="1.5"/>
-        <line x1="19" y1="22" x2="19" y2="26" stroke="currentColor" strokeWidth="1.5"/>
-        <line x1="6" y1="26" x2="22" y2="26" stroke="currentColor" strokeWidth="1.5"/>
-      </svg>
-    ),
-    en: { title: 'Website Development', desc: 'Professional websites from elegant single-page presences to full e-commerce platforms — built for performance and growth.' },
-    fr: { title: 'Développement Web', desc: 'Sites web professionnels, des vitrines élégantes aux plateformes transactionnelles — conçus pour la performance et la croissance.' },
-  },
-  {
-    key: 'webApps',
-    path: '/services/web-applications',
+const SERVICE_CARDS = {
+  webApps: {
     icon: (
       <svg width="28" height="28" fill="none" viewBox="0 0 28 28">
         <rect x="3" y="3" width="10" height="10" rx="2" stroke="currentColor" strokeWidth="1.5"/>
@@ -41,9 +25,18 @@ const SERVICES = [
     en: { title: 'Web Applications', desc: 'Custom web applications scoped to your workflows — from industry platforms to enterprise tools built with production-grade engineering.' },
     fr: { title: 'Applications Web', desc: 'Applications web sur mesure adaptées à vos processus — des plateformes sectorielles aux outils d\'entreprise conçus avec une ingénierie de niveau production.' },
   },
-  {
-    key: 'workflow',
-    path: '/services/workflow-automation',
+  aiReceptionists: {
+    icon: (
+      <svg width="28" height="28" fill="none" viewBox="0 0 28 28">
+        <circle cx="14" cy="9" r="5" stroke="currentColor" strokeWidth="1.5"/>
+        <path d="M4 24C4 19.582 8.477 16 14 16C19.523 16 24 19.582 24 24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M19 20L21 22L25 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+    en: { title: 'AI Receptionists', desc: 'Meet Ashley — your 24/7 AI receptionist handling SMS booking, voice intake, appointment scheduling, and customer support.' },
+    fr: { title: 'Réceptionnistes IA', desc: 'Rencontrez Ashley — votre réceptionniste IA disponible 24h/7j pour les réservations SMS, la gestion vocale et le service client.' },
+  },
+  workflow: {
     icon: (
       <svg width="28" height="28" fill="none" viewBox="0 0 28 28">
         <circle cx="6" cy="14" r="3" stroke="currentColor" strokeWidth="1.5"/>
@@ -56,9 +49,7 @@ const SERVICES = [
     en: { title: 'Workflow Automation', desc: 'Automate scheduling, lead management, reporting, and notifications — so your team focuses on work that actually moves the needle.' },
     fr: { title: 'Automatisation', desc: 'Automatisez la planification, la gestion des prospects, les rapports et les notifications — pour que votre équipe se concentre sur ce qui compte.' },
   },
-  {
-    key: 'aiConstruction',
-    path: '/services/ai-construction',
+  aiConstruction: {
     icon: (
       <svg width="28" height="28" fill="none" viewBox="0 0 28 28">
         <path d="M4 22L10 10L16 16L20 8L24 22H4Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
@@ -68,22 +59,20 @@ const SERVICES = [
     en: { title: 'AI Construction', desc: 'AI-powered estimating, drawing analysis, quantity takeoffs, and project tracking for construction professionals.' },
     fr: { title: 'IA Construction', desc: 'Estimation, analyse de plans, métré et suivi de projets propulsés par l\'IA pour les professionnels de la construction.' },
   },
-  {
-    key: 'aiReceptionists',
-    path: '/services/ai-receptionists',
+  websiteDev: {
     icon: (
       <svg width="28" height="28" fill="none" viewBox="0 0 28 28">
-        <circle cx="14" cy="9" r="5" stroke="currentColor" strokeWidth="1.5"/>
-        <path d="M4 24C4 19.582 8.477 16 14 16C19.523 16 24 19.582 24 24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M19 20L21 22L25 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <rect x="2" y="5" width="24" height="17" rx="2" stroke="currentColor" strokeWidth="1.5"/>
+        <line x1="2" y1="10" x2="26" y2="10" stroke="currentColor" strokeWidth="1.5"/>
+        <line x1="9" y1="22" x2="9" y2="26" stroke="currentColor" strokeWidth="1.5"/>
+        <line x1="19" y1="22" x2="19" y2="26" stroke="currentColor" strokeWidth="1.5"/>
+        <line x1="6" y1="26" x2="22" y2="26" stroke="currentColor" strokeWidth="1.5"/>
       </svg>
     ),
-    en: { title: 'AI Receptionists', desc: 'Meet Ashley — your 24/7 AI receptionist handling SMS booking, voice intake, appointment scheduling, and customer support.' },
-    fr: { title: 'Réceptionnistes IA', desc: 'Rencontrez Ashley — votre réceptionniste IA disponible 24h/7j pour les réservations SMS, la gestion vocale et le service client.' },
+    en: { title: 'Website Development', desc: 'Professional websites from elegant single-page presences to full e-commerce platforms — built for performance and growth.' },
+    fr: { title: 'Développement Web', desc: 'Sites web professionnels, des vitrines élégantes aux plateformes transactionnelles — conçus pour la performance et la croissance.' },
   },
-  {
-    key: 'customSolutions',
-    path: '/services/custom-solutions',
+  customSolutions: {
     icon: (
       <svg width="28" height="28" fill="none" viewBox="0 0 28 28">
         <path d="M14 3L25 9V19L14 25L3 19V9L14 3Z" stroke="currentColor" strokeWidth="1.5"/>
@@ -93,7 +82,13 @@ const SERVICES = [
     en: { title: 'Custom Solutions', desc: 'Your business has unique requirements. We scope, design, and build exactly what you need — with precision and long-term maintainability in mind.' },
     fr: { title: 'Solutions sur mesure', desc: 'Votre entreprise a des besoins uniques. Nous concevons et construisons exactement ce qu\'il vous faut — avec précision et pérennité.' },
   },
-];
+};
+
+const SERVICES = SERVICE_NAV_ORDER.map((key) => ({
+  key,
+  path: SERVICE_PATHS[key],
+  ...SERVICE_CARDS[key],
+}));
 
 const VALUE_PROPS = [
   {

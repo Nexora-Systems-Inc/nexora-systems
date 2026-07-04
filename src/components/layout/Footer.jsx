@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useLang } from '../../context/LangContext';
+import { SERVICE_NAV_ITEMS } from '../../config/services';
 import './Footer.css';
 
 export default function Footer() {
@@ -23,12 +24,9 @@ export default function Footer() {
 
           <div className="footer-col">
             <p className="footer-col-title">{t.nav.services}</p>
-            <Link to="/services/website-development">{t.nav.websiteDev}</Link>
-            <Link to="/services/web-applications">{t.nav.webApps}</Link>
-            <Link to="/services/workflow-automation">{t.nav.workflow}</Link>
-            <Link to="/services/ai-construction">{t.nav.aiConstruction}</Link>
-            <Link to="/services/ai-receptionists">{t.nav.aiReceptionists}</Link>
-            <Link to="/services/custom-solutions">{t.nav.customSolutions}</Link>
+            {SERVICE_NAV_ITEMS.map((s) => (
+              <Link key={s.key} to={s.path}>{t.nav[s.key]}</Link>
+            ))}
           </div>
 
           <div className="footer-col">
