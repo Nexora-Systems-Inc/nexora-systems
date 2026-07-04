@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLang } from '../context/LangContext';
-import { SERVICE_NAV_ORDER, SERVICE_PATHS } from '../config/services';
+import { HOME_SERVICES_GRID_ORDER, SERVICE_PATHS } from '../config/services';
 import HomeFlagshipSection from '../components/home/HomeFlagshipSection';
 import './HomePage.css';
 
@@ -25,17 +25,6 @@ const SERVICE_CARDS = {
     en: { title: 'Web Applications', desc: 'Custom web applications scoped to your workflows — from industry platforms to enterprise tools built with production-grade engineering.' },
     fr: { title: 'Applications Web', desc: 'Applications web sur mesure adaptées à vos processus — des plateformes sectorielles aux outils d\'entreprise conçus avec une ingénierie de niveau production.' },
   },
-  aiReceptionists: {
-    icon: (
-      <svg width="28" height="28" fill="none" viewBox="0 0 28 28">
-        <circle cx="14" cy="9" r="5" stroke="currentColor" strokeWidth="1.5"/>
-        <path d="M4 24C4 19.582 8.477 16 14 16C19.523 16 24 19.582 24 24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M19 20L21 22L25 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
-    en: { title: 'AI Receptionists', desc: 'Meet Ashley — your 24/7 AI receptionist handling SMS booking, voice intake, appointment scheduling, and customer support.' },
-    fr: { title: 'Réceptionnistes IA', desc: 'Rencontrez Ashley — votre réceptionniste IA disponible 24h/7j pour les réservations SMS, la gestion vocale et le service client.' },
-  },
   workflow: {
     icon: (
       <svg width="28" height="28" fill="none" viewBox="0 0 28 28">
@@ -48,16 +37,6 @@ const SERVICE_CARDS = {
     ),
     en: { title: 'Workflow Automation', desc: 'Automate scheduling, lead management, reporting, and notifications — so your team focuses on work that actually moves the needle.' },
     fr: { title: 'Automatisation', desc: 'Automatisez la planification, la gestion des prospects, les rapports et les notifications — pour que votre équipe se concentre sur ce qui compte.' },
-  },
-  aiConstruction: {
-    icon: (
-      <svg width="28" height="28" fill="none" viewBox="0 0 28 28">
-        <path d="M4 22L10 10L16 16L20 8L24 22H4Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
-        <circle cx="10" cy="10" r="2" stroke="currentColor" strokeWidth="1.5"/>
-      </svg>
-    ),
-    en: { title: 'AI Construction', desc: 'AI-powered estimating, drawing analysis, quantity takeoffs, and project tracking for construction professionals.' },
-    fr: { title: 'IA Construction', desc: 'Estimation, analyse de plans, métré et suivi de projets propulsés par l\'IA pour les professionnels de la construction.' },
   },
   websiteDev: {
     icon: (
@@ -82,13 +61,24 @@ const SERVICE_CARDS = {
     en: { title: 'Custom Solutions', desc: 'Your business has unique requirements. We scope, design, and build exactly what you need — with precision and long-term maintainability in mind.' },
     fr: { title: 'Solutions sur mesure', desc: 'Votre entreprise a des besoins uniques. Nous concevons et construisons exactement ce qu\'il vous faut — avec précision et pérennité.' },
   },
+  crewpilot: {
+    en: {
+      title: 'AI Construction',
+      badge: 'Flagship Product',
+      desc: 'CrewPilot is Nexora\'s flagship construction platform — offline-first workforce management built for contractors and field teams.',
+    },
+    fr: {
+      title: 'IA Construction',
+      badge: 'Produit phare',
+      desc: 'CrewPilot est la plateforme phare de Nexora pour la construction — gestion de main-d\'œuvre hors ligne conçue pour entrepreneurs et équipes terrain.',
+    },
+  },
+  ashley: {
+    imageSrc: '/services/ashley-card.webp',
+    en: { alt: 'Meet Ashley — Ashley Sterling, Cognitive Interface Agent at Nexora Systems' },
+    fr: { alt: 'Rencontrez Ashley — Ashley Sterling, agente d\'interface cognitive chez Nexora Systems' },
+  },
 };
-
-const SERVICES = SERVICE_NAV_ORDER.map((key) => ({
-  key,
-  path: SERVICE_PATHS[key],
-  ...SERVICE_CARDS[key],
-}));
 
 const VALUE_PROPS = [
   {
@@ -107,6 +97,73 @@ const VALUE_PROPS = [
     fr: { title: 'Croissez sans alourdir vos coûts', desc: 'Automatisez vos processus internes et opérations quotidiennes — augmentez votre capacité, réduisez le travail manuel.' },
   },
 ];
+
+function StandardServiceCard({ card, path, lang }) {
+  return (
+    <Link to={path} className="service-card">
+      <div className="service-card-icon">{card.icon}</div>
+      <h3 className="service-card-title">{card[lang].title}</h3>
+      <p className="service-card-desc">{card[lang].desc}</p>
+      <span className="service-card-arrow" aria-hidden="true">→</span>
+    </Link>
+  );
+}
+
+function CrewPilotServiceCard({ card, path, lang }) {
+  const copy = card[lang];
+
+  return (
+    <Link to={path} className="service-card service-card--crewpilot">
+      <div className="service-card-crewpilot-top">
+        <img src="/products/crewpilot-logo.png" alt="" className="service-card-crewpilot-logo" />
+        <span className="service-card-crewpilot-badge">{copy.badge}</span>
+      </div>
+      <h3 className="service-card-title">{copy.title}</h3>
+      <p className="service-card-desc">{copy.desc}</p>
+      <img
+        src="/products/crewpilot/crewpilot-tablet-hero.webp"
+        alt=""
+        className="service-card-crewpilot-visual"
+        width={960}
+        height={640}
+        loading="lazy"
+        decoding="async"
+      />
+      <span className="service-card-arrow" aria-hidden="true">→</span>
+    </Link>
+  );
+}
+
+function AshleyServiceCard({ card, path, lang }) {
+  return (
+    <Link to={path} className="service-card service-card--ashley" aria-label={card[lang].alt}>
+      <img
+        src={card.imageSrc}
+        alt={card[lang].alt}
+        className="service-card-ashley-image"
+        width={960}
+        height={639}
+        loading="lazy"
+        decoding="async"
+      />
+    </Link>
+  );
+}
+
+function HomeServiceCard({ serviceKey, lang }) {
+  const card = SERVICE_CARDS[serviceKey];
+  const path = SERVICE_PATHS[serviceKey];
+
+  if (serviceKey === 'crewpilot') {
+    return <CrewPilotServiceCard card={card} path={path} lang={lang} />;
+  }
+
+  if (serviceKey === 'ashley') {
+    return <AshleyServiceCard card={card} path={path} lang={lang} />;
+  }
+
+  return <StandardServiceCard card={card} path={path} lang={lang} />;
+}
 
 export default function HomePage() {
   const { lang, t } = useLang();
@@ -168,13 +225,8 @@ export default function HomePage() {
           <p className="section-label" style={{ textAlign: 'center' }}>{t.home.servicesTitle}</p>
           <p className="home-services-sub">{t.home.servicesSub}</p>
           <div className="home-services-grid">
-            {SERVICES.map(s => (
-              <Link key={s.key} to={s.path} className="service-card">
-                <div className="service-card-icon">{s.icon}</div>
-                <h3 className="service-card-title">{s[lang].title}</h3>
-                <p className="service-card-desc">{s[lang].desc}</p>
-                <span className="service-card-arrow">→</span>
-              </Link>
+            {HOME_SERVICES_GRID_ORDER.map((key) => (
+              <HomeServiceCard key={key} serviceKey={key} lang={lang} />
             ))}
           </div>
         </div>

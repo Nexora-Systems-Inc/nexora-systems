@@ -1,10 +1,20 @@
-/** Canonical service order — used by nav, footer, homepage cards, and contact form. */
+/** Canonical service order — used by nav, footer, and contact form. */
 export const SERVICE_NAV_ORDER = [
   'webApps',
   'websiteDev',
   'aiReceptionists',
   'workflow',
   'aiConstruction',
+  'customSolutions',
+];
+
+/** Homepage services grid — ecosystem layout (3×2). */
+export const HOME_SERVICES_GRID_ORDER = [
+  'webApps',
+  'websiteDev',
+  'crewpilot',
+  'workflow',
+  'ashley',
   'customSolutions',
 ];
 
@@ -15,6 +25,8 @@ export const SERVICE_PATHS = {
   aiConstruction: '/services/ai-construction',
   websiteDev: '/services/website-development',
   customSolutions: '/services/custom-solutions',
+  crewpilot: '/products/crewpilot',
+  ashley: '/ashley',
 };
 
 export const SERVICE_NAV_ITEMS = SERVICE_NAV_ORDER.map((key) => ({

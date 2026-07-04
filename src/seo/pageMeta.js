@@ -49,6 +49,11 @@ export const PAGE_META = {
     description:
       'CrewPilot is Nexora\'s flagship workforce management platform — time tracking, payroll, scheduling, offline mode, and AI assistance for contractors and service teams.',
   },
+  '/ashley': {
+    title: `Meet Ashley | ${SITE_NAME}`,
+    description:
+      'Meet Ashley Sterling — Nexora\'s cognitive interface agent. Ashley brings intelligence to life across Nexora products and client experiences.',
+  },
   '/about': {
     title: `About | ${SITE_NAME}`,
     description:

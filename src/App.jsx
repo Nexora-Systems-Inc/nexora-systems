@@ -16,6 +16,7 @@ import './index.css';
 const HomePage = lazy(() => import('./pages/HomePage'));
 const WebsiteDevelopment = lazy(() => import('./pages/services/WebsiteDevelopment'));
 const CrewPilotPage = lazy(() => import('./pages/products/CrewPilotPage'));
+const AshleyPage = lazy(() => import('./pages/AshleyPage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const PrivacyPage = lazy(() => import('./pages/legal/PrivacyPage'));
@@ -39,6 +40,7 @@ export default function App() {
             <Route path="/services/ai-receptionists" element={<AIReceptionistsPage />} />
             <Route path="/services/custom-solutions" element={<CustomSolutionsPage />} />
             <Route path="/products/crewpilot" element={<CrewPilotPage />} />
+            <Route path="/ashley" element={<AshleyPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
