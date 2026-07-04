@@ -239,36 +239,6 @@ export default function WebsiteDevelopment() {
         </div>
       </section>
 
-      {/* PROJECT PRICING */}
-      <section className="wd-section wd-section--gray">
-        <div className="container">
-          <p className="section-label">{wd.pricingTitle}</p>
-          <div className="pricing-display">
-            <div className="pricing-box">
-              <p className="pricing-box-label">{t.pricing.standardLabel}</p>
-              <p className="pricing-box-value">{t.pricing.value}</p>
-              <p className="pricing-box-sublabel">{lang === 'en' ? 'Professional Website Development' : 'Développement de site web professionnel'}</p>
-              <ul className="pricing-box-includes">
-                {t.pricing.includes.map((item, i) => (
-                  <li key={i}><CheckIcon /><span>{item}</span></li>
-                ))}
-              </ul>
-              <p className="pricing-box-note">{t.pricing.note}</p>
-            </div>
-            <div className="pricing-minus">−</div>
-            <div className="pricing-box pricing-box--discount">
-              <p className="pricing-box-label">{t.pricing.discountLabel}</p>
-              <p className="pricing-box-discount">{t.pricing.discount}</p>
-            </div>
-            <div className="pricing-equals">=</div>
-            <div className="pricing-box pricing-box--final">
-              <p className="pricing-box-label">{t.pricing.finalLabel}</p>
-              <p className="pricing-box-final">{t.pricing.final}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ADDITIONAL SERVICES */}
       <section className="wd-section">
         <div className="container">
