@@ -189,9 +189,6 @@
 }
 
 .web-apps-ecosystem-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 28px;
   margin-top: 20px;
 }
 
@@ -550,7 +547,7 @@
   }
 
   .web-apps-ecosystem-row {
-    gap: 20px;
+    margin-top: 16px;
   }
 
   .web-apps-upcoming-card {

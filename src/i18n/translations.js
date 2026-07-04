@@ -258,10 +258,10 @@ export const translations = {
       services: [
         'CrewPilot',
         'Web Applications',
+        'Website Development',
         'AI Receptionists',
         'Workflow Automation',
         'AI Construction',
-        'Website Development',
         'Custom Solutions',
       ],
     },
@@ -620,10 +620,10 @@ export const translations = {
       services: [
         'CrewPilot',
         'Applications Web',
+        'Développement Web',
         'Réceptionnistes IA',
         'Automatisation',
         'IA Construction',
-        'Développement Web',
         'Solutions sur mesure',
       ],
     },

@@ -79,7 +79,6 @@ export default function WebApplicationsPage() {
           <p id="ecosystem-heading" className="section-label">{wa.ecosystemLabel}</p>
 
           <div className="web-apps-ecosystem-row">
-            <div className="web-apps-product-num web-apps-product-num--light">02</div>
             <article className="web-apps-upcoming-card" aria-labelledby="accord-heading">
               <p className="section-label">{accord.badge}</p>
               <div className="web-apps-upcoming-brand">

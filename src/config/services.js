@@ -1,10 +1,10 @@
 /** Canonical service order — used by nav, footer, homepage cards, and contact form. */
 export const SERVICE_NAV_ORDER = [
   'webApps',
+  'websiteDev',
   'aiReceptionists',
   'workflow',
   'aiConstruction',
-  'websiteDev',
   'customSolutions',
 ];
 
@@ -27,19 +27,19 @@ export const CONTACT_SERVICE_LABELS = {
   en: [
     'CrewPilot',
     'Web Applications',
+    'Website Development',
     'AI Receptionists',
     'Workflow Automation',
     'AI Construction',
-    'Website Development',
     'Custom Solutions',
   ],
   fr: [
     'CrewPilot',
     'Applications Web',
+    'Développement Web',
     'Réceptionnistes IA',
     'Automatisation',
     'IA Construction',
-    'Développement Web',
     'Solutions sur mesure',
   ],
 };
