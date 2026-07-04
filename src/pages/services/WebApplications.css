@@ -197,8 +197,8 @@
 
 /* Compact portfolio — CribLedger */
 .web-apps-portfolio {
-  margin-top: 36px;
-  padding-top: 28px;
+  margin-top: 52px;
+  padding-top: 32px;
   border-top: 1px solid rgba(0, 0, 0, 0.07);
 }
 
@@ -206,26 +206,31 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-top: 12px;
-  padding: 16px 20px;
-  background: var(--white);
-  border: 1px solid rgba(0, 0, 0, 0.07);
-  border-radius: var(--radius-md);
+  margin-top: 14px;
+  padding: 18px 22px;
+  background: var(--black);
+  border: 1px solid rgba(201, 168, 76, 0.28);
+  border-radius: var(--radius-lg);
   max-width: 520px;
-  transition: border-color var(--transition), box-shadow var(--transition);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition),
+    transform var(--transition);
 }
 
 .web-apps-portfolio-item:hover {
-  border-color: rgba(201, 168, 76, 0.35);
-  box-shadow: 0 6px 20px rgba(201, 168, 76, 0.08);
+  border-color: rgba(201, 168, 76, 0.45);
+  box-shadow: 0 10px 32px rgba(201, 168, 76, 0.12);
+  transform: translateY(-1px);
 }
 
 .web-apps-portfolio-mark {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: var(--radius-sm);
-  background: var(--black);
-  color: var(--gold);
+  background: linear-gradient(145deg, var(--gold-light) 0%, var(--gold) 45%, var(--gold-dark) 100%);
+  color: var(--black);
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 700;
@@ -234,6 +239,7 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(201, 168, 76, 0.22);
 }
 
 .web-apps-portfolio-copy {
@@ -242,11 +248,12 @@
 }
 
 .web-apps-portfolio-name {
-  font-family: var(--font-body);
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--black);
-  margin-bottom: 2px;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 3px;
+  line-height: 1.2;
 }
 
 .web-apps-portfolio-tagline {
@@ -254,19 +261,24 @@
   color: var(--gold);
   font-family: var(--font-display);
   font-style: italic;
+  line-height: 1.35;
 }
 
 .web-apps-portfolio-more {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--gray-500);
+  color: rgba(255, 255, 255, 0.45);
   display: flex;
   align-items: center;
   gap: 6px;
   flex-shrink: 0;
-  opacity: 0.7;
+  transition: color var(--transition);
+}
+
+.web-apps-portfolio-item:hover .web-apps-portfolio-more {
+  color: rgba(255, 255, 255, 0.65);
 }
 
 .web-apps-portfolio-arrow {
@@ -506,19 +518,27 @@
   }
 
   .web-apps-portfolio {
-    margin-top: 28px;
-    padding-top: 24px;
+    margin-top: 44px;
+    padding-top: 28px;
   }
 
   .web-apps-portfolio-item {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     max-width: none;
+    padding: 16px 18px;
+    gap: 14px;
+  }
+
+  .web-apps-portfolio-mark {
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
   }
 
   .web-apps-portfolio-more {
-    width: 100%;
-    margin-top: 4px;
-    padding-left: 56px;
+    margin-left: auto;
+    margin-top: 0;
+    padding-left: 0;
   }
 
   .web-apps-closing {
@@ -578,6 +598,10 @@
 
 @media (prefers-reduced-motion: reduce) {
   .web-apps-feature-card:hover {
+    transform: none;
+  }
+
+  .web-apps-portfolio-item:hover {
     transform: none;
   }
 }
