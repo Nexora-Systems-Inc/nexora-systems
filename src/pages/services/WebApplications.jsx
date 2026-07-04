@@ -8,6 +8,7 @@ export default function WebApplicationsPage() {
   const { lang, t } = useLang();
   const wa = t.webApplications;
   const cp = t.products.crewpilot;
+  const accord = t.products.accord;
   const common = t.products.common;
   const spotlight = cp.spotlight;
   const demoUrl = '/contact?product=crewpilot&intent=demo';
@@ -91,13 +92,44 @@ export default function WebApplicationsPage() {
         </div>
       </section>
 
+      <section className="web-apps-upcoming" aria-labelledby="accord-heading">
+        <div className="container">
+          <div className="web-apps-upcoming-row">
+            <div className="web-apps-product-num web-apps-product-num--light">02</div>
+            <article className="web-apps-upcoming-card">
+              <p className="section-label">{accord.badge}</p>
+              <div className="web-apps-upcoming-brand">
+                <img src={accord.logoSrc} alt="" className="web-apps-upcoming-logo" />
+                <div>
+                  <h2 id="accord-heading" className="web-apps-upcoming-name">{accord.name}</h2>
+                  <p className="web-apps-upcoming-tagline">{accord.tagline}</p>
+                </div>
+              </div>
+              <p className="web-apps-upcoming-built">{accord.builtBy}</p>
+              <p className="web-apps-upcoming-desc">{accord.description}</p>
+              <ul className="web-apps-upcoming-badges">
+                {accord.badges.map((badge) => (
+                  <li key={badge} className="web-apps-upcoming-badge">
+                    <span className="web-apps-upcoming-badge-check" aria-hidden="true">✓</span>
+                    {badge}
+                  </li>
+                ))}
+              </ul>
+              <button type="button" className="web-apps-coming-soon-btn" disabled aria-disabled="true">
+                {t.common.comingSoon}
+              </button>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section className="web-apps-secondary">
         <div className="container">
           <p className="section-label">{common.moreProducts}</p>
           <div className="scaffold-features">
             {otherFeatures.map((f, i) => (
               <div key={i} className="scaffold-feature">
-                <div className="scaffold-feature-num">{String(i + 2).padStart(2, '0')}</div>
+                <div className="scaffold-feature-num">{String(i + 3).padStart(2, '0')}</div>
                 <div>
                   <h3 className="scaffold-feature-title">{lang === 'en' ? f.titleEn : f.titleFr}</h3>
                   <p className="scaffold-feature-desc">{lang === 'en' ? f.descEn : f.descFr}</p>
