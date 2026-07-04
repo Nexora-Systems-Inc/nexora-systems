@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { LangProvider } from './context/LangContext';
 import Layout from './components/layout/Layout';
 import Analytics from './components/analytics/Analytics';
+import ScrollToTop from './components/ScrollToTop';
 import {
   WebApplicationsPage,
   WorkflowAutomationPage,
@@ -26,6 +27,7 @@ export default function App() {
   return (
     <LangProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <Analytics />
         <Layout>
           <Routes>

@@ -14,11 +14,31 @@
   pointer-events: none;
 }
 
-.web-apps-flagship-header {
+.web-apps-flagship-row {
   position: relative;
   z-index: 1;
-  max-width: 720px;
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
   margin-bottom: 56px;
+}
+
+.web-apps-product-num {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 500;
+  color: var(--gold);
+  opacity: 0.4;
+  min-width: 52px;
+  line-height: 1;
+  padding-top: 4px;
+  flex-shrink: 0;
+}
+
+.web-apps-flagship-header {
+  flex: 1;
+  min-width: 0;
+  max-width: 720px;
 }
 
 .web-apps-flagship-brand {
@@ -180,6 +200,15 @@
 @media (max-width: 768px) {
   .web-apps-flagship {
     padding: 72px 0;
+  }
+
+  .web-apps-flagship-row {
+    gap: 20px;
+  }
+
+  .web-apps-product-num {
+    font-size: 28px;
+    min-width: 40px;
   }
 
   .web-apps-flagship-brand {

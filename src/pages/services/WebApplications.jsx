@@ -49,7 +49,9 @@ export default function WebApplicationsPage() {
       <section className="web-apps-flagship">
         <div className="web-apps-flagship-glow" aria-hidden="true" />
         <div className="container">
-          <div className="web-apps-flagship-header">
+          <div className="web-apps-flagship-row">
+            <div className="web-apps-product-num">01</div>
+            <div className="web-apps-flagship-header">
             <p className="section-label">{wa.spotlightLabel}</p>
             <div className="web-apps-flagship-brand">
               <img src={cp.logoSrc} alt="" className="web-apps-flagship-logo" />
@@ -61,6 +63,7 @@ export default function WebApplicationsPage() {
             <p className="web-apps-flagship-built">{cp.builtBy}</p>
             <p className="web-apps-flagship-desc">{cp.heroDesc}</p>
             <p className="web-apps-flagship-positioning">{cp.positioning}</p>
+            </div>
           </div>
 
           <div className="web-apps-features-grid">
