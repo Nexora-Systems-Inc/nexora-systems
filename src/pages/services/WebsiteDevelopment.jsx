@@ -42,6 +42,7 @@ const ADDON_ICONS = {
   settings: <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.6"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" strokeWidth="1.6"/></svg>,
   users: <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" strokeWidth="1.6"/><circle cx="9" cy="7" r="4" stroke="currentColor" strokeWidth="1.6"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" strokeWidth="1.6"/></svg>,
   refresh: <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M23 4v6h-6M1 20v-6h6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+  bot: <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="2" stroke="currentColor" strokeWidth="1.6"/><circle cx="9" cy="14" r="1.2" fill="currentColor"/><circle cx="15" cy="14" r="1.2" fill="currentColor"/><path d="M12 8V5M8 5h8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/><path d="M9 5a3 3 0 0 1 6 0" stroke="currentColor" strokeWidth="1.6"/></svg>,
 };
 
 function CheckIcon() {
@@ -168,6 +169,15 @@ export default function WebsiteDevelopment() {
         </div>
       </section>
 
+      {/* MIGRATION */}
+      <section className="wd-section wd-section--gray">
+        <div className="container">
+          <p className="section-label">{wd.migrationLabel}</p>
+          <h2 className="wd-section-title">{wd.migrationTitle}</h2>
+          <p className="wd-migration-desc">{wd.migrationDesc}</p>
+        </div>
+      </section>
+
       {/* MAINTENANCE PLANS */}
       <section className="wd-section wd-section--dark">
         <div className="container">
@@ -203,8 +213,7 @@ export default function WebsiteDevelopment() {
       {/* COMPARISON TABLE */}
       <section className="wd-section">
         <div className="container">
-          <p className="section-label">{wd.comparisonTitle}</p>
-          <h2 className="wd-section-title">{cmp.feature}</h2>
+          <h2 className="wd-section-title">{wd.comparisonTitle}</h2>
           <div className="comparison-table-wrap">
             <table className="comparison-table">
               <thead>

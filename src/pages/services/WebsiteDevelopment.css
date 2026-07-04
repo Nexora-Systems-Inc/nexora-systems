@@ -20,6 +20,15 @@
   margin: 8px 0 40px;
 }
 
+.wd-migration-desc {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.65);
+  line-height: 1.75;
+  max-width: 720px;
+  font-weight: 300;
+  margin-top: -24px;
+}
+
 /* PACKAGES */
 .packages-grid {
   display: grid;
