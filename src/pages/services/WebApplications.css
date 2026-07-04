@@ -183,7 +183,7 @@
 
 /* Product ecosystem */
 .web-apps-ecosystem {
-  padding: 48px 0 72px;
+  padding: 48px 0 56px;
   background: var(--off-white);
   border-top: 1px solid rgba(201, 168, 76, 0.12);
 }
@@ -193,6 +193,153 @@
   align-items: flex-start;
   gap: 28px;
   margin-top: 20px;
+}
+
+/* Compact portfolio — CribLedger */
+.web-apps-portfolio {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.web-apps-portfolio-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 12px;
+  padding: 16px 20px;
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: var(--radius-md);
+  max-width: 520px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.web-apps-portfolio-item:hover {
+  border-color: rgba(201, 168, 76, 0.35);
+  box-shadow: 0 6px 20px rgba(201, 168, 76, 0.08);
+}
+
+.web-apps-portfolio-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--black);
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.web-apps-portfolio-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.web-apps-portfolio-name {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 2px;
+}
+
+.web-apps-portfolio-tagline {
+  font-size: 13px;
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-style: italic;
+}
+
+.web-apps-portfolio-more {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.web-apps-portfolio-arrow {
+  color: var(--gold);
+  font-size: 14px;
+  transition: transform var(--transition);
+}
+
+.web-apps-portfolio-item:hover .web-apps-portfolio-arrow {
+  transform: translateX(3px);
+}
+
+/* Closing — custom software message */
+.web-apps-closing {
+  position: relative;
+  padding: 88px 0 96px;
+  background: var(--black);
+  border-top: 1px solid rgba(201, 168, 76, 0.2);
+  overflow: hidden;
+}
+
+.web-apps-closing-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(201, 168, 76, 0.1) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.web-apps-closing-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+}
+
+.web-apps-closing-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.5vw, 52px);
+  font-weight: 500;
+  color: var(--white);
+  line-height: 1.12;
+  max-width: 560px;
+}
+
+.web-apps-closing-divider {
+  margin: 24px 0 28px;
+  max-width: 200px;
+}
+
+.web-apps-closing-lead {
+  font-size: 17px;
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-style: italic;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.web-apps-closing-text {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.85;
+  font-weight: 300;
+  margin-bottom: 16px;
+  max-width: 640px;
+}
+
+.web-apps-closing-text:last-of-type {
+  margin-bottom: 36px;
+}
+
+.web-apps-closing-cta {
+  min-width: 220px;
+  justify-content: center;
 }
 
 .web-apps-ecosystem-more {
@@ -355,7 +502,31 @@
   }
 
   .web-apps-ecosystem {
-    padding: 40px 0 56px;
+    padding: 40px 0 44px;
+  }
+
+  .web-apps-portfolio {
+    margin-top: 28px;
+    padding-top: 24px;
+  }
+
+  .web-apps-portfolio-item {
+    flex-wrap: wrap;
+    max-width: none;
+  }
+
+  .web-apps-portfolio-more {
+    width: 100%;
+    margin-top: 4px;
+    padding-left: 56px;
+  }
+
+  .web-apps-closing {
+    padding: 64px 0 72px;
+  }
+
+  .web-apps-closing-cta {
+    width: 100%;
   }
 
   .web-apps-ecosystem-row {
@@ -392,10 +563,6 @@
 
   .web-apps-coming-soon-btn {
     width: 100%;
-  }
-
-  .web-apps-ecosystem-more {
-    margin-top: 32px;
   }
 }
 
