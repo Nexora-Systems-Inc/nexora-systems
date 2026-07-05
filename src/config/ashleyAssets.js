@@ -9,3 +9,15 @@ export const ASHLEY_ASSETS = {
   presentationWidth: 960,
   presentationHeight: 639,
 };
+
+/** Ashley greeting audio — extend `getAshleyWelcomeAudioSrc` when FR is ready. */
+export const ASHLEY_AUDIO = {
+  en: '/media/audio/ashley/welcome_en.mp3',
+  fr: '/media/audio/ashley/welcome_fr.mp3',
+};
+
+export function getAshleyWelcomeAudioSrc(lang) {
+  // V1: English greeting only. Swap to ASHLEY_AUDIO[lang] when welcome_fr.mp3 is ready.
+  void lang;
+  return ASHLEY_AUDIO.en;
+}

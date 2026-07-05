@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LangContext';
 import { ASHLEY_ASSETS } from '../config/ashleyAssets';
+import AshleyGreetingAudio from '../components/ashley/AshleyGreetingAudio';
 import './AshleyPage.css';
 
 export default function AshleyPage() {
@@ -36,15 +37,18 @@ export default function AshleyPage() {
 
       <section className="ashley-page-body">
         <div className="container ashley-page-inner">
-          <img
-            src={ASHLEY_ASSETS.presentationSrc}
-            alt=""
-            className="ashley-page-card"
-            width={ASHLEY_ASSETS.presentationWidth}
-            height={ASHLEY_ASSETS.presentationHeight}
-            loading="lazy"
-            decoding="async"
-          />
+          <div className="ashley-page-card-wrap">
+            <img
+              src={ASHLEY_ASSETS.presentationSrc}
+              alt=""
+              className="ashley-page-card"
+              width={ASHLEY_ASSETS.presentationWidth}
+              height={ASHLEY_ASSETS.presentationHeight}
+              loading="lazy"
+              decoding="async"
+            />
+            <AshleyGreetingAudio lang={lang} />
+          </div>
           <p className="ashley-page-desc">{copy.body}</p>
           <Link to="/contact" className="btn-gold">{copy.cta}</Link>
         </div>
