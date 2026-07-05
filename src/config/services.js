@@ -4,7 +4,6 @@ export const SERVICE_NAV_ORDER = [
   'websiteDev',
   'aiReceptionists',
   'workflow',
-  'aiConstruction',
   'customSolutions',
 ];
 
