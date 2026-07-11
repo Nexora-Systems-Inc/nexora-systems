@@ -21,9 +21,60 @@ function flattenText(node) {
   return '';
 }
 
+function MarkdownImage(props) {
+  const { alt = '', src = '', node: _node, ...rest } = props;
+  const resolvedSrc = resolveProposalImageSrc(src);
+
+  return (
+    <figure className="proposal-figure">
+      <img
+        alt={alt}
+        src={resolvedSrc}
+        loading="eager"
+        decoding="async"
+        {...rest}
+      />
+      {alt ? <figcaption>{alt}</figcaption> : null}
+    </figure>
+  );
+}
+
+/**
+ * Resolve Markdown image paths to site-root URLs so relative references
+ * like ./images/proposals/diagram.png work from any route.
+ * @param {string} src
+ */
+function resolveProposalImageSrc(src) {
+  const value = String(src || '').trim();
+  if (!value) return value;
+  if (/^(https?:|data:|blob:)/i.test(value)) return value;
+  let path = value.replace(/^\.\//, '');
+  if (!path.startsWith('/')) path = `/${path}`;
+  return path;
+}
+
+function isSoleFigureChild(children) {
+  const items = Array.isArray(children) ? children : [children];
+  const meaningful = items.filter((child) => {
+    if (child == null || typeof child === 'boolean') return false;
+    if (typeof child === 'string') return child.trim().length > 0;
+    return true;
+  });
+  if (meaningful.length !== 1) return false;
+  const only = meaningful[0];
+  return Boolean(
+    only?.props?.className &&
+      String(only.props.className).split(/\s+/).includes('proposal-figure'),
+  );
+}
+
 function MarkdownParagraph({ children }) {
   if (isPageBreakParagraph(children)) {
     return <div className="proposal-page-break" aria-hidden="true" />;
+  }
+  // Keep figures out of <p> wrappers so block layout/print breaks work.
+  if (isSoleFigureChild(children)) {
+    return <>{children}</>;
   }
   return <p>{children}</p>;
 }
@@ -33,16 +84,6 @@ function MarkdownTable({ children }) {
     <div className="proposal-table-wrap">
       <table>{children}</table>
     </div>
-  );
-}
-
-function MarkdownImage(props) {
-  const { alt = '', ...rest } = props;
-  return (
-    <figure className="proposal-figure">
-      <img alt={alt} {...rest} />
-      {alt ? <figcaption>{alt}</figcaption> : null}
-    </figure>
   );
 }
 

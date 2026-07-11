@@ -93,7 +93,8 @@ export default function ProposalRendererPage() {
           <p className="proposal-renderer-hint">
             Cover fields use lines like <code>**Client:** Acme Corp</code> under
             the title. Insert <code>&lt;!-- pagebreak --&gt;</code> for print page
-            breaks.
+            breaks. Images use standard Markdown:{' '}
+            <code>![Alt text](/images/proposals/diagram.png)</code>
           </p>
         </section>
 

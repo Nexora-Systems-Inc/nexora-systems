@@ -410,22 +410,38 @@
 }
 
 .proposal-figure {
-  margin: 22px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 88%;
+  max-width: 88%;
+  margin: 28px auto;
   break-inside: avoid;
   page-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
 }
 
 .proposal-figure img {
-  width: 100%;
-  height: auto;
   display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: min(70vh, 6.5in);
+  object-fit: contain;
+  object-position: center;
 }
 
 .proposal-figure figcaption {
-  margin-top: 8px;
+  margin-top: 10px;
+  max-width: 100%;
+  text-align: center;
   font-size: 9pt;
   color: var(--proposal-muted);
   letter-spacing: 0.02em;
+}
+
+.proposal-document--portrait .proposal-figure img {
+  max-height: min(72vh, 8.5in);
 }
 
 .proposal-page-break {
@@ -567,6 +583,33 @@
   .proposal-figure,
   .proposal-body h2,
   .proposal-body h3 {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .proposal-figure {
+    width: 88%;
+    max-width: 88%;
+    margin: 0.28in auto;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    break-before: auto;
+    page-break-before: auto;
+  }
+
+  .proposal-figure img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    /* Fit within landscape printable area; leave room for footer */
+    max-height: 6.1in;
+  }
+
+  .proposal-document--portrait .proposal-figure img {
+    max-height: 8.2in;
+  }
+
+  .proposal-figure figcaption {
     break-inside: avoid;
     page-break-inside: avoid;
   }
