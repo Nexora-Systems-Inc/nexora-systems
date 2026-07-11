@@ -5,7 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "seo:generate": "node platform/seo/generate.mjs",
+    "seo:verify": "node platform/seo/verify.mjs",
+    "seo:verify:live": "node platform/seo/verify.mjs --live",
+    "prebuild": "node platform/seo/generate.mjs",
+    "build": "vite build && node platform/seo/verify.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

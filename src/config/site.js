@@ -1,8 +1,14 @@
-/** Canonical public site URL — override via VITE_SITE_URL at build time. */
-export const SITE_URL = (import.meta.env.VITE_SITE_URL || 'https://nexorasystems.ca').replace(/\/$/, '');
-
-export const SITE_NAME = 'Nexora Systems';
-
-export const DEFAULT_OG_IMAGE = '/og-image.svg';
-
-export const SITE_TAGLINE = 'Where intelligence comes to life.';
+/** App-facing re-exports of the platform SEO source of truth. */
+export {
+  DEFAULT_SITE_URL,
+  SITE_URL,
+  SITE_NAME,
+  SITE_TAGLINE,
+  DEFAULT_OG_IMAGE,
+  SITEMAP_PATHS,
+  RETIRED_PATHS,
+  APEX_HOST,
+  resolveSiteUrl,
+  getCanonicalHost,
+  getSiteUrl,
+} from '../../platform/seo/site.config.mjs';

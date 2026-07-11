@@ -4,7 +4,7 @@
 
 **Company:** Nexora Systems
 
-**Website:** https://nexorasystems.ca
+**Website:** https://www.nexorasystems.ca
 
 **Application:** https://app.nexorasystems.ca
 
@@ -144,7 +144,7 @@ To request account deletion or ask questions about this policy, contact Nexora S
 
 **Company:** Nexora Systems
 
-**Website:** https://nexorasystems.ca
+**Website:** https://www.nexorasystems.ca
 
 **Application:** https://app.nexorasystems.ca
 

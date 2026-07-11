@@ -1,6 +1,10 @@
-import { SITE_NAME, SITE_URL, DEFAULT_OG_IMAGE } from '../config/site';
+import { SITE_NAME, DEFAULT_OG_IMAGE } from '../config/site';
+import {
+  buildCanonicalUrl,
+  defaultOgImageUrl,
+} from '../../platform/seo/urls.mjs';
 
-const OG_IMAGE = `${SITE_URL}${DEFAULT_OG_IMAGE}`;
+const OG_IMAGE = defaultOgImageUrl();
 
 const DEFAULT = {
   title: `${SITE_NAME} — Where Intelligence Comes to Life`,
@@ -28,11 +32,6 @@ export const PAGE_META = {
     title: `Workflow Automation | ${SITE_NAME}`,
     description:
       'Automate scheduling, lead management, reporting, and core business processes so your team can focus on high-value work.',
-  },
-  '/services/ai-construction': {
-    title: `AI Construction | ${SITE_NAME}`,
-    description:
-      'AI-powered estimating, drawing analysis, quantity takeoffs, and field reporting tools for the construction industry.',
   },
   '/services/ai-receptionists': {
     title: `AI Receptionists | ${SITE_NAME}`,
@@ -94,7 +93,4 @@ export function resolvePageMeta(pathname) {
   };
 }
 
-export function buildCanonicalUrl(pathname) {
-  if (pathname === '/') return `${SITE_URL}/`;
-  return `${SITE_URL}${pathname}`;
-}
+export { buildCanonicalUrl };

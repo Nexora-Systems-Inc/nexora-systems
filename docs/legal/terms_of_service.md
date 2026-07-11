@@ -4,7 +4,7 @@
 
 **Company:** Nexora Systems
 
-**Website:** https://nexorasystems.ca
+**Website:** https://www.nexorasystems.ca
 
 **Application:** https://app.nexorasystems.ca
 
@@ -234,7 +234,7 @@ If you have questions about these Terms, please contact Nexora Systems.
 
 **Company:** Nexora Systems
 
-**Website:** https://nexorasystems.ca
+**Website:** https://www.nexorasystems.ca
 
 **Application:** https://app.nexorasystems.ca
 

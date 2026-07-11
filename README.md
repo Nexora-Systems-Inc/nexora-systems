@@ -13,6 +13,22 @@ npm install
 npm run dev
 ```
 
+Production build (generates SEO files and runs verification):
+
+```bash
+npm run build
+```
+
+---
+
+## Platform SEO
+
+Canonical host, sitemap, and robots.txt are owned by `platform/seo/`.
+
+- Config: `platform/seo/site.config.mjs`
+- Docs: [Canonical URL strategy](docs/platform/canonical-url.md) · [Launch checklist](docs/platform/website-launch-checklist.md)
+- Commands: `npm run seo:generate` · `npm run seo:verify` · `npm run seo:verify:live`
+
 ---
 
 ## Folder Structure
@@ -22,6 +38,8 @@ nexora-v2/
 ├── index.html
 ├── vite.config.js
 ├── package.json
+├── platform/seo/                   # Canonical URL + SEO generate/verify
+├── docs/platform/                  # Canonical strategy + launch checklist
 └── src/
     ├── main.jsx                        # React entry point
     ├── App.jsx                         # Router + LangProvider wrapper
@@ -42,7 +60,7 @@ nexora-v2/
         └── services/
             ├── WebsiteDevelopment.jsx + .css   # FULL PAGE — packages, maintenance, comparison, pricing, addons, notes
             ├── ServiceScaffold.jsx + .css       # Reusable scaffold for service pages
-            └── OtherServicePages.jsx            # Web Apps, Workflow, AI Construction, AI Receptionists, Custom Solutions
+            └── OtherServicePages.jsx            # Web Apps, Workflow, AI Receptionists, Custom Solutions
 ```
 
 ---
@@ -55,7 +73,6 @@ nexora-v2/
 | `/services/website-development` | WebsiteDevelopment |
 | `/services/web-applications` | WebApplicationsPage |
 | `/services/workflow-automation` | WorkflowAutomationPage |
-| `/services/ai-construction` | AIConstructionPage |
 | `/services/ai-receptionists` | AIReceptionistsPage |
 | `/services/custom-solutions` | CustomSolutionsPage |
 | `/about` | AboutPage |

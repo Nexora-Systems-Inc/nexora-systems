@@ -21,7 +21,6 @@ export const SERVICE_PATHS = {
   webApps: '/services/web-applications',
   aiReceptionists: '/services/ai-receptionists',
   workflow: '/services/workflow-automation',
-  aiConstruction: '/services/ai-construction',
   websiteDev: '/services/website-development',
   customSolutions: '/services/custom-solutions',
   crewpilot: '/products/crewpilot',

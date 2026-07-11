@@ -1,4 +1,17 @@
 {
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "nexorasystems.ca" }],
+      "destination": "https://www.nexorasystems.ca/$1",
+      "permanent": true
+    },
+    {
+      "source": "/services/ai-construction",
+      "destination": "/services/custom-solutions",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
   ],

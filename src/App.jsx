@@ -7,7 +7,6 @@ import ScrollToTop from './components/ScrollToTop';
 import {
   WebApplicationsPage,
   WorkflowAutomationPage,
-  AIConstructionPage,
   AIReceptionistsPage,
   CustomSolutionsPage,
 } from './pages/services/OtherServicePages';
@@ -36,7 +35,6 @@ export default function App() {
             <Route path="/services/website-development" element={<WebsiteDevelopment />} />
             <Route path="/services/web-applications" element={<WebApplicationsPage />} />
             <Route path="/services/workflow-automation" element={<WorkflowAutomationPage />} />
-            <Route path="/services/ai-construction" element={<AIConstructionPage />} />
             <Route path="/services/ai-receptionists" element={<AIReceptionistsPage />} />
             <Route path="/services/custom-solutions" element={<CustomSolutionsPage />} />
             <Route path="/products/crewpilot" element={<CrewPilotPage />} />

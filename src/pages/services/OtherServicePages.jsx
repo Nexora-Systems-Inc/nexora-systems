@@ -39,43 +39,6 @@ export function WorkflowAutomationPage() {
   );
 }
 
-export function AIConstructionPage() {
-  return (
-    <ServiceScaffold
-      titleEn="AI Construction"
-      titleFr="IA Construction"
-      subtitleEn="Intelligent Tools for the Construction Industry"
-      subtitleFr="Outils intelligents pour l'industrie de la construction"
-      features={[
-        {
-          titleEn: 'AI-Powered Estimating',
-          titleFr: 'Estimation propulsée par l\'IA',
-          descEn: 'Generate accurate project estimates faster than ever. Our AI estimating tools analyze project scope, material requirements, and historical data to produce reliable cost projections.',
-          descFr: 'Générez des estimations de projet précises plus rapidement. Nos outils d\'IA analysent la portée, les matériaux et les données historiques pour des projections fiables.',
-        },
-        {
-          titleEn: 'Drawing Analysis',
-          titleFr: 'Analyse de plans',
-          descEn: 'Upload architectural or engineering drawings and let AI extract key dimensions, identify components, and flag discrepancies — saving hours of manual review.',
-          descFr: 'Téléversez des plans architecturaux ou d\'ingénierie et laissez l\'IA extraire les dimensions clés, identifier les composants et signaler les incohérences.',
-        },
-        {
-          titleEn: 'Quantity Takeoffs',
-          titleFr: 'Métrés quantitatifs',
-          descEn: 'Automate quantity takeoffs from digital plans. Reduce human error and dramatically speed up the pre-construction phase of every project.',
-          descFr: 'Automatisez les métrés à partir de plans numériques. Réduisez les erreurs humaines et accélérez considérablement la phase de pré-construction.',
-        },
-        {
-          titleEn: 'Project Tracking & Field Reporting',
-          titleFr: 'Suivi de projet et rapports terrain',
-          descEn: 'Real-time project dashboards, progress tracking, and mobile-first field reporting tools keep every stakeholder aligned and every project on track.',
-          descFr: 'Tableaux de bord en temps réel, suivi d\'avancement et outils de rapport terrain mobiles pour garder tous les intervenants alignés.',
-        },
-      ]}
-    />
-  );
-}
-
 export function AIReceptionistsPage() {
   return (
     <ServiceScaffold

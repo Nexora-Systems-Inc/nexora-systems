@@ -4,7 +4,7 @@
 
 **Company:** Nexora Systems
 
-**Website:** https://nexorasystems.ca
+**Website:** https://www.nexorasystems.ca
 
 **Application:** https://app.nexorasystems.ca
 
@@ -502,7 +502,7 @@ If you have questions about this Privacy Policy, wish to exercise your privacy r
 
 **Company:** Nexora Systems
 
-**Website:** https://nexorasystems.ca
+**Website:** https://www.nexorasystems.ca
 
 **Application:** https://app.nexorasystems.ca
 
