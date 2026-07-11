@@ -445,6 +445,7 @@
   max-height: min(70vh, 6.5in);
   object-fit: contain;
   object-position: center;
+  border-radius: 12px;
 }
 
 .proposal-figure-block .proposal-figure img {
