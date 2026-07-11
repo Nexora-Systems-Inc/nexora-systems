@@ -81,7 +81,7 @@ export const translations = {
       },
       business: {
         name: 'Business Website',
-        price: '$2,000',
+        price: '$2,500',
         badge: 'Starting At',
         ideal: ['Growing businesses', 'Multi-service companies', 'Professional firms'],
         includes: [
@@ -98,7 +98,13 @@ export const translations = {
         name: 'E-Commerce Website',
         price: '$3,500',
         badge: 'Starting At',
-        ideal: ['Online stores', 'Product catalogs', 'Retail businesses'],
+        ideal: [
+          'Restaurants',
+          'Food Trucks',
+          'Retail Businesses',
+          'Service Businesses Accepting Online Payments',
+          'Online Stores',
+        ],
         includes: [
           'Everything in Business Website',
           'Product Catalog',
@@ -107,17 +113,28 @@ export const translations = {
           'Product Inventory Setup',
           'Store Configuration',
           'E-Commerce Launch Support',
+          'Standard E-Commerce Configuration',
         ],
+        includesNote:
+          'Third-party integrations, POS integrations, inventory synchronization, workflow automation, and other custom development are quoted separately under Custom Development.',
       },
       custom: {
-        name: 'Custom Solution',
+        name: 'Custom Development',
         price: 'Custom\nQuote',
         badge: 'Custom Quote',
-        ideal: ['Membership sites', 'Booking systems', 'Automation projects', 'Client portals', 'Specialized business requirements'],
+        ideal: [
+          'Third-Party System Integrations',
+          'POS Integrations (Clover, Square, etc.)',
+          'Workflow Automation',
+          'Client Portals',
+          'Custom Business Applications',
+          'Specialized Operational Requirements',
+        ],
         includes: [
           'Discovery Consultation',
+          'Solution Architecture',
           'Custom Scope Definition',
-          'Custom Development Plan',
+          'Development Roadmap',
           'Tailored Proposal',
         ],
       },
@@ -460,7 +477,7 @@ export const translations = {
       },
       business: {
         name: 'Site Web d\'Affaires',
-        price: '2 000 $',
+        price: '2 500 $',
         badge: 'À partir de',
         ideal: ['Entreprises en croissance', 'Entreprises multi-services', 'Cabinets et firmes professionnelles'],
         includes: [
@@ -477,7 +494,13 @@ export const translations = {
         name: 'Site Web Transactionnel',
         price: '3 500 $',
         badge: 'À partir de',
-        ideal: ['Boutiques en ligne', 'Catalogues de produits', 'Entreprises de vente au détail'],
+        ideal: [
+          'Restaurants',
+          'Food trucks',
+          'Entreprises de vente au détail',
+          'Entreprises de services acceptant les paiements en ligne',
+          'Boutiques en ligne',
+        ],
         includes: [
           'Tout ce qui est inclus dans le forfait Site Web d\'affaires',
           'Catalogue de produits',
@@ -486,17 +509,28 @@ export const translations = {
           'Configuration de l\'inventaire des produits',
           'Configuration de la boutique',
           'Support au lancement transactionnel',
+          'Configuration e-commerce standard',
         ],
+        includesNote:
+          'Les intégrations tierces, intégrations POS, synchronisation d\'inventaire, automatisation des flux de travail et tout autre développement personnalisé sont cotés séparément sous Développement sur mesure.',
       },
       custom: {
-        name: 'Solution sur Mesure',
+        name: 'Développement sur Mesure',
         price: 'Devis\npersonnalisé',
         badge: 'Devis personnalisé',
-        ideal: ['Sites d\'adhésion', 'Systèmes de réservation', 'Projets d\'automatisation', 'Portails clients', 'Besoins d\'affaires spécialisés'],
+        ideal: [
+          'Intégrations de systèmes tiers',
+          'Intégrations POS (Clover, Square, etc.)',
+          'Automatisation des flux de travail',
+          'Portails clients',
+          'Applications d\'affaires personnalisées',
+          'Besoins opérationnels spécialisés',
+        ],
         includes: [
           'Consultation de découverte',
+          'Architecture de solution',
           'Définition de portée sur mesure',
-          'Plan de développement personnalisé',
+          'Feuille de route de développement',
           'Proposition adaptée',
         ],
       },

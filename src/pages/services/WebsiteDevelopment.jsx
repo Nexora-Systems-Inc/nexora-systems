@@ -143,14 +143,19 @@ export default function WebsiteDevelopment() {
                 </ul>
                 <div className="package-card-divider" />
                 <p className="package-includes-label">{t.common.includes}</p>
-                <ul className="package-includes-list">
-                  {data.includes.map((item, i) => (
-                    <li key={i}>
-                      <CheckIcon />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+                <div className="package-includes-block">
+                  <ul className="package-includes-list">
+                    {data.includes.map((item, i) => (
+                      <li key={i}>
+                        <CheckIcon />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  {data.includesNote && (
+                    <p className="package-includes-note">{data.includesNote}</p>
+                  )}
+                </div>
                 <div className="package-card-icon-bottom">{PACKAGE_ICONS[key]}</div>
               </div>
             ))}
