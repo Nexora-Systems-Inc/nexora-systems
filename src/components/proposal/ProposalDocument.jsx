@@ -134,7 +134,7 @@ export default function ProposalDocument({
           <div className="proposal-cover-brand-text">
             <div className="proposal-cover-name">Nexora Systems</div>
             <div className="proposal-cover-tagline">
-              Where intelligence comes to life.
+              Systems you didn't know you needed.
             </div>
           </div>
         </div>
