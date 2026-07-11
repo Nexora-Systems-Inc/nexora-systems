@@ -1,0 +1,189 @@
+.proposal-renderer-page {
+  min-height: calc(100vh - 72px);
+  background:
+    linear-gradient(180deg, #0a0a0a 0%, #111111 180px, #f0f0ee 180px);
+}
+
+.proposal-renderer-chrome {
+  color: var(--white);
+  padding: 36px 0 28px;
+}
+
+.proposal-renderer-chrome-inner {
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.proposal-renderer-back {
+  color: inherit;
+  text-decoration: none;
+}
+
+.proposal-renderer-back:hover {
+  color: var(--gold-light);
+}
+
+.proposal-renderer-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 500;
+  margin: 4px 0 8px;
+  color: var(--white);
+}
+
+.proposal-renderer-desc {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.62);
+  max-width: 520px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.proposal-renderer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.proposal-renderer-actions .btn-outline-dark {
+  color: var(--white);
+  border-color: rgba(201, 168, 76, 0.45);
+}
+
+.proposal-renderer-actions .btn-outline-dark:hover {
+  background: rgba(201, 168, 76, 0.12);
+  color: var(--white);
+}
+
+.proposal-renderer-workspace {
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 0 32px 48px;
+  display: grid;
+  grid-template-columns: minmax(260px, 0.75fr) minmax(420px, 1.4fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.proposal-renderer-editor,
+.proposal-renderer-preview {
+  min-width: 0;
+}
+
+.proposal-renderer-panel-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 10px;
+}
+
+.proposal-renderer-textarea {
+  width: 100%;
+  min-height: calc(100vh - 260px);
+  resize: vertical;
+  border: 1px solid rgba(201, 168, 76, 0.28);
+  background: #111;
+  color: #f0f0ee;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 12.5px;
+  line-height: 1.55;
+  padding: 18px;
+  border-radius: var(--radius-sm);
+  outline: none;
+}
+
+.proposal-renderer-textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px rgba(201, 168, 76, 0.18);
+}
+
+.proposal-renderer-hint {
+  margin: 10px 0 0;
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.5;
+}
+
+.proposal-renderer-hint code {
+  font-size: 11px;
+  background: rgba(0, 0, 0, 0.06);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+.proposal-renderer-preview-frame {
+  background: transparent;
+  padding-bottom: 24px;
+  overflow-x: auto;
+}
+
+@media (max-width: 1200px) {
+  .proposal-renderer-workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .proposal-renderer-textarea {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 768px) {
+  .proposal-renderer-chrome-inner,
+  .proposal-renderer-workspace {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* Print isolation — hide site chrome & editor; show only the document.
+   @page size/margin is injected from proposalRendererSettings. */
+
+@media print {
+  body.proposal-printing .no-print,
+  body.proposal-printing .skip-link,
+  body.proposal-printing .navbar,
+  body.proposal-printing footer,
+  body.proposal-printing .proposal-renderer-chrome,
+  body.proposal-printing .proposal-renderer-editor,
+  body.proposal-printing .proposal-renderer-panel-label {
+    display: none !important;
+  }
+
+  body.proposal-printing,
+  body.proposal-printing main,
+  body.proposal-printing .proposal-renderer-page,
+  body.proposal-printing .proposal-renderer-workspace,
+  body.proposal-printing .proposal-renderer-preview,
+  body.proposal-printing .proposal-renderer-preview-frame {
+    background: #fff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: none !important;
+    min-height: 0 !important;
+    width: 100% !important;
+    display: block !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+  }
+
+  body.proposal-printing main {
+    padding-top: 0 !important;
+  }
+
+  body.proposal-printing .proposal-document {
+    position: static;
+    width: 100%;
+    max-width: none;
+    box-shadow: none;
+    border: none;
+  }
+}

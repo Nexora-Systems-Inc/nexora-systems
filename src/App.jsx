@@ -21,6 +21,8 @@ const ContactPage = lazy(() => import('./pages/ContactPage'));
 const PrivacyPage = lazy(() => import('./pages/legal/PrivacyPage'));
 const TermsPage = lazy(() => import('./pages/legal/TermsPage'));
 const AccountDeletionPage = lazy(() => import('./pages/legal/AccountDeletionPage'));
+const InternalLandingPage = lazy(() => import('./pages/internal/InternalLandingPage'));
+const ProposalRendererPage = lazy(() => import('./pages/internal/ProposalRendererPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 export default function App() {
@@ -44,6 +46,8 @@ export default function App() {
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/terms" element={<TermsPage />} />
             <Route path="/account-deletion" element={<AccountDeletionPage />} />
+            <Route path="/internal" element={<InternalLandingPage />} />
+            <Route path="/internal/proposal-renderer" element={<ProposalRendererPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Layout>

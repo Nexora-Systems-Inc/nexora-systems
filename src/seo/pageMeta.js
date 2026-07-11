@@ -78,12 +78,22 @@ export const PAGE_META = {
     description:
       'How to request deletion of your CrewPilot account and associated personal information.',
   },
+  '/internal': {
+    title: `Internal Tools | ${SITE_NAME}`,
+    description: 'Nexora internal business tools for documents, sales, and operations.',
+    noindex: true,
+  },
+  '/internal/proposal-renderer': {
+    title: `Proposal Renderer | ${SITE_NAME}`,
+    description: 'Internal Nexora proposal Markdown preview and PDF export.',
+    noindex: true,
+  },
 };
 
 export function resolvePageMeta(pathname) {
   const meta = PAGE_META[pathname];
   if (meta) {
-    return { ...meta, ogImage: OG_IMAGE };
+    return { ...meta, ogImage: OG_IMAGE, noindex: Boolean(meta.noindex) };
   }
   return {
     title: `Page Not Found | ${SITE_NAME}`,

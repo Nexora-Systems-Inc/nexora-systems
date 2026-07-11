@@ -1,0 +1,553 @@
+/**
+ * Proposal document surface — screen preview + print/PDF.
+ * Visual language: black / white / Nexora gold, consulting-document restraint.
+ *
+ * Page geometry comes from --proposal-page-width / --proposal-page-height
+ * (set by ProposalDocument from proposalRendererSettings).
+ */
+
+.proposal-document {
+  --proposal-gold: #c9a84c;
+  --proposal-gold-dark: #9a7a30;
+  --proposal-ink: #0a0a0a;
+  --proposal-muted: #555555;
+  --proposal-line: #e6e2d8;
+  --proposal-soft: #f7f6f3;
+  --proposal-paper: #ffffff;
+  --proposal-page-width: 11in;
+  --proposal-page-height: 8.5in;
+
+  position: relative;
+  background: var(--proposal-paper);
+  color: var(--proposal-ink);
+  font-family: var(--font-body);
+  font-size: 10.5pt;
+  line-height: 1.65;
+  width: 100%;
+  max-width: var(--proposal-page-width);
+  margin: 0 auto;
+  padding: 0;
+  box-shadow: 0 12px 48px rgba(10, 10, 10, 0.1);
+  box-sizing: border-box;
+}
+
+/* —— Cover —— */
+
+.proposal-cover {
+  min-height: var(--proposal-page-height);
+  padding: 0.7in 0.9in 0.55in;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  page-break-after: always;
+  break-after: page;
+  background:
+    linear-gradient(180deg, #fafaf8 0%, #ffffff 42%, #ffffff 100%);
+  position: relative;
+}
+
+.proposal-cover::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--proposal-ink), var(--proposal-gold));
+}
+
+.proposal-cover-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 0.45in;
+}
+
+.proposal-cover-mark {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  background: var(--proposal-ink);
+  color: var(--proposal-gold);
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.proposal-cover-name {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--proposal-ink);
+}
+
+.proposal-cover-tagline {
+  margin-top: 4px;
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--proposal-muted);
+  letter-spacing: 0.02em;
+}
+
+.proposal-cover-rule {
+  height: 1px;
+  width: 72px;
+  background: var(--proposal-gold);
+  margin-bottom: 0.4in;
+}
+
+.proposal-cover-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--proposal-gold-dark);
+  margin: 0 0 16px;
+}
+
+.proposal-cover-title {
+  font-family: var(--font-display);
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: 0.01em;
+  color: var(--proposal-ink);
+  margin: 0 0 0.4in;
+  max-width: 14ch;
+}
+
+.proposal-cover-meta {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 420px;
+}
+
+.proposal-cover-meta-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 12px;
+  align-items: baseline;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--proposal-line);
+}
+
+.proposal-cover-meta-row dt {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--proposal-gold-dark);
+}
+
+.proposal-cover-meta-row dd {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--proposal-ink);
+}
+
+.proposal-cover-footer {
+  margin-top: auto;
+  padding-top: 0.45in;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--proposal-muted);
+}
+
+/* —— Landscape reflow —— */
+
+.proposal-document--landscape .proposal-cover {
+  padding: 0.6in 0.95in 0.5in;
+}
+
+.proposal-document--landscape .proposal-cover-title {
+  font-size: 48px;
+  max-width: 28ch;
+  margin-bottom: 0.35in;
+}
+
+.proposal-document--landscape .proposal-cover-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 36px;
+  max-width: 760px;
+}
+
+.proposal-document--landscape .proposal-cover-meta-row {
+  grid-template-columns: 110px 1fr;
+}
+
+.proposal-document--landscape .proposal-body {
+  padding: 0.55in 0.95in 0.45in;
+}
+
+.proposal-document--landscape .proposal-body p,
+.proposal-document--landscape .proposal-body li {
+  max-width: 72ch;
+}
+
+.proposal-document--landscape .proposal-body blockquote {
+  max-width: 68ch;
+}
+
+.proposal-document--landscape .proposal-table-wrap {
+  max-width: none;
+}
+
+.proposal-document--landscape .proposal-body table {
+  font-size: 10pt;
+}
+
+.proposal-document--landscape .proposal-body thead th,
+.proposal-document--landscape .proposal-body tbody td {
+  padding: 10px 16px;
+}
+
+.proposal-document--landscape .proposal-body h2 {
+  margin-top: 28px;
+}
+
+/* —— Portrait reflow (future document types) —— */
+
+.proposal-document--portrait .proposal-cover {
+  padding: 0.85in 0.85in 0.7in;
+}
+
+.proposal-document--portrait .proposal-cover-title {
+  font-size: 42px;
+  max-width: 14ch;
+}
+
+.proposal-document--portrait .proposal-cover-meta {
+  display: flex;
+  flex-direction: column;
+  max-width: 420px;
+}
+
+.proposal-document--portrait .proposal-body {
+  padding: 0.7in 0.85in 0.55in;
+}
+
+/* —— Body —— */
+
+.proposal-body {
+  padding: 0.55in 0.95in 0.45in;
+}
+
+.proposal-empty {
+  color: var(--proposal-muted);
+  font-style: italic;
+}
+
+.proposal-body > :first-child {
+  margin-top: 0;
+}
+
+.proposal-body h1,
+.proposal-body h2,
+.proposal-body h3,
+.proposal-body h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  color: var(--proposal-ink);
+  line-height: 1.2;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+.proposal-body h1 {
+  font-size: 26px;
+  margin: 0 0 18px;
+}
+
+.proposal-body h2 {
+  font-size: 20px;
+  margin: 36px 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--proposal-line);
+}
+
+.proposal-body h2:first-child {
+  margin-top: 0;
+}
+
+.proposal-body h3 {
+  font-size: 15px;
+  margin: 26px 0 10px;
+  letter-spacing: 0.02em;
+}
+
+.proposal-body h4 {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--proposal-gold-dark);
+  margin: 22px 0 8px;
+}
+
+.proposal-body p {
+  margin: 0 0 14px;
+  color: #222;
+  font-weight: 400;
+}
+
+.proposal-body strong {
+  font-weight: 600;
+  color: var(--proposal-ink);
+}
+
+.proposal-body em {
+  font-style: italic;
+  color: #333;
+}
+
+.proposal-body a {
+  color: var(--proposal-gold-dark);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.proposal-body ul,
+.proposal-body ol {
+  margin: 0 0 16px;
+  padding-left: 1.15rem;
+}
+
+.proposal-body li {
+  margin-bottom: 6px;
+  color: #222;
+}
+
+.proposal-body li::marker {
+  color: var(--proposal-gold-dark);
+}
+
+.proposal-body li > p {
+  margin-bottom: 6px;
+}
+
+.proposal-body blockquote {
+  margin: 20px 0;
+  padding: 14px 18px;
+  border-left: 2px solid var(--proposal-gold);
+  background: var(--proposal-soft);
+  color: #333;
+}
+
+.proposal-body blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.proposal-body hr {
+  border: none;
+  border-top: 1px solid var(--proposal-line);
+  margin: 28px 0;
+}
+
+.proposal-table-wrap {
+  margin: 18px 0 22px;
+  overflow-x: auto;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.proposal-body table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9.5pt;
+}
+
+.proposal-body thead th {
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: 8.5pt;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--proposal-gold-dark);
+  background: var(--proposal-soft);
+  border-bottom: 1.5px solid var(--proposal-gold);
+  padding: 10px 12px;
+}
+
+.proposal-body tbody td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--proposal-line);
+  vertical-align: top;
+  color: #222;
+}
+
+.proposal-body tbody tr:last-child td {
+  border-bottom: 1px solid var(--proposal-line);
+}
+
+.proposal-figure {
+  margin: 22px 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.proposal-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.proposal-figure figcaption {
+  margin-top: 8px;
+  font-size: 9pt;
+  color: var(--proposal-muted);
+  letter-spacing: 0.02em;
+}
+
+.proposal-page-break {
+  display: none;
+}
+
+.proposal-doc-footer {
+  display: none;
+}
+
+/* —— Screen: soften cover height on narrow viewports —— */
+
+@media (max-width: 900px) {
+  .proposal-document {
+    box-shadow: none;
+    border: 1px solid var(--proposal-line);
+  }
+
+  .proposal-cover {
+    min-height: auto;
+    padding: 40px 28px 36px;
+  }
+
+  .proposal-cover-title {
+    font-size: clamp(28px, 8vw, 40px);
+    max-width: none;
+  }
+
+  .proposal-document--landscape .proposal-cover-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .proposal-cover-meta-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .proposal-body {
+    padding: 32px 28px 40px;
+  }
+
+  .proposal-document--landscape .proposal-body p,
+  .proposal-document--landscape .proposal-body li,
+  .proposal-document--landscape .proposal-body blockquote {
+    max-width: none;
+  }
+}
+
+/* —— Print / PDF —— */
+
+@media print {
+  .proposal-document {
+    max-width: none;
+    width: 100%;
+    box-shadow: none;
+    font-size: 10pt;
+  }
+
+  .proposal-cover {
+    min-height: 0;
+    height: auto;
+    padding: 0.1in 0 0.35in;
+    background: #fff;
+  }
+
+  .proposal-document--landscape .proposal-cover {
+    padding: 0.08in 0 0.3in;
+  }
+
+  .proposal-cover::before {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .proposal-cover-mark {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .proposal-body {
+    padding: 0.1in 0 0.4in;
+  }
+
+  .proposal-document--landscape .proposal-body {
+    padding: 0.08in 0 0.35in;
+  }
+
+  .proposal-document--landscape .proposal-body p,
+  .proposal-document--landscape .proposal-body li {
+    max-width: none;
+  }
+
+  .proposal-document--landscape .proposal-body blockquote {
+    max-width: none;
+  }
+
+  .proposal-body h2 {
+    margin-top: 22px;
+  }
+
+  .proposal-page-break {
+    display: block;
+    height: 0;
+    margin: 0;
+    border: none;
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .proposal-doc-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    position: fixed;
+    bottom: 0.28in;
+    left: 0.55in;
+    right: 0.55in;
+    font-size: 8pt;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--proposal-muted);
+    border-top: 1px solid var(--proposal-line);
+    padding-top: 8px;
+  }
+
+  .proposal-doc-footer-sep {
+    color: var(--proposal-gold);
+  }
+
+  .proposal-body thead th,
+  .proposal-cover-mark,
+  .proposal-body blockquote {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .proposal-table-wrap,
+  .proposal-figure,
+  .proposal-body h2,
+  .proposal-body h3 {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
