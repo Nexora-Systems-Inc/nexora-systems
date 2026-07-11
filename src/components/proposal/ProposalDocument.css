@@ -171,15 +171,6 @@
   line-height: 1.4;
 }
 
-.proposal-cover-footer {
-  margin-top: auto;
-  padding-top: 0.45in;
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--proposal-muted);
-}
-
 /* —— Landscape reflow —— */
 
 .proposal-document--landscape .proposal-cover {
@@ -260,6 +251,29 @@
   padding: 0.55in 0.95in 0.45in;
 }
 
+.proposal-figure-block {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+}
+
+.proposal-figure-block > :first-child {
+  margin-top: 0;
+}
+
+.proposal-figure-block h2,
+.proposal-figure-block h3,
+.proposal-figure-block h4,
+.proposal-figure-block p {
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+.proposal-figure-block .proposal-figure {
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
 .proposal-empty {
   color: var(--proposal-muted);
   font-style: italic;
@@ -293,7 +307,9 @@
   border-bottom: 1px solid var(--proposal-line);
 }
 
-.proposal-body h2:first-child {
+.proposal-body h2:first-child,
+.proposal-content-block:first-child > h2:first-child,
+.proposal-figure-block:first-child > h2:first-child {
   margin-top: 0;
 }
 
@@ -431,6 +447,11 @@
   object-position: center;
 }
 
+.proposal-figure-block .proposal-figure img {
+  /* Leave room for heading + intro inside the same unbreakable block */
+  max-height: min(58vh, 5.2in);
+}
+
 .proposal-figure figcaption {
   margin-top: 10px;
   max-width: 100%;
@@ -442,6 +463,10 @@
 
 .proposal-document--portrait .proposal-figure img {
   max-height: min(72vh, 8.5in);
+}
+
+.proposal-document--portrait .proposal-figure-block .proposal-figure img {
+  max-height: min(60vh, 7in);
 }
 
 .proposal-page-break {
@@ -501,14 +526,17 @@
   }
 
   .proposal-cover {
-    min-height: 0;
-    height: auto;
-    padding: 0.1in 0 0.35in;
+    display: block;
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 0 0 0.2in;
     background: #fff;
+    page-break-after: always;
+    break-after: page;
   }
 
   .proposal-document--landscape .proposal-cover {
-    padding: 0.08in 0 0.3in;
+    padding: 0 0 0.18in;
   }
 
   .proposal-cover::before {
@@ -522,11 +550,16 @@
   }
 
   .proposal-body {
-    padding: 0.1in 0 0.4in;
+    padding: 0 0 0.35in;
   }
 
   .proposal-document--landscape .proposal-body {
-    padding: 0.08in 0 0.35in;
+    padding: 0 0 0.3in;
+  }
+
+  .proposal-body > :first-child,
+  .proposal-body > :first-child > :first-child {
+    margin-top: 0 !important;
   }
 
   .proposal-document--landscape .proposal-body p,
@@ -540,6 +573,12 @@
 
   .proposal-body h2 {
     margin-top: 22px;
+  }
+
+  .proposal-body h2:first-child,
+  .proposal-content-block:first-child h2:first-child,
+  .proposal-figure-block:first-child h2:first-child {
+    margin-top: 0;
   }
 
   .proposal-page-break {
@@ -581,16 +620,32 @@
 
   .proposal-table-wrap,
   .proposal-figure,
+  .proposal-figure-block,
   .proposal-body h2,
   .proposal-body h3 {
     break-inside: avoid;
     page-break-inside: avoid;
   }
 
+  .proposal-figure-block {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    break-before: auto;
+    page-break-before: auto;
+  }
+
+  .proposal-figure-block h2,
+  .proposal-figure-block h3,
+  .proposal-figure-block h4,
+  .proposal-figure-block p {
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+
   .proposal-figure {
     width: 88%;
     max-width: 88%;
-    margin: 0.28in auto;
+    margin: 0.2in auto 0.1in;
     break-inside: avoid !important;
     page-break-inside: avoid !important;
     break-before: auto;
@@ -601,12 +656,19 @@
     max-width: 100%;
     width: auto;
     height: auto;
-    /* Fit within landscape printable area; leave room for footer */
     max-height: 6.1in;
+  }
+
+  .proposal-figure-block .proposal-figure img {
+    max-height: 5in;
   }
 
   .proposal-document--portrait .proposal-figure img {
     max-height: 8.2in;
+  }
+
+  .proposal-document--portrait .proposal-figure-block .proposal-figure img {
+    max-height: 6.8in;
   }
 
   .proposal-figure figcaption {

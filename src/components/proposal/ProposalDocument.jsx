@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import { groupProposalBodyBlocks } from './groupProposalFigures';
 import { PAGE_BREAK_TOKEN, parseProposalMarkdown } from './parseProposalMarkdown';
 import {
   DEFAULT_ORIENTATION,
@@ -146,6 +147,11 @@ export default function ProposalDocument({
     [markdown],
   );
 
+  const bodyBlocks = useMemo(
+    () => groupProposalBodyBlocks(bodyMarkdown),
+    [bodyMarkdown],
+  );
+
   const page = getOrientationConfig(orientation);
   const preparedBy = meta.preparedBy || 'Nexora Systems';
   const classification = meta.classification || 'Confidential';
@@ -237,17 +243,27 @@ export default function ProposalDocument({
             </dd>
           </div>
         </dl>
-
-        <div className="proposal-cover-footer">
-          <span>nexorasystems.ca</span>
-        </div>
       </header>
 
       <div className="proposal-body">
-        {bodyMarkdown ? (
-          <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
-            {bodyMarkdown}
-          </ReactMarkdown>
+        {bodyBlocks.length > 0 ? (
+          bodyBlocks.map((block, index) => (
+            <div
+              key={`${block.type}-${index}`}
+              className={
+                block.type === 'figure'
+                  ? 'proposal-figure-block'
+                  : 'proposal-content-block'
+              }
+            >
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={markdownComponents}
+              >
+                {block.markdown}
+              </ReactMarkdown>
+            </div>
+          ))
         ) : (
           <p className="proposal-empty">
             Add Markdown content to preview the proposal body.
