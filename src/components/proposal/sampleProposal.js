@@ -4,7 +4,7 @@ export const SAMPLE_PROPOSAL_MARKDOWN = `# Digital Transformation Proposal
 **Client:** Horizon Field Services Inc.
 **Prepared for:** Catherine Moreau, Operations Director
 **Date:** July 11, 2026
-**Prepared by:** Nexora Systems
+**Prepared by:** Joey Agostinucci, President | Nexora Systems Inc.
 **Classification:** Confidential
 **Reference:** NXS-2026-0142
 **Version:** 1.0

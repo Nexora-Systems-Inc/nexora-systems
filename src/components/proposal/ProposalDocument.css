@@ -151,6 +151,26 @@
   color: var(--proposal-ink);
 }
 
+.proposal-cover-meta-value {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.proposal-cover-meta-primary {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--proposal-ink);
+  line-height: 1.35;
+}
+
+.proposal-cover-meta-secondary {
+  font-size: 10.5px;
+  font-weight: 300;
+  color: var(--proposal-muted);
+  line-height: 1.4;
+}
+
 .proposal-cover-footer {
   margin-top: auto;
   padding-top: 0.45in;

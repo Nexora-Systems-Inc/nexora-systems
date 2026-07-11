@@ -53,6 +53,39 @@ const markdownComponents = {
 };
 
 /**
+ * Split cover metadata on the first comma for a two-line presentation.
+ * Markdown stays unchanged; only the rendered value is split.
+ * @param {string} value
+ * @returns {{ primary: string, secondary: string | null }}
+ */
+function splitMetaValue(value) {
+  const text = String(value || '').trim();
+  const commaIndex = text.indexOf(',');
+  if (commaIndex === -1) {
+    return { primary: text, secondary: null };
+  }
+  const primary = text.slice(0, commaIndex).trim();
+  const secondary = text.slice(commaIndex + 1).trim();
+  if (!primary || !secondary) {
+    return { primary: text, secondary: null };
+  }
+  return { primary, secondary };
+}
+
+function MetaValue({ value }) {
+  const { primary, secondary } = splitMetaValue(value);
+  if (!secondary) {
+    return primary;
+  }
+  return (
+    <span className="proposal-cover-meta-value">
+      <span className="proposal-cover-meta-primary">{primary}</span>
+      <span className="proposal-cover-meta-secondary">{secondary}</span>
+    </span>
+  );
+}
+
+/**
  * Branded proposal document surface.
  * Renders Markdown into a premium consulting-style layout.
  *
@@ -115,38 +148,52 @@ export default function ProposalDocument({
           {meta.client ? (
             <div className="proposal-cover-meta-row">
               <dt>Client</dt>
-              <dd>{meta.client}</dd>
+              <dd>
+                <MetaValue value={meta.client} />
+              </dd>
             </div>
           ) : null}
           {meta.preparedFor ? (
             <div className="proposal-cover-meta-row">
               <dt>Prepared for</dt>
-              <dd>{meta.preparedFor}</dd>
+              <dd>
+                <MetaValue value={meta.preparedFor} />
+              </dd>
             </div>
           ) : null}
           <div className="proposal-cover-meta-row">
             <dt>Date</dt>
-            <dd>{dateLabel}</dd>
+            <dd>
+              <MetaValue value={dateLabel} />
+            </dd>
           </div>
           <div className="proposal-cover-meta-row">
             <dt>Prepared by</dt>
-            <dd>{preparedBy}</dd>
+            <dd>
+              <MetaValue value={preparedBy} />
+            </dd>
           </div>
           {meta.reference ? (
             <div className="proposal-cover-meta-row">
               <dt>Reference</dt>
-              <dd>{meta.reference}</dd>
+              <dd>
+                <MetaValue value={meta.reference} />
+              </dd>
             </div>
           ) : null}
           {meta.version ? (
             <div className="proposal-cover-meta-row">
               <dt>Version</dt>
-              <dd>{meta.version}</dd>
+              <dd>
+                <MetaValue value={meta.version} />
+              </dd>
             </div>
           ) : null}
           <div className="proposal-cover-meta-row">
             <dt>Classification</dt>
-            <dd>{classification}</dd>
+            <dd>
+              <MetaValue value={classification} />
+            </dd>
           </div>
         </dl>
 
