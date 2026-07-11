@@ -156,6 +156,7 @@ export default function WebsiteDevelopment() {
                     <p className="package-includes-note">{data.includesNote}</p>
                   )}
                 </div>
+                <p className="package-care-footer">{wd.carePlansFooter}</p>
                 <div className="package-card-icon-bottom">{PACKAGE_ICONS[key]}</div>
               </div>
             ))}
