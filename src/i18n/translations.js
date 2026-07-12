@@ -245,6 +245,57 @@ export const translations = {
       desc: 'The page you\'re looking for doesn\'t exist or has been moved.',
       home: 'Back to Home',
     },
+    about: {
+      heroLabel: 'About',
+      heroTitle: 'Meet the Team Behind Nexora',
+      heroSub: 'Human leadership. AI specialists. One mission: Building systems that help businesses work smarter.',
+      introLabel: 'How We Work',
+      introTitle: 'Specialized AI professionals, built into how Nexora operates.',
+      introBody1:
+        'Nexora uses specialized AI professionals internally to accelerate planning, software development, testing, documentation, and customer support. They are not human employees — they are AI specialists that work alongside human leadership.',
+      introBody2:
+        'Each one is designed for a clear role. Together, they increase speed, consistency, and quality across every engagement — while strategy and accountability stay with the people who lead the company.',
+      teamLabel: 'The Team',
+      teamTitle: 'Leadership and specialists',
+      teamLead:
+        'Four profiles. One operating model: human direction, AI acceleration, and production standards that hold under real business pressure.',
+      badgeHuman: 'Human Leadership',
+      badgeAi: 'AI Specialist',
+      team: {
+        ron: {
+          name: 'Ron Williams',
+          title: 'CEO & Strategic Advisor',
+          bio: 'Responsible for business strategy, solution architecture, long-term planning, and helping clients transform operations.',
+          portraitAlt: 'Portrait placeholder for Ron Williams',
+        },
+        ashley: {
+          name: 'Ashley Sterling',
+          title: 'Cognitive Operations Coordinator',
+          bio: 'Coordinates documentation, project planning, communication, operational consistency, and ensures projects remain organized from beginning to end.',
+          portraitAlt: 'Ashley Sterling — Cognitive Operations Coordinator at Nexora Systems',
+        },
+        logan: {
+          name: 'Logan Steele',
+          title: 'AI Software Engineer',
+          bio: 'Works alongside developers to design software, solve technical challenges, review implementations, and accelerate product development.',
+          portraitAlt: 'Portrait placeholder for Logan Steele',
+        },
+        atlas: {
+          name: 'Atlas',
+          title: 'Quality Assurance Specialist',
+          bio: 'Validates releases through automated and manual quality assurance processes, identifies regressions before deployment, and helps ensure every solution meets Nexora\'s production standards. Calm, dependable, and detail-oriented by design.',
+          portraitAlt: 'Portrait placeholder for Atlas',
+        },
+      },
+      humanLabel: 'Accountability',
+      humanTitle: 'Human-Led. AI-Accelerated.',
+      humanBody1:
+        'Every recommendation, deployment, and business decision is ultimately reviewed and approved by Nexora. The AI team enhances speed, consistency, and quality — but accountability always remains with human leadership.',
+      humanBody2:
+        'Clients work with a company that moves faster without outsourcing judgment. Intelligence is amplified. Responsibility is not.',
+      ctaTitle: 'Ready to work with Nexora?',
+      ctaSub: 'Tell us about your operations. We\'ll bring the right mix of human judgment and AI capability to the problem.',
+    },
     contact: {
       heroLabel: 'Get in Touch',
       heroTitle: 'Contact Us',
@@ -640,6 +691,57 @@ export const translations = {
       title: 'Page introuvable',
       desc: 'La page que vous recherchez n\'existe pas ou a été déplacée.',
       home: 'Retour à l\'accueil',
+    },
+    about: {
+      heroLabel: 'À propos',
+      heroTitle: 'L\'équipe derrière Nexora',
+      heroSub: 'Leadership humain. Spécialistes IA. Une mission : bâtir des systèmes qui aident les entreprises à travailler plus intelligemment.',
+      introLabel: 'Notre façon de travailler',
+      introTitle: 'Des professionnels IA spécialisés, intégrés au fonctionnement de Nexora.',
+      introBody1:
+        'Nexora utilise des professionnels IA spécialisés en interne pour accélérer la planification, le développement logiciel, les tests, la documentation et le soutien client. Ce ne sont pas des employés humains — ce sont des spécialistes IA qui travaillent aux côtés du leadership humain.',
+      introBody2:
+        'Chacun est conçu pour un rôle précis. Ensemble, ils renforcent la vitesse, la cohérence et la qualité à chaque engagement — tandis que la stratégie et la responsabilité restent entre les mains de ceux qui dirigent l\'entreprise.',
+      teamLabel: 'L\'équipe',
+      teamTitle: 'Leadership et spécialistes',
+      teamLead:
+        'Quatre profils. Un modèle d\'exploitation : direction humaine, accélération par l\'IA, et des standards de production qui tiennent sous la pression réelle des affaires.',
+      badgeHuman: 'Leadership humain',
+      badgeAi: 'Spécialiste IA',
+      team: {
+        ron: {
+          name: 'Ron Williams',
+          title: 'PDG et conseiller stratégique',
+          bio: 'Responsable de la stratégie d\'affaires, de l\'architecture de solutions, de la planification à long terme, et de l\'accompagnement des clients dans la transformation de leurs opérations.',
+          portraitAlt: 'Espace réservé pour le portrait de Ron Williams',
+        },
+        ashley: {
+          name: 'Ashley Sterling',
+          title: 'Coordonnatrice des opérations cognitives',
+          bio: 'Coordonne la documentation, la planification de projet, la communication et la cohérence opérationnelle, et veille à ce que les projets restent organisés du début à la fin.',
+          portraitAlt: 'Ashley Sterling — Coordonnatrice des opérations cognitives chez Nexora Systems',
+        },
+        logan: {
+          name: 'Logan Steele',
+          title: 'Ingénieur logiciel IA',
+          bio: 'Travaille aux côtés des développeurs pour concevoir des logiciels, résoudre des défis techniques, réviser les implémentations et accélérer le développement de produits.',
+          portraitAlt: 'Espace réservé pour le portrait de Logan Steele',
+        },
+        atlas: {
+          name: 'Atlas',
+          title: 'Spécialiste de l\'assurance qualité',
+          bio: 'Valide les livraisons par des processus d\'assurance qualité automatisés et manuels, identifie les régressions avant le déploiement, et aide à garantir que chaque solution respecte les standards de production de Nexora. Calme, fiable et orienté détail par conception.',
+          portraitAlt: 'Espace réservé pour le portrait d\'Atlas',
+        },
+      },
+      humanLabel: 'Responsabilité',
+      humanTitle: 'Dirigé par l\'humain. Accéléré par l\'IA.',
+      humanBody1:
+        'Chaque recommandation, déploiement et décision d\'affaires est ultimement examiné et approuvé par Nexora. L\'équipe IA améliore la vitesse, la cohérence et la qualité — mais la responsabilité demeure toujours entre les mains du leadership humain.',
+      humanBody2:
+        'Les clients collaborent avec une entreprise qui avance plus vite sans externaliser le jugement. L\'intelligence est amplifiée. La responsabilité ne l\'est pas.',
+      ctaTitle: 'Prêt à travailler avec Nexora?',
+      ctaSub: 'Parlez-nous de vos opérations. Nous apporterons le bon équilibre entre jugement humain et capacité IA.',
     },
     contact: {
       heroLabel: 'Contactez-nous',

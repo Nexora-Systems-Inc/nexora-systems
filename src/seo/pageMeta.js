@@ -56,7 +56,7 @@ export const PAGE_META = {
   '/about': {
     title: `About | ${SITE_NAME}`,
     description:
-      'Nexora Systems builds production software including CrewPilot, and delivers custom technology for serious businesses across Ontario and Quebec.',
+      'Meet the team behind Nexora — human leadership enhanced by specialized AI professionals who accelerate planning, development, testing, and support.',
   },
   '/contact': {
     title: `Contact | ${SITE_NAME}`,
