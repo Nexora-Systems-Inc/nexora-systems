@@ -1,64 +1,13 @@
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LangContext';
-import { ASHLEY_ASSETS } from '../config/ashleyAssets';
+import { TEAM_PORTRAITS, TEAM_PORTRAIT_SIZE } from '../config/aboutTeamAssets';
 import './AboutPage.css';
 
-function RonIcon() {
-  return (
-    <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
-      <circle cx="32" cy="22" r="10" stroke="currentColor" strokeWidth="1.6" />
-      <path
-        d="M14 52c2.5-10 10-15 18-15s15.5 5 18 15"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-      />
-      <path
-        d="M44 18.5c3.5 1 6 4.2 6 8.2"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-      />
-      <path
-        d="M46 40c4.5 1.5 7.5 5 9 10"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function LoganIcon() {
-  return (
-    <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
-      <rect x="12" y="14" width="40" height="36" rx="4" stroke="currentColor" strokeWidth="1.6" />
-      <path d="M20 24h24M20 32h18M20 40h12" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-      <circle cx="44" cy="40" r="3" stroke="currentColor" strokeWidth="1.6" />
-    </svg>
-  );
-}
-
-function AtlasIcon() {
-  return (
-    <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
-      <circle cx="32" cy="32" r="18" stroke="currentColor" strokeWidth="1.6" />
-      <path
-        d="M22 33.5l6 6 14-14"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 const TEAM_META = [
-  { id: 'ron', kind: 'human', Icon: RonIcon },
-  { id: 'ashley', kind: 'ai', imageSrc: ASHLEY_ASSETS.gridSrc },
-  { id: 'logan', kind: 'ai', Icon: LoganIcon },
-  { id: 'atlas', kind: 'ai', Icon: AtlasIcon },
+  { id: 'ron', kind: 'human', imageSrc: TEAM_PORTRAITS.ron.src },
+  { id: 'ashley', kind: 'ai', imageSrc: TEAM_PORTRAITS.ashley.src },
+  { id: 'logan', kind: 'ai', imageSrc: TEAM_PORTRAITS.logan.src },
+  { id: 'peter', kind: 'ai', imageSrc: TEAM_PORTRAITS.peter.src },
 ];
 
 export default function AboutPage() {
@@ -103,26 +52,19 @@ export default function AboutPage() {
                 member.kind === 'human'
                   ? 'about-team-badge about-team-badge--human'
                   : 'about-team-badge';
-              const Icon = member.Icon;
 
               return (
                 <article key={member.id} className="about-team-card">
                   <div className="about-team-portrait">
-                    {member.imageSrc ? (
-                      <img
-                        src={member.imageSrc}
-                        alt={copy.portraitAlt}
-                        className="about-team-portrait-img"
-                        width={ASHLEY_ASSETS.gridWidth}
-                        height={ASHLEY_ASSETS.gridHeight}
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    ) : (
-                      <div className="about-team-portrait-placeholder" aria-hidden="true">
-                        <Icon />
-                      </div>
-                    )}
+                    <img
+                      src={member.imageSrc}
+                      alt={copy.portraitAlt}
+                      className="about-team-portrait-img"
+                      width={TEAM_PORTRAIT_SIZE.width}
+                      height={TEAM_PORTRAIT_SIZE.height}
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                   <div className="about-team-body">
                     <span className={badgeClass}>{badge}</span>

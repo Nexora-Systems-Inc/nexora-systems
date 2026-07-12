@@ -266,7 +266,7 @@ export const translations = {
           name: 'Ron Williams',
           title: 'CEO & Strategic Advisor',
           bio: 'Responsible for business strategy, solution architecture, long-term planning, and helping clients transform operations.',
-          portraitAlt: 'Portrait placeholder for Ron Williams',
+          portraitAlt: 'Ron Williams — CEO & Strategic Advisor at Nexora Systems',
         },
         ashley: {
           name: 'Ashley Sterling',
@@ -278,13 +278,13 @@ export const translations = {
           name: 'Logan Steele',
           title: 'AI Software Engineer',
           bio: 'Works alongside developers to design software, solve technical challenges, review implementations, and accelerate product development.',
-          portraitAlt: 'Portrait placeholder for Logan Steele',
+          portraitAlt: 'Logan Steele — AI Software Engineer at Nexora Systems',
         },
-        atlas: {
-          name: 'Atlas',
+        peter: {
+          name: 'Peter Playwright',
           title: 'Quality Assurance Specialist',
           bio: 'Validates releases through automated and manual quality assurance processes, identifies regressions before deployment, and helps ensure every solution meets Nexora\'s production standards. Calm, dependable, and detail-oriented by design.',
-          portraitAlt: 'Portrait placeholder for Atlas',
+          portraitAlt: 'Peter Playwright — Quality Assurance Specialist at Nexora Systems',
         },
       },
       humanLabel: 'Accountability',
@@ -713,7 +713,7 @@ export const translations = {
           name: 'Ron Williams',
           title: 'PDG et conseiller stratégique',
           bio: 'Responsable de la stratégie d\'affaires, de l\'architecture de solutions, de la planification à long terme, et de l\'accompagnement des clients dans la transformation de leurs opérations.',
-          portraitAlt: 'Espace réservé pour le portrait de Ron Williams',
+          portraitAlt: 'Ron Williams — PDG et conseiller stratégique chez Nexora Systems',
         },
         ashley: {
           name: 'Ashley Sterling',
@@ -725,13 +725,13 @@ export const translations = {
           name: 'Logan Steele',
           title: 'Ingénieur logiciel IA',
           bio: 'Travaille aux côtés des développeurs pour concevoir des logiciels, résoudre des défis techniques, réviser les implémentations et accélérer le développement de produits.',
-          portraitAlt: 'Espace réservé pour le portrait de Logan Steele',
+          portraitAlt: 'Logan Steele — Ingénieur logiciel IA chez Nexora Systems',
         },
-        atlas: {
-          name: 'Atlas',
+        peter: {
+          name: 'Peter Playwright',
           title: 'Spécialiste de l\'assurance qualité',
           bio: 'Valide les livraisons par des processus d\'assurance qualité automatisés et manuels, identifie les régressions avant le déploiement, et aide à garantir que chaque solution respecte les standards de production de Nexora. Calme, fiable et orienté détail par conception.',
-          portraitAlt: 'Espace réservé pour le portrait d\'Atlas',
+          portraitAlt: 'Peter Playwright — Spécialiste de l\'assurance qualité chez Nexora Systems',
         },
       },
       humanLabel: 'Responsabilité',
