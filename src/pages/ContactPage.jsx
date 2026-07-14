@@ -94,7 +94,7 @@ export default function ContactPage() {
             <div className="contact-details">
               <div>
                 <p className="contact-detail-label">Email</p>
-                <a href="mailto:info@nexorasystems.ca" className="contact-detail-value">info@nexorasystems.ca</a>
+                <p className="contact-detail-value">info@nexorasystems.ca</p>
               </div>
               <div>
                 <p className="contact-detail-label">{c.serviceArea}</p>
