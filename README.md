@@ -38,6 +38,9 @@ nexora-v2/
 ├── index.html
 ├── vite.config.js
 ├── package.json
+├── api/
+│   ├── contact.js                  # Contact form Resend endpoint
+│   └── _lib/contact.js             # Validation + email builders
 ├── platform/seo/                   # Canonical URL + SEO generate/verify
 ├── docs/platform/                  # Canonical strategy + launch checklist
 └── src/
@@ -145,11 +148,19 @@ To fully build a page:
 
 ## Contact Form
 
-`ContactPage.jsx` currently handles form state in React.
+The contact page posts to a Vercel serverless endpoint (`POST /api/contact`) that
+validates/sanitizes the payload and delivers it with Resend.
 
-To connect to a backend:
-- Replace `handleSubmit` with a `fetch()` POST to your API endpoint
-- Or integrate with a service like Resend, Formspree, or EmailJS
+Required server environment variables (never use a `VITE_` prefix):
+
+| Variable | Purpose |
+|----------|---------|
+| `RESEND_API_KEY` | Resend API key |
+| `CONTACT_TO_EMAIL` | Destination inbox (e.g. `info@nexorasystems.ca`) |
+| `RESEND_FROM_EMAIL` | Verified sender, e.g. `Nexora Systems <noreply@nexorasystems.ca>` |
+
+Local API testing needs `vercel dev` (or equivalent) so `/api/contact` is available.
+Helper checks: `npm run test:contact`.
 
 ---
 

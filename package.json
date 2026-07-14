@@ -10,13 +10,15 @@
     "seo:verify:live": "node platform/seo/verify.mjs --live",
     "prebuild": "node platform/seo/generate.mjs",
     "build": "vite build && node platform/seo/verify.mjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:contact": "node scripts/test-contact-api.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-markdown": "^10.1.0",
-    "react-router-dom": "^6.26.0"
+    "react-router-dom": "^6.26.0",
+    "resend": "^6.17.2"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.1",

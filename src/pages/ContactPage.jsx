@@ -13,6 +13,8 @@ export default function ContactPage() {
   const c = t.contact;
   const [searchParams] = useSearchParams();
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState('');
   const [form, setForm] = useState({ name: '', email: '', company: '', message: '', service: '' });
 
   useEffect(() => {
@@ -34,18 +36,41 @@ export default function ContactPage() {
 
   function handleChange(e) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    if (error) setError('');
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    const subject = encodeURIComponent(
-      `Nexora Inquiry${form.service ? ` — ${form.service}` : ''}`,
-    );
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\nCompany: ${form.company || 'N/A'}\nService: ${form.service || 'N/A'}\n\n${form.message}`,
-    );
-    window.location.href = `mailto:info@nexorasystems.ca?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+    if (submitting) return;
+
+    setSubmitting(true);
+    setError('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+
+      let payload = null;
+      try {
+        payload = await response.json();
+      } catch {
+        payload = null;
+      }
+
+      if (!response.ok || !payload?.success) {
+        setError(payload?.error || c.errorGeneric);
+        return;
+      }
+
+      setSubmitted(true);
+    } catch {
+      setError(c.errorGeneric);
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -107,6 +132,7 @@ export default function ContactPage() {
                       required={field.required}
                       autoComplete={field.autoComplete}
                       className="contact-input"
+                      disabled={submitting}
                     />
                   </div>
                 ))}
@@ -118,6 +144,7 @@ export default function ContactPage() {
                     value={form.service}
                     onChange={handleChange}
                     className="contact-input"
+                    disabled={submitting}
                   >
                     <option value="">{c.selectService}</option>
                     {CONTACT_SERVICE_LABELS[lang].map((s) => <option key={s} value={s}>{s}</option>)}
@@ -133,10 +160,19 @@ export default function ContactPage() {
                     rows={5}
                     required
                     className="contact-input contact-textarea"
+                    disabled={submitting}
                   />
                 </div>
-                <button type="submit" className="btn-gold contact-submit">
-                  {c.sendMessage}
+                {error ? (
+                  <p className="contact-error" role="alert">{error}</p>
+                ) : null}
+                <button
+                  type="submit"
+                  className="btn-gold contact-submit"
+                  disabled={submitting}
+                  aria-busy={submitting}
+                >
+                  {submitting ? c.sending : c.sendMessage}
                 </button>
               </form>
             )}
