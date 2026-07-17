@@ -81,8 +81,8 @@ export function CustomSolutionsPage() {
     <ServiceScaffold
       titleEn="Custom Solutions"
       titleFr="Solutions sur mesure"
-      subtitleEn="Built Precisely for Your Business Requirements"
-      subtitleFr="Conçu précisément pour les besoins de votre entreprise"
+      subtitleEn="Business Systems Built Precisely for Your Requirements"
+      subtitleFr="Des systèmes d\'affaires conçus précisément pour vos besoins"
       features={[
         {
           titleEn: 'Discovery Consultation',
@@ -103,10 +103,10 @@ export function CustomSolutionsPage() {
           descFr: 'Un plan de développement par phases et jalons adapté à votre calendrier et budget. Chaque phase est transparente et chaque livrable clairement défini.',
         },
         {
-          titleEn: 'Membership Sites, Booking Systems & Client Portals',
-          titleFr: 'Sites d\'adhésion, systèmes de réservation et portails clients',
-          descEn: 'If your requirement falls outside our standard service categories, it likely falls here. We build membership platforms, booking engines, client portals, automation projects, and more.',
-          descFr: 'Si votre besoin dépasse nos catégories standard, il appartient probablement ici. Nous construisons des plateformes d\'adhésion, des moteurs de réservation, des portails clients et plus.',
+          titleEn: 'Connected Systems & Operational Software',
+          titleFr: 'Systèmes connectés et logiciels opérationnels',
+          descEn: 'If your requirement falls outside our standard service categories, it likely falls here. We build membership platforms, booking engines, client portals, progressive web apps, automation projects, and specialized operational software.',
+          descFr: 'Si votre besoin dépasse nos catégories standard, il appartient probablement ici. Nous construisons des plateformes d\'adhésion, des moteurs de réservation, des portails clients, des applications web progressives, des projets d\'automatisation et des logiciels opérationnels spécialisés.',
         },
       ]}
     />

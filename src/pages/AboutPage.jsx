@@ -26,18 +26,18 @@ export default function AboutPage() {
           <p className="section-label">{lang === 'en' ? 'Our Mission' : 'Notre mission'}</p>
           <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 500, marginBottom: 28, marginTop: 8, lineHeight: 1.15 }}>
             {lang === 'en'
-              ? 'We help businesses grow through intelligent technology.'
-              : 'Nous aidons les entreprises à croître grâce à des technologies intelligentes.'}
+              ? 'We design and engineer business systems that help companies work smarter.'
+              : 'Nous concevons et développons des systèmes d\'affaires qui aident les entreprises à travailler plus intelligemment.'}
           </h2>
           <p style={{ fontSize: 16, color: 'var(--gray-500)', lineHeight: 1.9, marginBottom: 20, fontWeight: 300 }}>
             {lang === 'en'
-              ? 'Nexora Systems is a technology company serving businesses across Ontario and Quebec. We design, build, and ship production software — including CrewPilot, our flagship workforce management platform — alongside custom solutions for websites, AI, and business operations.'
-              : 'Nexora Systems est une entreprise technologique qui sert des entreprises à travers l\'Ontario et le Québec. Nous concevons, développons et livrons des logiciels de production — dont CrewPilot, notre plateforme phare de gestion de la main-d\'œuvre — aux côtés de solutions sur mesure pour sites web, IA et opérations d\'affaires.'}
+              ? 'Nexora Systems serves businesses across Ontario and Quebec. We design and engineer complete business systems — custom websites, progressive web apps, automation, AI assistants, and operational software. CrewPilot is proof of that capability: production workforce management built to grow with the businesses that depend on it.'
+              : 'Nexora Systems sert des entreprises à travers l\'Ontario et le Québec. Nous concevons et développons des systèmes d\'affaires complets — sites web, applications web progressives, automatisation, assistants IA et logiciels opérationnels. CrewPilot en est la preuve : une gestion de la main-d\'œuvre en production conçue pour évoluer avec les entreprises qui en dépendent.'}
           </p>
           <p style={{ fontSize: 16, color: 'var(--gray-500)', lineHeight: 1.9, fontWeight: 300 }}>
             {lang === 'en'
-              ? 'Every engagement begins with a deep understanding of your business. We don\'t apply templates — we scope, design, and build solutions that fit your specific context, industry, and goals.'
-              : 'Chaque engagement commence par une compréhension approfondie de votre entreprise. Nous ne appliquons pas de modèles — nous définissons, concevons et construisons des solutions adaptées à votre contexte, secteur et objectifs spécifiques.'}
+              ? 'Every engagement begins with a deep understanding of how your business operates. We don\'t apply templates — we scope, design, and build systems that fit your specific context, industry, and goals.'
+              : 'Chaque engagement commence par une compréhension approfondie de vos opérations. Nous n\'appliquons pas de modèles — nous définissons, concevons et construisons des systèmes adaptés à votre contexte, secteur et objectifs spécifiques.'}
           </p>
           <div style={{ marginTop: 48 }}>
             <Link to="/contact" className="btn-gold">{t.common.contactUs}</Link>

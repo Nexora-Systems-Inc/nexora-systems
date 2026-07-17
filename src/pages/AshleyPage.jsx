@@ -11,14 +11,14 @@ export default function AshleyPage() {
         label: 'Coming Soon',
         title: 'Meet Ashley',
         subtitle: 'Ashley Sterling — Cognitive Interface Agent',
-        body: 'Ashley is Nexora\'s AI personality — a cognitive interface agent designed to bring intelligence to life across Nexora products and client experiences. This page will introduce Ashley in full detail as the experience launches.',
+        body: 'Ashley is Nexora\'s AI personality — a cognitive interface agent that brings intelligence into business systems, products, and client experiences. From field assistance in CrewPilot to receptionist workflows, Ashley is how Nexora makes AI practical and approachable. This page will introduce Ashley in full detail as the experience launches.',
         cta: 'Contact Nexora',
       }
     : {
         label: 'Bientôt disponible',
         title: 'Rencontrez Ashley',
         subtitle: 'Ashley Sterling — Agent d\'interface cognitive',
-        body: 'Ashley est la personnalité IA de Nexora — une agente d\'interface cognitive conçue pour donner vie à l\'intelligence dans les produits Nexora et les expériences client. Cette page présentera Ashley en détail au lancement de l\'expérience.',
+        body: 'Ashley est la personnalité IA de Nexora — une agente d\'interface cognitive qui intègre l\'intelligence aux systèmes d\'affaires, produits et expériences client. Du soutien terrain dans CrewPilot aux flux de réception, Ashley rend l\'IA pratique et accessible. Cette page présentera Ashley en détail au lancement de l\'expérience.',
         cta: 'Contacter Nexora',
       };
 

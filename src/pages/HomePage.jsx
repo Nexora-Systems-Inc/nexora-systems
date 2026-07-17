@@ -23,8 +23,8 @@ const SERVICE_CARDS = {
         <rect x="15" y="15" width="10" height="10" rx="2" stroke="currentColor" strokeWidth="1.5"/>
       </svg>
     ),
-    en: { title: 'Web Applications', desc: 'Custom web applications scoped to your workflows — from industry platforms to enterprise tools built with production-grade engineering.' },
-    fr: { title: 'Applications Web', desc: 'Applications web sur mesure adaptées à vos processus — des plateformes sectorielles aux outils d\'entreprise conçus avec une ingénierie de niveau production.' },
+    en: { title: 'Web Applications', desc: 'Progressive web apps and operational software scoped to your workflows — built with the same production standards we apply to our own platforms.' },
+    fr: { title: 'Applications Web', desc: 'Applications web progressives et logiciels opérationnels adaptés à vos processus — construits selon les mêmes standards de production que nos propres plateformes.' },
   },
   workflow: {
     icon: (
@@ -36,8 +36,8 @@ const SERVICE_CARDS = {
         <line x1="9" y1="15" x2="19" y2="20.5" stroke="currentColor" strokeWidth="1.5"/>
       </svg>
     ),
-    en: { title: 'Workflow Automation', desc: 'Automate scheduling, lead management, reporting, and notifications — so your team focuses on work that actually moves the needle.' },
-    fr: { title: 'Automatisation', desc: 'Automatisez la planification, la gestion des prospects, les rapports et les notifications — pour que votre équipe se concentre sur ce qui compte.' },
+    en: { title: 'Workflow Automation', desc: 'Optimize scheduling, lead management, reporting, and day-to-day operations — so your team focuses on work that moves the business forward.' },
+    fr: { title: 'Automatisation', desc: 'Optimisez la planification, la gestion des prospects, les rapports et les opérations quotidiennes — pour que votre équipe se concentre sur ce qui fait avancer l\'entreprise.' },
   },
   websiteDev: {
     icon: (
@@ -49,8 +49,8 @@ const SERVICE_CARDS = {
         <line x1="6" y1="26" x2="22" y2="26" stroke="currentColor" strokeWidth="1.5"/>
       </svg>
     ),
-    en: { title: 'Website Development', desc: 'Professional websites from elegant single-page presences to full e-commerce platforms — built for performance and growth.' },
-    fr: { title: 'Développement Web', desc: 'Sites web professionnels, des vitrines élégantes aux plateformes transactionnelles — conçus pour la performance et la croissance.' },
+    en: { title: 'Website Development', desc: 'Professional websites and digital presence that fit into a larger business system — built for performance, clarity, and growth.' },
+    fr: { title: 'Développement Web', desc: 'Sites web professionnels et présence numérique qui s\'intègrent à un système d\'affaires plus large — conçus pour la performance, la clarté et la croissance.' },
   },
   customSolutions: {
     icon: (
@@ -59,24 +59,24 @@ const SERVICE_CARDS = {
         <circle cx="14" cy="14" r="4" stroke="currentColor" strokeWidth="1.5"/>
       </svg>
     ),
-    en: { title: 'Custom Solutions', desc: 'Your business has unique requirements. We scope, design, and build exactly what you need — with precision and long-term maintainability in mind.' },
-    fr: { title: 'Solutions sur mesure', desc: 'Votre entreprise a des besoins uniques. Nous concevons et construisons exactement ce qu\'il vous faut — avec précision et pérennité.' },
+    en: { title: 'Custom Solutions', desc: 'When your requirements go beyond standard tools, we design and engineer the systems your business actually needs — with long-term maintainability in mind.' },
+    fr: { title: 'Solutions sur mesure', desc: 'Quand vos besoins dépassent les outils standards, nous concevons et développons les systèmes dont votre entreprise a vraiment besoin — avec la pérennité en tête.' },
   },
   crewpilot: {
     en: {
       badge: 'Flagship Product',
       name: 'CrewPilot',
-      tagline: 'Offline-First Workforce Platform',
-      desc: 'CrewPilot is Nexora Systems\' flagship platform for contractors, combining workforce management, estimating, payroll, materials, and AI into one modern, offline-first solution.',
-      pills: ['Time Tracking', 'Payroll', 'Estimating', 'Materials', 'AI Assistant', 'Offline First'],
-      attribution: 'Designed & Built by Nexora Systems',
+      tagline: 'Built to Grow With Your Business',
+      desc: 'CrewPilot is proof of Nexora\'s engineering capability — workforce management, estimating, payroll, materials, and AI in one secure, offline-first platform designed for growing field businesses.',
+      pills: ['Ready to Expand', 'Secure Access', 'Offline-First', 'Payroll', 'AI Assistant', 'Built for Growth'],
+      attribution: 'Designed & Engineered by Nexora Systems',
     },
     fr: {
       badge: 'Produit phare',
       name: 'CrewPilot',
-      tagline: 'Plateforme de main-d\'œuvre hors ligne',
-      desc: 'CrewPilot est la plateforme phare de Nexora Systems pour les entrepreneurs — gestion de la main-d\'œuvre, estimation, paie, matériaux et IA réunis dans une solution moderne hors ligne.',
-      pills: ['Suivi du temps', 'Paie', 'Estimation', 'Matériaux', 'Assistant IA', 'Hors ligne'],
+      tagline: 'Conçue pour évoluer avec votre entreprise',
+      desc: 'CrewPilot est la preuve de la capacité d\'ingénierie de Nexora — gestion de la main-d\'œuvre, estimation, paie, matériaux et IA dans une plateforme sécurisée hors ligne conçue pour les entreprises terrain en croissance.',
+      pills: ['Prêt à grandir', 'Accès sécurisé', 'Hors ligne', 'Paie', 'Assistant IA', 'Conçu pour croître'],
       attribution: 'Conçu et développé par Nexora Systems',
     },
   },
@@ -90,18 +90,18 @@ const SERVICE_CARDS = {
 const VALUE_PROPS = [
   {
     icon: '→',
-    en: { title: 'Turn interest into real revenue', desc: 'Capture every inquiry, qualify leads instantly, and move opportunities forward automatically — so nothing slips through.' },
-    fr: { title: 'Convertissez l\'intérêt en revenus réels', desc: 'Capturez chaque demande, qualifiez les prospects instantanément et faites avancer les opportunités automatiquement.' },
+    en: { title: 'Built for Growth', desc: 'From a first website to connected digital infrastructure — we design systems that expand with your operations, not ones you outgrow in a year.' },
+    fr: { title: 'Conçu pour la croissance', desc: 'Du premier site web à une infrastructure numérique connectée — nous concevons des systèmes qui évoluent avec vos opérations, pas des solutions que vous dépassez en un an.' },
   },
   {
     icon: '⚡',
-    en: { title: 'Respond instantly, every time', desc: 'Engage clients with fast, consistent communication powered by AI — handling inquiries, bookings, and follow-ups without delays.' },
-    fr: { title: 'Répondez instantanément, à chaque fois', desc: 'Engagez vos clients avec une communication rapide et constante propulsée par l\'IA — sans délai, sans exception.' },
+    en: { title: 'Engineered for Reliability', desc: 'Production standards, careful releases, and software built to perform under real business pressure — the same discipline behind CrewPilot.' },
+    fr: { title: 'Conçu pour la fiabilité', desc: 'Standards de production, mises en production contrôlées et logiciels conçus pour performer sous pression réelle — la même discipline derrière CrewPilot.' },
   },
   {
     icon: '◆',
-    en: { title: 'Grow without growing overhead', desc: 'Automate your internal workflows and daily operations — increasing capacity, reducing manual work, keeping your business smooth.' },
-    fr: { title: 'Croissez sans alourdir vos coûts', desc: 'Automatisez vos processus internes et opérations quotidiennes — augmentez votre capacité, réduisez le travail manuel.' },
+    en: { title: 'Complete Business Solutions', desc: 'Websites, progressive web apps, automation, AI assistants, and operational software — delivered as one coherent ecosystem, not disconnected projects.' },
+    fr: { title: 'Des solutions d\'affaires complètes', desc: 'Sites web, applications web progressives, automatisation, assistants IA et logiciels opérationnels — livrés comme un écosystème cohérent, pas comme des projets isolés.' },
   },
 ];
 

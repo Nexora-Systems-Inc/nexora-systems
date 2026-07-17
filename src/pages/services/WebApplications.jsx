@@ -143,8 +143,8 @@ export default function WebApplicationsPage() {
             </h2>
             <p className="scaffold-cta-sub">
               {lang === 'en'
-                ? 'From flagship products to custom builds — contact us to discuss your requirements.'
-                : 'Des produits phares aux solutions sur mesure — contactez-nous pour discuter de vos besoins.'}
+                ? 'From flagship platforms to custom business systems — contact us to discuss your requirements.'
+                : 'Des plateformes phares aux systèmes d\'affaires sur mesure — contactez-nous pour discuter de vos besoins.'}
             </p>
           </div>
           <Link to="/contact" className="btn-gold">
