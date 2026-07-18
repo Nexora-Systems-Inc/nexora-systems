@@ -297,6 +297,15 @@ export default function WebsiteDevelopment() {
                 {t.notes.changeRequests.body}
               </p>
             </div>
+            <div className="note-card note-card--blue">
+              <div className="note-card-icon note-card-icon--blue">
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" strokeWidth="1.6"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg>
+              </div>
+              <h4>{t.notes.projectScope.title}</h4>
+              <p style={{ fontSize: 13.5, color: 'rgba(255,255,255,0.65)', lineHeight: 1.7, marginTop: 8 }}>
+                {t.notes.projectScope.body}
+              </p>
+            </div>
           </div>
         </div>
       </section>
