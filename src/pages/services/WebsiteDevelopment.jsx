@@ -79,7 +79,7 @@ export default function WebsiteDevelopment() {
 
   const maintenancePlans = [
     { key: 'basicCare', data: mnt.basicCare },
-    { key: 'standard', data: mnt.standard, featured: true },
+    { key: 'businessCare', data: mnt.businessCare, featured: true },
     { key: 'premium', data: mnt.premium },
   ];
 
@@ -226,7 +226,7 @@ export default function WebsiteDevelopment() {
                 <tr>
                   <th className="comparison-th comparison-th--feature">{cmp.feature}</th>
                   <th className="comparison-th">{cmp.basicCare}</th>
-                  <th className="comparison-th comparison-th--featured">{cmp.standardBusiness}</th>
+                  <th className="comparison-th comparison-th--featured">{cmp.businessCare}</th>
                   <th className="comparison-th">{cmp.premiumBusiness}</th>
                 </tr>
               </thead>

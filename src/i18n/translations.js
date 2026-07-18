@@ -160,17 +160,18 @@ export const translations = {
           '30 Minutes of Content Updates per Month (Minor text, image, or content changes. Monthly time does not roll over.)',
         ],
       },
-      standard: {
-        name: 'Standard Business',
+      businessCare: {
+        name: 'Business Care',
         price: '$75',
         period: '/month',
-        responseTime: '2–3 Business Days',
+        responseTime: 'Within 2–3 Business Days',
         includes: [
           'Everything in Basic Care',
-          'Priority Support',
-          '1 Hour Content Updates',
+          'Priority Email Support',
+          '60 Minutes of Content Updates per Month',
           'Quarterly Website Review',
           'Search Visibility Review',
+          'Performance Review',
         ],
       },
       premium: {
@@ -179,7 +180,7 @@ export const translations = {
         period: '/month',
         responseTime: '1 Business Day',
         includes: [
-          'Everything in Standard Business',
+          'Everything in Business Care',
           '2 Hours Content Updates',
           'Monthly Website Review',
           'Ongoing Search Visibility Monitoring',
@@ -191,7 +192,7 @@ export const translations = {
     comparison: {
       feature: 'What\'s Included',
       basicCare: 'Basic Care',
-      standardBusiness: 'Standard Business',
+      businessCare: 'Business Care',
       premiumBusiness: 'Premium Business',
       features: [
         { name: 'Fully Managed Website Hosting', ff: true, sb: true, pb: true },
@@ -201,12 +202,12 @@ export const translations = {
         { name: 'Routine Platform Maintenance', ff: true, sb: true, pb: true },
         { name: 'Website Availability Monitoring', ff: true, sb: true, pb: true },
         { name: 'Email Support', ff: true, sb: true, pb: true },
-        { name: 'Content Updates', ff: '30 Min / Month', sb: '1 Hour / Month', pb: '2 Hours / Month' },
+        { name: 'Content Updates', ff: '30 Min / Month', sb: '60 Min / Month', pb: '2 Hours / Month' },
         { name: 'Website Review', ff: false, sb: 'Quarterly', pb: 'Monthly' },
-        { name: 'Search Visibility Review', ff: false, sb: 'Basic', pb: 'Advanced' },
-        { name: 'Priority Support', ff: false, sb: true, pb: true },
-        { name: 'Site Speed & Performance Review', ff: false, sb: false, pb: true },
-        { name: 'Response Goal', ff: 'Within 5 Business Days', sb: '2–3 Business Days', pb: '1 Business Day' },
+        { name: 'Search Visibility Review', ff: false, sb: true, pb: true },
+        { name: 'Priority Email Support', ff: false, sb: true, pb: true },
+        { name: 'Performance Review', ff: false, sb: true, pb: true },
+        { name: 'Response Goal', ff: 'Within 5 Business Days', sb: 'Within 2–3 Business Days', pb: '1 Business Day' },
       ],
     },
     additionalServices: [
@@ -568,17 +569,18 @@ export const translations = {
           '30 minutes de modifications de contenu par mois (Modifications mineures de texte, d\'image ou de contenu. Le temps mensuel n\'est pas reporté.)',
         ],
       },
-      standard: {
-        name: 'Entreprise Standard',
+      businessCare: {
+        name: 'Soins Affaires',
         price: '75 $',
         period: '/mois',
-        responseTime: '2 à 3 jours ouvrables',
+        responseTime: 'Dans un délai de 2 à 3 jours ouvrables',
         includes: [
           'Tout ce qui est inclus dans Soins de base',
-          'Support prioritaire',
-          '1 heure de modifications de contenu par mois',
+          'Support prioritaire par courriel',
+          '60 minutes de modifications de contenu par mois',
           'Revue du site web trimestrielle',
           'Revue de la visibilité en ligne',
+          'Revue des performances',
         ],
       },
       premium: {
@@ -587,7 +589,7 @@ export const translations = {
         period: '/mois',
         responseTime: '1 jour ouvrable',
         includes: [
-          'Tout ce qui est inclus dans Entreprise standard',
+          'Tout ce qui est inclus dans Soins Affaires',
           '2 heures de modifications de contenu par mois',
           'Revue du site web mensuelle',
           'Suivi continu de la visibilité en ligne',
@@ -599,7 +601,7 @@ export const translations = {
     comparison: {
       feature: 'Ce qui est inclus',
       basicCare: 'Soins de base',
-      standardBusiness: 'Entreprise Standard',
+      businessCare: 'Soins Affaires',
       premiumBusiness: 'Entreprise Premium',
       features: [
         { name: 'Hébergement de site web entièrement géré', ff: true, sb: true, pb: true },
@@ -609,12 +611,12 @@ export const translations = {
         { name: 'Maintenance de plateforme de routine', ff: true, sb: true, pb: true },
         { name: 'Surveillance de la disponibilité du site', ff: true, sb: true, pb: true },
         { name: 'Support par courriel', ff: true, sb: true, pb: true },
-        { name: 'Modifications de contenu', ff: '30 min / mois', sb: '1 heure / mois', pb: '2 heures / mois' },
+        { name: 'Modifications de contenu', ff: '30 min / mois', sb: '60 min / mois', pb: '2 heures / mois' },
         { name: 'Revue du site web', ff: false, sb: 'Trimestrielle', pb: 'Mensuelle' },
-        { name: 'Revue de la visibilité en ligne', ff: false, sb: 'De base', pb: 'Avancée' },
-        { name: 'Support prioritaire', ff: false, sb: true, pb: true },
-        { name: 'Revue vitesse et performances', ff: false, sb: false, pb: true },
-        { name: 'Objectif de réponse', ff: 'Dans un délai de 5 jours ouvrables', sb: '2 à 3 jours ouvrables', pb: '1 jour ouvrable' },
+        { name: 'Revue de la visibilité en ligne', ff: false, sb: true, pb: true },
+        { name: 'Support prioritaire par courriel', ff: false, sb: true, pb: true },
+        { name: 'Revue des performances', ff: false, sb: true, pb: true },
+        { name: 'Objectif de réponse', ff: 'Dans un délai de 5 jours ouvrables', sb: 'Dans un délai de 2 à 3 jours ouvrables', pb: '1 jour ouvrable' },
       ],
     },
     additionalServices: [
