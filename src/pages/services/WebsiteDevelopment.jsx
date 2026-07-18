@@ -78,7 +78,7 @@ export default function WebsiteDevelopment() {
   ];
 
   const maintenancePlans = [
-    { key: 'friendsFamily', data: mnt.friendsFamily },
+    { key: 'basicCare', data: mnt.basicCare },
     { key: 'standard', data: mnt.standard, featured: true },
     { key: 'premium', data: mnt.premium },
   ];
@@ -207,7 +207,7 @@ export default function WebsiteDevelopment() {
                   ))}
                 </ul>
                 <div className="maint-response">
-                  <span className="maint-response-label">{lang === 'en' ? 'Response Time:' : 'Délai de réponse :'}</span>
+                  <span className="maint-response-label">{lang === 'en' ? 'Response Goal:' : 'Objectif de réponse :'}</span>
                   <span className="maint-response-val">{data.responseTime}</span>
                 </div>
               </div>
@@ -225,7 +225,7 @@ export default function WebsiteDevelopment() {
               <thead>
                 <tr>
                   <th className="comparison-th comparison-th--feature">{cmp.feature}</th>
-                  <th className="comparison-th">{cmp.friendsFamily}</th>
+                  <th className="comparison-th">{cmp.basicCare}</th>
                   <th className="comparison-th comparison-th--featured">{cmp.standardBusiness}</th>
                   <th className="comparison-th">{cmp.premiumBusiness}</th>
                 </tr>

@@ -144,17 +144,20 @@ export const translations = {
       },
     },
     maintenance: {
-      friendsFamily: {
-        name: 'Friends & Family',
+      basicCare: {
+        name: 'Basic Care',
         price: '$50',
         period: '/month',
-        responseTime: 'Best Effort',
+        responseTime: 'Within 5 Business Days',
         includes: [
-          'Hosting Management',
+          'Fully Managed Website Hosting',
           'Domain Management',
-          'Secure HTTPS Monitoring',
+          'SSL Certificate Management',
+          'Routine Security Updates',
+          'Routine Platform Maintenance',
+          'Website Availability Monitoring',
           'Email Support',
-          '30 Minutes Content Updates',
+          '30 Minutes of Content Updates per Month (Minor text, image, or content changes. Monthly time does not roll over.)',
         ],
       },
       standard: {
@@ -163,7 +166,7 @@ export const translations = {
         period: '/month',
         responseTime: '2–3 Business Days',
         includes: [
-          'Everything in Friends & Family',
+          'Everything in Basic Care',
           'Priority Support',
           '1 Hour Content Updates',
           'Quarterly Website Review',
@@ -187,20 +190,23 @@ export const translations = {
     },
     comparison: {
       feature: 'What\'s Included',
-      friendsFamily: 'Friends & Family',
+      basicCare: 'Basic Care',
       standardBusiness: 'Standard Business',
       premiumBusiness: 'Premium Business',
       features: [
-        { name: 'Hosting Management', ff: true, sb: true, pb: true },
+        { name: 'Fully Managed Website Hosting', ff: true, sb: true, pb: true },
         { name: 'Domain Management', ff: true, sb: true, pb: true },
-        { name: 'Secure HTTPS Website', ff: true, sb: true, pb: true },
+        { name: 'SSL Certificate Management', ff: true, sb: true, pb: true },
+        { name: 'Routine Security Updates', ff: true, sb: true, pb: true },
+        { name: 'Routine Platform Maintenance', ff: true, sb: true, pb: true },
+        { name: 'Website Availability Monitoring', ff: true, sb: true, pb: true },
         { name: 'Email Support', ff: true, sb: true, pb: true },
         { name: 'Content Updates', ff: '30 Min / Month', sb: '1 Hour / Month', pb: '2 Hours / Month' },
         { name: 'Website Review', ff: false, sb: 'Quarterly', pb: 'Monthly' },
         { name: 'Search Visibility Review', ff: false, sb: 'Basic', pb: 'Advanced' },
         { name: 'Priority Support', ff: false, sb: true, pb: true },
         { name: 'Site Speed & Performance Review', ff: false, sb: false, pb: true },
-        { name: 'Response Time', ff: 'Best Effort', sb: '2–3 Business Days', pb: '1 Business Day' },
+        { name: 'Response Goal', ff: 'Within 5 Business Days', sb: '2–3 Business Days', pb: '1 Business Day' },
       ],
     },
     additionalServices: [
@@ -216,7 +222,7 @@ export const translations = {
     notes: {
       included: {
         title: 'Included in Monthly Service',
-        items: ['Hosting oversight', 'Domain management', 'Secure HTTPS management', 'Backup monitoring', 'Minor content changes'],
+        items: ['Fully managed website hosting', 'Domain management', 'SSL certificate management', 'Backup monitoring', 'Minor content changes'],
       },
       notIncluded: {
         title: 'Not Included',
@@ -546,17 +552,20 @@ export const translations = {
       },
     },
     maintenance: {
-      friendsFamily: {
-        name: 'Amis et Famille',
+      basicCare: {
+        name: 'Soins de base',
         price: '50 $',
         period: '/mois',
-        responseTime: 'Meilleur effort',
+        responseTime: 'Dans un délai de 5 jours ouvrables',
         includes: [
-          'Gestion de l\'hébergement',
+          'Hébergement de site web entièrement géré',
           'Gestion des domaines',
-          'Surveillance HTTPS sécurisée',
+          'Gestion des certificats SSL',
+          'Mises à jour de sécurité de routine',
+          'Maintenance de plateforme de routine',
+          'Surveillance de la disponibilité du site',
           'Support par courriel',
-          '30 minutes de modifications de contenu par mois',
+          '30 minutes de modifications de contenu par mois (Modifications mineures de texte, d\'image ou de contenu. Le temps mensuel n\'est pas reporté.)',
         ],
       },
       standard: {
@@ -565,7 +574,7 @@ export const translations = {
         period: '/mois',
         responseTime: '2 à 3 jours ouvrables',
         includes: [
-          'Tout ce qui est inclus dans Amis et famille',
+          'Tout ce qui est inclus dans Soins de base',
           'Support prioritaire',
           '1 heure de modifications de contenu par mois',
           'Revue du site web trimestrielle',
@@ -589,20 +598,23 @@ export const translations = {
     },
     comparison: {
       feature: 'Ce qui est inclus',
-      friendsFamily: 'Amis et Famille',
+      basicCare: 'Soins de base',
       standardBusiness: 'Entreprise Standard',
       premiumBusiness: 'Entreprise Premium',
       features: [
-        { name: 'Gestion de l\'hébergement', ff: true, sb: true, pb: true },
+        { name: 'Hébergement de site web entièrement géré', ff: true, sb: true, pb: true },
         { name: 'Gestion des domaines', ff: true, sb: true, pb: true },
-        { name: 'Site web HTTPS sécurisé', ff: true, sb: true, pb: true },
+        { name: 'Gestion des certificats SSL', ff: true, sb: true, pb: true },
+        { name: 'Mises à jour de sécurité de routine', ff: true, sb: true, pb: true },
+        { name: 'Maintenance de plateforme de routine', ff: true, sb: true, pb: true },
+        { name: 'Surveillance de la disponibilité du site', ff: true, sb: true, pb: true },
         { name: 'Support par courriel', ff: true, sb: true, pb: true },
         { name: 'Modifications de contenu', ff: '30 min / mois', sb: '1 heure / mois', pb: '2 heures / mois' },
         { name: 'Revue du site web', ff: false, sb: 'Trimestrielle', pb: 'Mensuelle' },
         { name: 'Revue de la visibilité en ligne', ff: false, sb: 'De base', pb: 'Avancée' },
         { name: 'Support prioritaire', ff: false, sb: true, pb: true },
         { name: 'Revue vitesse et performances', ff: false, sb: false, pb: true },
-        { name: 'Délai de réponse', ff: 'Meilleur effort', sb: '2 à 3 jours ouvrables', pb: '1 jour ouvrable' },
+        { name: 'Objectif de réponse', ff: 'Dans un délai de 5 jours ouvrables', sb: '2 à 3 jours ouvrables', pb: '1 jour ouvrable' },
       ],
     },
     additionalServices: [
@@ -618,7 +630,7 @@ export const translations = {
     notes: {
       included: {
         title: 'Inclus dans le service mensuel',
-        items: ['Supervision de l\'hébergement', 'Gestion des domaines', 'Gestion HTTPS sécurisée', 'Surveillance des sauvegardes', 'Modifications mineures de contenu'],
+        items: ['Hébergement de site web entièrement géré', 'Gestion des domaines', 'Gestion des certificats SSL', 'Surveillance des sauvegardes', 'Modifications mineures de contenu'],
       },
       notIncluded: {
         title: 'Non inclus',
