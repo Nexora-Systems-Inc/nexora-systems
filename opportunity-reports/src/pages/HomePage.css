@@ -1,0 +1,89 @@
+.home-page {
+  min-height: 100vh;
+}
+
+.home-hero {
+  padding: clamp(5rem, 12vw, 8rem) 0 clamp(3rem, 6vw, 4.5rem);
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(900px 420px at 0% 0%, rgba(154, 123, 79, 0.16), transparent 55%),
+    linear-gradient(180deg, rgba(255, 253, 248, 0.75), transparent);
+}
+
+.home-hero-inner {
+  max-width: 44rem;
+}
+
+.home-brand {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  color: var(--accent-strong);
+  margin-bottom: 0.35rem;
+}
+
+.home-hero h1 {
+  font-size: clamp(3rem, 7vw, 5rem);
+  margin-bottom: 1rem;
+}
+
+.home-lede {
+  font-size: 1.1rem;
+  max-width: 36rem;
+}
+
+.home-section-head {
+  margin-bottom: 2rem;
+  max-width: 40rem;
+}
+
+.home-section-head h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 0.8rem;
+}
+
+.home-report-list {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.home-report-item {
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.6rem 1.5rem;
+  border-radius: var(--radius-md);
+  background: rgba(255, 253, 248, 0.72);
+  border: 1px solid var(--line);
+}
+
+@media (min-width: 800px) {
+  .home-report-item {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+}
+
+.home-report-item h3 {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+
+.home-report-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.home-architecture-note {
+  padding: 1.6rem 1.5rem;
+  border-top: 1px solid var(--line-strong);
+}
+
+.home-architecture-note h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.7rem;
+}
+
+.home-architecture-note p {
+  max-width: 44rem;
+}

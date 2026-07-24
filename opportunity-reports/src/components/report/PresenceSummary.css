@@ -1,0 +1,74 @@
+.presence-summary {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.presence-overview {
+  font-size: 1.05rem;
+  max-width: 48rem;
+}
+
+.presence-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 800px) {
+  .presence-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.presence-item {
+  padding: 1.35rem 1.3rem 1.4rem;
+  border-top: 1px solid var(--line-strong);
+}
+
+.presence-item-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.7rem;
+}
+
+.presence-item h3 {
+  font-size: 1.45rem;
+}
+
+.presence-status {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+
+.presence-status.status-not-found {
+  color: #8a4b32;
+}
+
+.presence-status.status-strong-signal,
+.presence-status.status-active {
+  color: #3f6b4a;
+}
+
+.presence-item p {
+  font-size: 0.96rem;
+}
+
+.presence-item a {
+  display: inline-block;
+  margin-top: 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+  border-bottom: 1px solid transparent;
+}
+
+.presence-item a:hover {
+  border-bottom-color: var(--accent);
+}
