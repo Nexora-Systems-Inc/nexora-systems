@@ -11,7 +11,10 @@
     "prebuild": "node platform/seo/generate.mjs",
     "build": "vite build && node platform/seo/verify.mjs",
     "preview": "vite preview",
-    "test:contact": "node scripts/test-contact-api.mjs"
+    "test:contact": "node scripts/test-contact-api.mjs",
+    "reports:dev": "npm --prefix opportunity-reports run dev",
+    "reports:build": "npm --prefix opportunity-reports run build",
+    "reports:preview": "npm --prefix opportunity-reports run preview"
   },
   "dependencies": {
     "react": "^18.3.1",

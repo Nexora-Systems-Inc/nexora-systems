@@ -1,0 +1,36 @@
+.section-header {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+  max-width: 44rem;
+}
+
+.section-header.align-center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.section-header h2 {
+  font-size: clamp(2.2rem, 4.4vw, 3.4rem);
+  margin-bottom: 1rem;
+}
+
+.section-header.align-center .lede {
+  margin-inline: auto;
+}
+
+.section-header-rule {
+  display: block;
+  width: 3.5rem;
+  height: 2px;
+  margin-top: 1.4rem;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  transform-origin: left center;
+}
+
+.section-header.align-center .section-header-rule {
+  margin-inline: auto;
+  transform-origin: center;
+}
+
+.section-header.is-visible .section-header-rule {
+  animation: draw-line 800ms var(--ease-out) both;
+}

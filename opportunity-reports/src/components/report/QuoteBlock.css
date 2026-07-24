@@ -1,0 +1,36 @@
+.quote-block {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 900px) {
+  .quote-block {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.quote-item {
+  padding: 1.5rem 1.35rem;
+  border-left: 2px solid var(--accent);
+  background: rgba(255, 253, 248, 0.45);
+}
+
+.quote-item blockquote {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.35;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+
+.quote-item figcaption {
+  display: grid;
+  gap: 0.2rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.quote-source {
+  letter-spacing: 0.02em;
+}
