@@ -18,6 +18,8 @@ const CrewPilotPage = lazy(() => import('./pages/products/CrewPilotPage'));
 const AshleyPage = lazy(() => import('./pages/AshleyPage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
+const EquipmentIndexPage = lazy(() => import('./pages/equipment/EquipmentIndexPage'));
+const EquipmentListingPage = lazy(() => import('./pages/equipment/EquipmentListingPage'));
 const PrivacyPage = lazy(() => import('./pages/legal/PrivacyPage'));
 const TermsPage = lazy(() => import('./pages/legal/TermsPage'));
 const AccountDeletionPage = lazy(() => import('./pages/legal/AccountDeletionPage'));
@@ -41,6 +43,8 @@ export default function App() {
             <Route path="/ashley" element={<AshleyPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/equipment" element={<EquipmentIndexPage />} />
+            <Route path="/equipment/:slug" element={<EquipmentListingPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/terms" element={<TermsPage />} />
             <Route path="/account-deletion" element={<AccountDeletionPage />} />

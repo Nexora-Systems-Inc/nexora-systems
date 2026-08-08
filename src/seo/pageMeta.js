@@ -1,7 +1,13 @@
 import { SITE_NAME, DEFAULT_OG_IMAGE } from '../config/site';
 import {
+  EQUIPMENT_INDEX_META,
+  getEquipmentBySlug,
+  getPrimaryEquipmentImage,
+} from '../config/equipment';
+import {
   buildCanonicalUrl,
   defaultOgImageUrl,
+  absoluteUrl,
 } from '../../platform/seo/urls.mjs';
 
 const OG_IMAGE = defaultOgImageUrl();
@@ -80,7 +86,36 @@ export const PAGE_META = {
   },
 };
 
+function resolveEquipmentMeta(pathname) {
+  if (pathname === EQUIPMENT_INDEX_META.path) {
+    return {
+      title: EQUIPMENT_INDEX_META.title,
+      description: EQUIPMENT_INDEX_META.description,
+      ogImage: OG_IMAGE,
+    };
+  }
+
+  if (!pathname.startsWith('/equipment/')) return null;
+
+  const slug = pathname.slice('/equipment/'.length).replace(/\/$/, '');
+  const listing = getEquipmentBySlug(slug);
+  if (!listing) return null;
+
+  const primary = getPrimaryEquipmentImage(listing);
+  return {
+    title: listing.seo.title,
+    description: listing.seo.description,
+    ogTitle: listing.seo.ogTitle || listing.seo.title,
+    ogDescription: listing.seo.ogDescription || listing.seo.description,
+    ogType: 'product',
+    ogImage: primary?.src ? absoluteUrl(primary.src) : OG_IMAGE,
+  };
+}
+
 export function resolvePageMeta(pathname) {
+  const equipmentMeta = resolveEquipmentMeta(pathname);
+  if (equipmentMeta) return equipmentMeta;
+
   const meta = PAGE_META[pathname];
   if (meta) {
     return { ...meta, ogImage: OG_IMAGE };
@@ -93,4 +128,4 @@ export function resolvePageMeta(pathname) {
   };
 }
 
-export { buildCanonicalUrl };
+export { buildCanonicalUrl, DEFAULT_OG_IMAGE };

@@ -1,0 +1,49 @@
+.eq-sticky-cta {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .eq-sticky-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9000;
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+    background: rgba(10, 10, 10, 0.96);
+    border-top: 1px solid rgba(201, 168, 76, 0.35);
+    backdrop-filter: blur(10px);
+  }
+
+  .eq-sticky-cta-price {
+    color: var(--gold-light);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
+  .eq-sticky-cta-actions {
+    display: flex;
+    gap: 8px;
+  }
+
+  .eq-sticky-cta-btn {
+    padding: 11px 14px;
+    font-size: 11px;
+  }
+
+  .eq-sticky-cta-btn--offer {
+    border-color: rgba(201, 168, 76, 0.55);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eq-sticky-cta {
+    backdrop-filter: none;
+  }
+}

@@ -11,7 +11,9 @@
     "prebuild": "node platform/seo/generate.mjs",
     "build": "vite build && node platform/seo/verify.mjs",
     "preview": "vite preview",
-    "test:contact": "node scripts/test-contact-api.mjs"
+    "test:contact": "node scripts/test-contact-api.mjs",
+    "test:equipment": "node scripts/test-equipment-inquiry-api.mjs",
+    "test": "npm run test:contact && npm run test:equipment"
   },
   "dependencies": {
     "react": "^18.3.1",

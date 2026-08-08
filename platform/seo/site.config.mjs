@@ -7,6 +7,8 @@
  * Override at build/CI time with VITE_SITE_URL (preferred) or SITE_URL.
  */
 
+import { getEquipmentSitemapPaths } from '../../src/config/equipment/index.js';
+
 function stripTrailingSlash(url) {
   return String(url || '').replace(/\/$/, '');
 }
@@ -52,6 +54,7 @@ export const DEFAULT_OG_IMAGE = '/og-image.svg';
  * Indexable routes included in sitemap.xml.
  * Keep in sync with React Router paths that should be crawled.
  * Do not list redirects, retired pages, or noindex routes.
+ * Equipment listing paths are derived from the equipment registry.
  */
 export const SITEMAP_PATHS = [
   '/',
@@ -63,6 +66,7 @@ export const SITEMAP_PATHS = [
   '/products/crewpilot',
   '/about',
   '/contact',
+  ...getEquipmentSitemapPaths(),
   '/privacy',
   '/terms',
   '/account-deletion',
