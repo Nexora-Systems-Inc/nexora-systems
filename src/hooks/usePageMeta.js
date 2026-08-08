@@ -47,26 +47,39 @@ export function usePageMeta() {
   const canonical = buildCanonicalUrl(pathname);
 
   useEffect(() => {
+    const ogTitle = meta.ogTitle || meta.title;
+    const ogDescription = meta.ogDescription || meta.description;
+
     document.title = meta.title;
 
     upsertMeta('name', 'description', meta.description);
     upsertMeta('name', 'robots', meta.noindex ? 'noindex, nofollow' : 'index, follow');
 
-    upsertMeta('property', 'og:title', meta.title);
-    upsertMeta('property', 'og:description', meta.description);
+    upsertMeta('property', 'og:title', ogTitle);
+    upsertMeta('property', 'og:description', ogDescription);
     upsertMeta('property', 'og:image', meta.ogImage);
     upsertMeta('property', 'og:url', canonical);
-    upsertMeta('property', 'og:type', 'website');
+    upsertMeta('property', 'og:type', meta.ogType || 'website');
     upsertMeta('property', 'og:site_name', SITE_NAME);
 
     upsertMeta('name', 'twitter:card', 'summary_large_image');
-    upsertMeta('name', 'twitter:title', meta.title);
-    upsertMeta('name', 'twitter:description', meta.description);
+    upsertMeta('name', 'twitter:title', ogTitle);
+    upsertMeta('name', 'twitter:description', ogDescription);
     upsertMeta('name', 'twitter:image', meta.ogImage);
 
     upsertLink('canonical', canonical);
 
     upsertJsonLd('nexora-ld-organization', organizationJsonLd());
     upsertJsonLd('nexora-ld-website', websiteJsonLd());
-  }, [pathname, meta.title, meta.description, meta.ogImage, meta.noindex, canonical]);
+  }, [
+    pathname,
+    meta.title,
+    meta.description,
+    meta.ogTitle,
+    meta.ogDescription,
+    meta.ogImage,
+    meta.ogType,
+    meta.noindex,
+    canonical,
+  ]);
 }

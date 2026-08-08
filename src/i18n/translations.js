@@ -273,6 +273,7 @@ export const translations = {
       privacy: 'Privacy Policy',
       terms: 'Terms of Service',
       accountDeletion: 'Account Deletion',
+      equipment: 'Equipment',
     },
     notFound: {
       title: 'Page not found',
@@ -705,6 +706,7 @@ export const translations = {
       privacy: 'Politique de confidentialité',
       terms: 'Conditions d\'utilisation',
       accountDeletion: 'Suppression de compte',
+      equipment: 'Équipement',
     },
     notFound: {
       title: 'Page introuvable',

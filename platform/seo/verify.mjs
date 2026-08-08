@@ -20,6 +20,7 @@ import {
 } from './site.config.mjs';
 import { renderRobotsTxt, renderSitemapXml } from './generate.mjs';
 import { buildCanonicalUrl, sitemapUrl as expectedSitemapUrl } from './urls.mjs';
+import { getEquipmentSitemapPaths } from '../../src/config/equipment/index.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '../..');
@@ -92,6 +93,27 @@ function extractAppRoutes(appSource) {
   return paths;
 }
 
+/** Match static routes and parameterized patterns such as /equipment/:slug. */
+function routePatternMatches(routePattern, path) {
+  if (routePattern === path) return true;
+  if (!routePattern.includes(':')) return false;
+
+  const patternParts = routePattern.split('/');
+  const pathParts = path.split('/');
+  if (patternParts.length !== pathParts.length) return false;
+
+  return patternParts.every(
+    (part, index) => part.startsWith(':') || part === pathParts[index],
+  );
+}
+
+function appHasRoute(appRoutes, path) {
+  for (const route of appRoutes) {
+    if (routePatternMatches(route, path)) return true;
+  }
+  return false;
+}
+
 /** Extract PAGE_META keys from pageMeta.js */
 function extractPageMetaKeys(source) {
   const keys = new Set();
@@ -101,6 +123,14 @@ function extractPageMetaKeys(source) {
     keys.add(match[1]);
   }
   return keys;
+}
+
+/**
+ * Equipment index + listing SEO is resolved dynamically from the equipment
+ * registry (see resolvePageMeta), not only from static PAGE_META keys.
+ */
+function metaCoversPath(metaKeys, path, equipmentPaths) {
+  return metaKeys.has(path) || equipmentPaths.has(path);
 }
 
 async function fetchStatus(url) {
@@ -245,12 +275,18 @@ function verifyRoutesAndMeta() {
 
   const appRoutes = extractAppRoutes(read(appPath));
   const metaKeys = extractPageMetaKeys(read(metaPath));
+  const equipmentPaths = new Set(getEquipmentSitemapPaths());
+  const metaSource = read(metaPath);
+
+  if (!metaSource.includes('resolveEquipmentMeta') && !metaSource.includes('getEquipmentBySlug')) {
+    fail('pageMeta.js must resolve equipment listing metadata from the equipment registry');
+  }
 
   for (const path of SITEMAP_PATHS) {
-    if (!appRoutes.has(path)) {
+    if (!appHasRoute(appRoutes, path)) {
       fail(`Sitemap path ${path} has no matching <Route> in App.jsx`);
     }
-    if (!metaKeys.has(path)) {
+    if (!metaCoversPath(metaKeys, path, equipmentPaths)) {
       fail(`Sitemap path ${path} has no PAGE_META entry in pageMeta.js`);
     }
   }
