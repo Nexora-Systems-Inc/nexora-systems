@@ -1,14 +1,16 @@
 /**
- * AI Receptionist (Ashley service page, nav, homepage card, contact option).
- * Set to true to show it again. Page copy stays in the repo either way.
+ * Header services menu only (desktop dropdown and mobile menu).
+ * The AI Receptionist page, homepage Ashley card, footer link, contact
+ * option, sitemap entry, and page meta stay public while this is false.
+ * Set to true to show AI Receptionists in the top navigation.
  */
-export const AI_RECEPTIONISTS_ENABLED = false;
+export const AI_RECEPTIONISTS_NAV_ENABLED = false;
 
-/** Canonical service order — used by nav, footer, and contact form. */
+/** Public service order — footer links. The header uses HEADER_SERVICE_NAV_ITEMS. */
 export const SERVICE_NAV_ORDER = [
   'webApps',
   'websiteDev',
-  ...(AI_RECEPTIONISTS_ENABLED ? ['aiReceptionists'] : []),
+  'aiReceptionists',
   'workflow',
   'customSolutions',
 ];
@@ -19,7 +21,7 @@ export const HOME_SERVICES_GRID_ORDER = [
   'websiteDev',
   'workflow',
   'crewpilot',
-  ...(AI_RECEPTIONISTS_ENABLED ? ['ashley'] : []),
+  'ashley',
   'customSolutions',
 ];
 
@@ -38,8 +40,13 @@ export const SERVICE_NAV_ITEMS = SERVICE_NAV_ORDER.map((key) => ({
   path: SERVICE_PATHS[key],
 }));
 
-/** Contact form service labels (CrewPilot product listed first, then services in nav order). */
-const CONTACT_SERVICE_LABELS_ALL = {
+/** Header/top navigation. Omits AI Receptionist while the nav flag is off. */
+export const HEADER_SERVICE_NAV_ITEMS = AI_RECEPTIONISTS_NAV_ENABLED
+  ? SERVICE_NAV_ITEMS
+  : SERVICE_NAV_ITEMS.filter((item) => item.key !== 'aiReceptionists');
+
+/** Contact form service labels (CrewPilot product listed first, then services in public order). */
+export const CONTACT_SERVICE_LABELS = {
   en: [
     'CrewPilot',
     'Web Applications',
@@ -59,12 +66,3 @@ const CONTACT_SERVICE_LABELS_ALL = {
     'Solutions sur mesure',
   ],
 };
-
-const HIDDEN_CONTACT_LABELS = new Set(['AI Receptionists', 'Réceptionnistes IA']);
-
-export const CONTACT_SERVICE_LABELS = AI_RECEPTIONISTS_ENABLED
-  ? CONTACT_SERVICE_LABELS_ALL
-  : {
-    en: CONTACT_SERVICE_LABELS_ALL.en.filter((label) => !HIDDEN_CONTACT_LABELS.has(label)),
-    fr: CONTACT_SERVICE_LABELS_ALL.fr.filter((label) => !HIDDEN_CONTACT_LABELS.has(label)),
-  };
