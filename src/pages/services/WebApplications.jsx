@@ -51,6 +51,15 @@ export default function WebApplicationsPage() {
             </div>
           </div>
 
+          <figure className="web-apps-flagship-visual">
+            <img
+              src="/products/crewpilot/crewpilot-tablet-hero.webp"
+              alt={t.home.flagship.showcaseAlt}
+              width={1400}
+              height={933}
+            />
+          </figure>
+
           <div className="web-apps-features-grid">
             {cp.features.map((feature) => (
               <article key={feature.key} className="web-apps-feature-card">
