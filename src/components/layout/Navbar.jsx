@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLang } from '../../context/LangContext';
-import { SERVICE_NAV_ITEMS } from '../../config/services';
+import { HEADER_SERVICE_NAV_ITEMS } from '../../config/services';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -53,7 +53,7 @@ export default function Navbar() {
             </button>
             {dropdownOpen && (
               <div className="navbar-dropdown-menu">
-                {SERVICE_NAV_ITEMS.map(s => (
+                {HEADER_SERVICE_NAV_ITEMS.map(s => (
                   <Link key={s.key} to={s.path} className="navbar-dropdown-item">
                     {t.nav[s.key]}
                   </Link>

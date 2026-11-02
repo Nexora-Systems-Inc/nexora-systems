@@ -1,6 +1,5 @@
 import { lazy } from 'react';
-import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom';
-import { AI_RECEPTIONISTS_ENABLED } from './config/services';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { LangProvider } from './context/LangContext';
 import Layout from './components/layout/Layout';
 import Analytics from './components/analytics/Analytics';
@@ -38,15 +37,7 @@ export default function App() {
             <Route path="/services/website-development" element={<WebsiteDevelopment />} />
             <Route path="/services/web-applications" element={<WebApplicationsPage />} />
             <Route path="/services/workflow-automation" element={<WorkflowAutomationPage />} />
-            <Route path="/services" element={<Navigate to="/#services" replace />} />
-            <Route
-              path="/services/ai-receptionists"
-              element={
-                AI_RECEPTIONISTS_ENABLED
-                  ? <AIReceptionistsPage />
-                  : <Navigate to="/services" replace />
-              }
-            />
+            <Route path="/services/ai-receptionists" element={<AIReceptionistsPage />} />
             <Route path="/services/custom-solutions" element={<CustomSolutionsPage />} />
             <Route path="/products/crewpilot" element={<CrewPilotPage />} />
             <Route path="/ashley" element={<AshleyPage />} />

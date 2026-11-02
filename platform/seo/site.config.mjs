@@ -7,8 +7,6 @@
  * Override at build/CI time with VITE_SITE_URL (preferred) or SITE_URL.
  */
 
-import { AI_RECEPTIONISTS_ENABLED } from '../../src/config/services.js';
-
 function stripTrailingSlash(url) {
   return String(url || '').replace(/\/$/, '');
 }
@@ -60,7 +58,7 @@ export const SITEMAP_PATHS = [
   '/services/website-development',
   '/services/web-applications',
   '/services/workflow-automation',
-  ...(AI_RECEPTIONISTS_ENABLED ? ['/services/ai-receptionists'] : []),
+  '/services/ai-receptionists',
   '/services/custom-solutions',
   '/products/crewpilot',
   '/about',
