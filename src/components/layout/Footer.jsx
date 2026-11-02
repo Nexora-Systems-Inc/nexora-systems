@@ -35,6 +35,7 @@ export default function Footer() {
             <Link to="/about">{t.nav.about}</Link>
             <Link to="/holiday-launch">{t.nav.holiday}</Link>
             <Link to="/contact">{t.nav.contact}</Link>
+            <Link to="/equipment">{t.footer.equipment}</Link>
             <a href="mailto:info@nexorasystems.ca">info@nexorasystems.ca</a>
           </div>
 
