@@ -297,6 +297,143 @@
   border-radius: calc(var(--radius-lg) - 4px);
 }
 
+/* RECENT WORK */
+.home-recent {
+  padding: 88px 0 72px;
+  background: var(--white);
+}
+
+.home-recent-label,
+.home-recent-title,
+.home-recent-sub {
+  text-align: center;
+}
+
+.home-recent-title {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 500;
+  margin: 0 auto 12px;
+  max-width: 18ch;
+}
+
+.home-recent-sub {
+  font-size: 15px;
+  color: var(--gray-500);
+  font-weight: 300;
+  max-width: 520px;
+  margin: 0 auto 40px;
+}
+
+.home-recent-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.home-recent-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--off-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  min-height: 100%;
+}
+
+.home-recent-card:hover {
+  transform: translateY(-2px);
+}
+
+.home-recent-media {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 10;
+  background: var(--near-black);
+}
+
+.home-recent-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-recent-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--gold);
+  color: var(--black);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+.home-recent-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px 18px 22px;
+}
+
+.home-recent-name {
+  font-family: var(--font-display);
+  font-size: 26px;
+  color: var(--black);
+  line-height: 1.1;
+}
+
+.home-recent-desc {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--gray-500);
+  font-weight: 300;
+}
+
+.home-recent-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.home-recent-card:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* HOLIDAY BAND */
+.home-holiday {
+  background: var(--off-white);
+  padding: 28px 0 72px;
+}
+
+.home-holiday-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  background: var(--black);
+  color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 36px 40px;
+}
+
+.home-holiday-title {
+  font-size: clamp(28px, 3vw, 40px);
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.home-holiday-sub {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.62);
+  font-weight: 300;
+  max-width: 560px;
+}
+
 /* VALUES */
 .home-values {
   padding: 96px 0;
@@ -389,6 +526,8 @@
 
 @media (max-width: 900px) {
   .home-services-grid { grid-template-columns: repeat(2, 1fr); }
+  .home-recent-grid { grid-template-columns: 1fr; }
+  .home-holiday-inner { flex-direction: column; align-items: flex-start; padding: 28px 24px; }
 }
 
 @media (max-width: 600px) {

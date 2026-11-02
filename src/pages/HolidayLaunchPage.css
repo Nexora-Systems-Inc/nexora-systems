@@ -1,0 +1,167 @@
+.holiday-hero-title {
+  font-size: clamp(36px, 5vw, 64px);
+  color: var(--white);
+  margin-top: 8px;
+  max-width: 16ch;
+}
+
+.holiday-hero-desc {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.62);
+  line-height: 1.75;
+  max-width: 640px;
+  font-weight: 300;
+}
+
+.holiday-section {
+  padding: 80px 0;
+  background: var(--white);
+}
+
+.holiday-section--soft {
+  background: var(--off-white);
+}
+
+.holiday-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.2fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.holiday-offer {
+  background: var(--black);
+  color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px 32px;
+  box-shadow: var(--shadow-elevated);
+}
+
+.holiday-price-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.holiday-price {
+  font-family: var(--font-display);
+  font-size: clamp(56px, 6vw, 76px);
+  line-height: 0.95;
+  color: var(--white);
+}
+
+.holiday-price-note {
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+}
+
+.holiday-until {
+  margin: 20px 0 28px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(201, 168, 76, 0.28);
+  color: var(--gold-light);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.holiday-cta {
+  width: 100%;
+  justify-content: center;
+}
+
+.holiday-cta-note {
+  margin-top: 14px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.6;
+}
+
+.holiday-details-title {
+  font-size: clamp(28px, 3vw, 40px);
+  margin-bottom: 24px;
+}
+
+.holiday-includes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+.holiday-includes li {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.holiday-includes h3 {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.holiday-includes p {
+  font-size: 14px;
+  color: var(--gray-500);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.holiday-upsell {
+  margin-top: 36px;
+  padding: 24px;
+  border-radius: var(--radius-md);
+  background: var(--gold-pale);
+}
+
+.holiday-upsell h3 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.holiday-upsell p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--dark);
+  font-weight: 400;
+}
+
+.holiday-plain {
+  max-width: 760px;
+}
+
+.holiday-plain h2 {
+  font-size: clamp(28px, 3vw, 40px);
+  margin-bottom: 16px;
+}
+
+.holiday-plain p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--gray-700);
+  font-weight: 300;
+  margin-bottom: 14px;
+}
+
+.holiday-plain a {
+  color: var(--gold-dark);
+  font-weight: 600;
+  border-bottom: 1px solid rgba(154, 122, 48, 0.45);
+}
+
+.holiday-plain a:hover {
+  color: var(--black);
+}
+
+@media (max-width: 860px) {
+  .holiday-layout {
+    grid-template-columns: 1fr;
+  }
+}

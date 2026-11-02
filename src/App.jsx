@@ -17,6 +17,8 @@ const WebsiteDevelopment = lazy(() => import('./pages/services/WebsiteDevelopmen
 const CrewPilotPage = lazy(() => import('./pages/products/CrewPilotPage'));
 const AshleyPage = lazy(() => import('./pages/AshleyPage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
+const WorkPage = lazy(() => import('./pages/WorkPage'));
+const HolidayLaunchPage = lazy(() => import('./pages/HolidayLaunchPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const PrivacyPage = lazy(() => import('./pages/legal/PrivacyPage'));
 const TermsPage = lazy(() => import('./pages/legal/TermsPage'));
@@ -40,6 +42,8 @@ export default function App() {
             <Route path="/products/crewpilot" element={<CrewPilotPage />} />
             <Route path="/ashley" element={<AshleyPage />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/work" element={<WorkPage />} />
+            <Route path="/holiday-launch" element={<HolidayLaunchPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/terms" element={<TermsPage />} />

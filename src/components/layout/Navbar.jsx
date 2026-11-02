@@ -62,6 +62,9 @@ export default function Navbar() {
             )}
           </div>
 
+          <Link to="/work" className={`navbar-link ${location.pathname === '/work' ? 'active' : ''}`}>
+            {t.nav.work}
+          </Link>
           <Link to="/about" className={`navbar-link ${location.pathname === '/about' ? 'active' : ''}`}>
             {t.nav.about}
           </Link>

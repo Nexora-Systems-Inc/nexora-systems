@@ -62,6 +62,8 @@ export const SITEMAP_PATHS = [
   '/services/custom-solutions',
   '/products/crewpilot',
   '/about',
+  '/work',
+  '/holiday-launch',
   '/contact',
   '/privacy',
   '/terms',
