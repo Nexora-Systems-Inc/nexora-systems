@@ -23,4 +23,16 @@ export const PRODUCT_FEATURE_ICONS = {
   aiAssistant: (
     <svg width="20" height="20" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a4 4 0 0 1 4 4v1a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4Z" stroke="currentColor" strokeWidth="1.6"/><path d="M6 10h12v2a6 6 0 0 1-12 0v-2Z" stroke="currentColor" strokeWidth="1.6"/><path d="M8 20h8M10 23h4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg>
   ),
+  planning: (
+    <svg width="20" height="20" fill="none" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="1.6"/><path d="M3 10H21M8 2V6M16 2V6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"/></svg>
+  ),
+  jobPhotos: (
+    <svg width="20" height="20" fill="none" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.6"/><circle cx="8.5" cy="10" r="1.4" stroke="currentColor" strokeWidth="1.4"/><path d="M21 16l-4.5-4.5L8 19" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
+  ),
+  conversations: (
+    <svg width="20" height="20" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6h14a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H9l-4 3v-3H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/></svg>
+  ),
+  billing: (
+    <svg width="20" height="20" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10a1 1 0 0 1 1 1v17l-2.2-1.4L13.5 21 11 19.2 8.2 21 6 19.6V4a1 1 0 0 1 1-1Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/><path d="M9 8h6M9 12h6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg>
+  ),
 };
