@@ -1,8 +1,14 @@
+/**
+ * AI Receptionist (Ashley service page, nav, homepage card, contact option).
+ * Set to true to show it again. Page copy stays in the repo either way.
+ */
+export const AI_RECEPTIONISTS_ENABLED = false;
+
 /** Canonical service order — used by nav, footer, and contact form. */
 export const SERVICE_NAV_ORDER = [
   'webApps',
   'websiteDev',
-  'aiReceptionists',
+  ...(AI_RECEPTIONISTS_ENABLED ? ['aiReceptionists'] : []),
   'workflow',
   'customSolutions',
 ];
@@ -13,7 +19,7 @@ export const HOME_SERVICES_GRID_ORDER = [
   'websiteDev',
   'workflow',
   'crewpilot',
-  'ashley',
+  ...(AI_RECEPTIONISTS_ENABLED ? ['ashley'] : []),
   'customSolutions',
 ];
 
@@ -33,7 +39,7 @@ export const SERVICE_NAV_ITEMS = SERVICE_NAV_ORDER.map((key) => ({
 }));
 
 /** Contact form service labels (CrewPilot product listed first, then services in nav order). */
-export const CONTACT_SERVICE_LABELS = {
+const CONTACT_SERVICE_LABELS_ALL = {
   en: [
     'CrewPilot',
     'Web Applications',
@@ -53,3 +59,12 @@ export const CONTACT_SERVICE_LABELS = {
     'Solutions sur mesure',
   ],
 };
+
+const HIDDEN_CONTACT_LABELS = new Set(['AI Receptionists', 'Réceptionnistes IA']);
+
+export const CONTACT_SERVICE_LABELS = AI_RECEPTIONISTS_ENABLED
+  ? CONTACT_SERVICE_LABELS_ALL
+  : {
+    en: CONTACT_SERVICE_LABELS_ALL.en.filter((label) => !HIDDEN_CONTACT_LABELS.has(label)),
+    fr: CONTACT_SERVICE_LABELS_ALL.fr.filter((label) => !HIDDEN_CONTACT_LABELS.has(label)),
+  };

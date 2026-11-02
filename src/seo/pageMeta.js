@@ -1,4 +1,5 @@
 import { SITE_NAME, DEFAULT_OG_IMAGE } from '../config/site';
+import { AI_RECEPTIONISTS_ENABLED } from '../config/services';
 import {
   buildCanonicalUrl,
   defaultOgImageUrl,
@@ -33,11 +34,15 @@ export const PAGE_META = {
     description:
       'Automate scheduling, lead management, reporting, and core business processes so your team can focus on high-value work.',
   },
-  '/services/ai-receptionists': {
-    title: `AI Receptionists | ${SITE_NAME}`,
-    description:
-      'Meet Ashley — Nexora\'s AI receptionist for SMS booking, voice intake, and 24/7 customer support automation.',
-  },
+  ...(AI_RECEPTIONISTS_ENABLED
+    ? {
+      '/services/ai-receptionists': {
+        title: `AI Receptionists | ${SITE_NAME}`,
+        description:
+          'Meet Ashley — Nexora\'s AI receptionist for SMS booking, voice intake, and 24/7 customer support automation.',
+      },
+    }
+    : {}),
   '/services/custom-solutions': {
     title: `Custom Solutions | ${SITE_NAME}`,
     description:
