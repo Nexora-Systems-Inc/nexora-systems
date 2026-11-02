@@ -1,0 +1,44 @@
+:root {
+  /* Nexora Opportunity Reports — consulting presentation tokens */
+  --ink: #171412;
+  --ink-soft: #3a342e;
+  --muted: #6b635b;
+  --line: rgba(23, 20, 18, 0.1);
+  --line-strong: rgba(23, 20, 18, 0.18);
+
+  --paper: #f3f1ec;
+  --paper-elevated: #faf8f4;
+  --paper-deep: #e8e4dc;
+
+  --accent: #9a7b4f;
+  --accent-strong: #7e623c;
+  --accent-soft: rgba(154, 123, 79, 0.14);
+  --accent-glow: rgba(154, 123, 79, 0.28);
+
+  --nexora-gold: #c9a84c;
+  --success-soft: #dfe8df;
+
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body: 'Manrope', 'Segoe UI', sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+
+  --shadow-soft: 0 10px 40px rgba(23, 20, 18, 0.06);
+  --shadow-lift: 0 18px 50px rgba(23, 20, 18, 0.1);
+
+  --space-section: clamp(4.5rem, 8vw, 7.5rem);
+  --space-block: clamp(1.25rem, 2vw, 2rem);
+  --content-width: 72rem;
+  --measure: 40rem;
+
+  --nav-height: 4.25rem;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition: 220ms var(--ease-out);
+}
+
+[data-report-theme] {
+  --accent: var(--report-accent, var(--accent));
+  --accent-soft: var(--report-accent-soft, var(--accent-soft));
+}
