@@ -317,7 +317,7 @@ export const translations = {
           captions: {
             menu: 'Red Samurai Sushi — menu',
             desktop: 'Red Samurai Sushi — homepage',
-            mobile: 'Red Samurai Sushi — homepage on a phone',
+            mobile: 'Red Samurai Sushi — Hosomakis on a phone',
           },
         },
         crewpilot: {
@@ -906,7 +906,7 @@ export const translations = {
           captions: {
             menu: 'Red Samurai Sushi — menu',
             desktop: 'Red Samurai Sushi — accueil',
-            mobile: 'Red Samurai Sushi — accueil sur un téléphone',
+            mobile: 'Red Samurai Sushi — Hosomakis sur un téléphone',
           },
         },
         crewpilot: {
