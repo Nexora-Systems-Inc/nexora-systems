@@ -56,7 +56,17 @@ export const PAGE_META = {
   '/about': {
     title: `About | ${SITE_NAME}`,
     description:
-      'Nexora Systems builds production software including CrewPilot, and delivers custom technology for serious businesses across Ontario and Quebec.',
+      'Nexora Systems is a new company in Hawkesbury, Ontario. Founder Joey Agostinucci works directly with every client on websites and software.',
+  },
+  '/work': {
+    title: `Our Work | ${SITE_NAME}`,
+    description:
+      'Websites Nexora Systems has built for local businesses, including Surface Renaud and Manon Lalonde, plus software such as CrewPilot.',
+  },
+  '/holiday-launch': {
+    title: `Holiday Launch Special — $850 Website | ${SITE_NAME}`,
+    description:
+      'A professional one-page website for local Hawkesbury-area businesses for $850 CAD, available until December 15, 2026. Includes a mobile-friendly design, a contact form, and a Google Business profile link.',
   },
   '/contact': {
     title: `Contact | ${SITE_NAME}`,

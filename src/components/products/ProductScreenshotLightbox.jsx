@@ -10,6 +10,8 @@ export default function ProductScreenshotLightbox({
   onPrev,
   onNext,
   closeLabel,
+  prevLabel = 'Previous screenshot',
+  nextLabel = 'Next screenshot',
 }) {
   const touchStartX = useRef(null);
   const activeShot = activeIndex != null ? screenshots[activeIndex] : null;
@@ -95,7 +97,7 @@ export default function ProductScreenshotLightbox({
           type="button"
           className="product-screenshot-lightbox-nav product-screenshot-lightbox-nav--prev"
           onClick={onPrev}
-          aria-label="Previous screenshot"
+          aria-label={prevLabel}
         >
           ‹
         </button>
@@ -118,7 +120,7 @@ export default function ProductScreenshotLightbox({
           type="button"
           className="product-screenshot-lightbox-nav product-screenshot-lightbox-nav--next"
           onClick={onNext}
-          aria-label="Next screenshot"
+          aria-label={nextLabel}
         >
           ›
         </button>

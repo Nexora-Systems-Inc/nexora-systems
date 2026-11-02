@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLang } from '../context/LangContext';
 import { HOME_SERVICES_GRID_ORDER, SERVICE_PATHS } from '../config/services';
+import { RECENT_WORK_IDS, WORK_ITEMS } from '../config/work';
 import { ASHLEY_ASSETS } from '../config/ashleyAssets';
 import HomeFlagshipSection from '../components/home/HomeFlagshipSection';
 import './HomePage.css';
@@ -177,6 +178,60 @@ function HomeServiceCard({ serviceKey, lang }) {
   return <StandardServiceCard card={card} path={path} lang={lang} />;
 }
 
+function RecentWorkStrip() {
+  const { t } = useLang();
+  const copy = t.home.recent;
+  const items = RECENT_WORK_IDS.map((id) => WORK_ITEMS.find((item) => item.id === id));
+
+  return (
+    <section className="home-recent">
+      <div className="container">
+        <p className="section-label home-recent-label">{copy.label}</p>
+        <h2 className="home-recent-title">{copy.title}</h2>
+        <p className="home-recent-sub">{copy.sub}</p>
+        <div className="home-recent-grid">
+          {items.map((item) => {
+            const card = t.work.items[item.key];
+            return (
+              <Link key={item.id} to={`/work#${item.id}`} className="home-recent-card">
+                <span className="home-recent-media">
+                  <img src={item.shots[0].src} alt={card.alt} width={1440} height={900} />
+                  {item.comingSoon ? <span className="home-recent-badge">{t.work.comingSoon}</span> : null}
+                </span>
+                <span className="home-recent-copy">
+                  <span className="home-recent-name">{card.name}</span>
+                  <span className="home-recent-desc">{card.desc}</span>
+                </span>
+              </Link>
+            );
+          })}
+        </div>
+        <div className="home-recent-cta">
+          <Link to="/work" className="btn-outline-dark">{copy.cta}</Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function HolidayBand() {
+  const { t } = useLang();
+  const copy = t.home.holidayBand;
+
+  return (
+    <section className="home-holiday">
+      <div className="container home-holiday-inner">
+        <div>
+          <p className="section-label">{copy.label}</p>
+          <h2 className="home-holiday-title">{copy.title}</h2>
+          <p className="home-holiday-sub">{copy.sub}</p>
+        </div>
+        <Link to="/holiday-launch" className="btn-gold">{copy.cta}</Link>
+      </div>
+    </section>
+  );
+}
+
 export default function HomePage() {
   const { lang, t } = useLang();
   const location = useLocation();
@@ -244,6 +299,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <RecentWorkStrip />
+
       {/* WHY NEXORA */}
       <section className="home-values">
         <div className="container">
@@ -262,6 +319,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <HolidayBand />
 
       {/* CTA BAND */}
       <section className="home-cta-band">

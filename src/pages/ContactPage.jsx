@@ -8,6 +8,16 @@ const PRODUCT_SERVICE_MAP = {
   crewpilot: { en: 'CrewPilot', fr: 'CrewPilot' },
 };
 
+const HOLIDAY_SERVICE = {
+  en: 'Website Development',
+  fr: 'Développement Web',
+};
+
+const HOLIDAY_MESSAGE = {
+  en: 'I would like to book a free 10-minute call about the Holiday Launch Special — a one-page website for $850 CAD.',
+  fr: 'Je souhaite réserver un appel gratuit de 10 minutes au sujet de l’offre de lancement des fêtes — un site d’une page à 850 $ CAD.',
+};
+
 export default function ContactPage() {
   const { lang, t } = useLang();
   const c = t.contact;
@@ -20,12 +30,27 @@ export default function ContactPage() {
   useEffect(() => {
     const product = searchParams.get('product');
     const intent = searchParams.get('intent');
+    const knownMessages = new Set([
+      ...Object.values(HOLIDAY_MESSAGE),
+      'I would like to book a demo of CrewPilot.',
+      'Je souhaite réserver une démo de CrewPilot.',
+    ]);
+
+    if (intent === 'holiday') {
+      setForm((prev) => ({
+        ...prev,
+        service: HOLIDAY_SERVICE[lang],
+        message: !prev.message || knownMessages.has(prev.message) ? HOLIDAY_MESSAGE[lang] : prev.message,
+      }));
+      return;
+    }
+
     if (product && PRODUCT_SERVICE_MAP[product]) {
       const serviceName = PRODUCT_SERVICE_MAP[product][lang];
       setForm((prev) => ({
         ...prev,
         service: serviceName,
-        message: intent === 'demo' && !prev.message
+        message: intent === 'demo' && (!prev.message || knownMessages.has(prev.message))
           ? (lang === 'en'
             ? 'I would like to book a demo of CrewPilot.'
             : 'Je souhaite réserver une démo de CrewPilot.')

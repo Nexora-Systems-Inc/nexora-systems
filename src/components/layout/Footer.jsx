@@ -31,7 +31,9 @@ export default function Footer() {
 
           <div className="footer-col">
             <p className="footer-col-title">{t.nav.about}</p>
+            <Link to="/work">{t.nav.work}</Link>
             <Link to="/about">{t.nav.about}</Link>
+            <Link to="/holiday-launch">{t.nav.holiday}</Link>
             <Link to="/contact">{t.nav.contact}</Link>
             <a href="mailto:info@nexorasystems.ca">info@nexorasystems.ca</a>
           </div>
