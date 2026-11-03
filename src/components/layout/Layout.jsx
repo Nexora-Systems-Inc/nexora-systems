@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import HolidayBanner from './HolidayBanner';
 import { usePageMeta } from '../../hooks/usePageMeta';
 
 function PageLoader() {
@@ -19,6 +20,7 @@ export default function Layout({ children }) {
       <a href="#main-content" className="skip-link">Skip to main content</a>
       <Navbar />
       <main id="main-content" style={{ paddingTop: '72px' }}>
+        <HolidayBanner />
         <Suspense fallback={<PageLoader />}>
           {children}
         </Suspense>

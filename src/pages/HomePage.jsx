@@ -1,3 +1,4 @@
+import { isHolidayOfferActive } from '../config/holidayOffer';
 import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLang } from '../context/LangContext';
@@ -217,6 +218,7 @@ function RecentWorkStrip() {
 function HolidayBand() {
   const { t } = useLang();
   const copy = t.home.holidayBand;
+  if (!isHolidayOfferActive()) return null;
 
   return (
     <section className="home-holiday">
@@ -284,6 +286,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <HolidayBand />
+
       <HomeFlagshipSection />
 
       {/* SERVICES GRID */}
@@ -320,7 +324,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <HolidayBand />
 
       {/* CTA BAND */}
       <section className="home-cta-band">

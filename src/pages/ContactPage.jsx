@@ -14,8 +14,8 @@ const HOLIDAY_SERVICE = {
 };
 
 const HOLIDAY_MESSAGE = {
-  en: 'I would like to book a free 10-minute call about the Holiday Launch Special — a one-page website for $850 CAD.',
-  fr: 'Je souhaite réserver un appel gratuit de 10 minutes au sujet de l’offre de lancement des fêtes — un site d’une page à 850 $ CAD.',
+  en: 'I would like to book a free 10-minute call about the Holiday Launch Special — a one-page website for $750 CAD.',
+  fr: 'Je souhaite réserver un appel gratuit de 10 minutes au sujet de l’offre de lancement des fêtes — un site d’une page à 750 $ CAD.',
 };
 
 export default function ContactPage() {

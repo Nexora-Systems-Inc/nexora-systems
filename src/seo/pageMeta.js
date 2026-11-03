@@ -64,9 +64,9 @@ export const PAGE_META = {
       'Websites Nexora Systems has built for local businesses, including Surface Renaud and Manon Lalonde, plus software such as CrewPilot.',
   },
   '/holiday-launch': {
-    title: `Holiday Launch Special — $850 Website | ${SITE_NAME}`,
+    title: `Holiday Launch Special — $750 Website | ${SITE_NAME}`,
     description:
-      'A professional one-page website for local Hawkesbury-area businesses for $850 CAD, available until December 15, 2026. Includes a mobile-friendly design, a contact form, and a Google Business profile link.',
+      'A professional one-page website for local Hawkesbury-area businesses for $750 CAD one-time (25% off our $1,000 Standard Website), available until December 15, 2026. Includes a mobile-friendly design, a contact form, and a Google Business profile link.',
   },
   '/contact': {
     title: `Contact | ${SITE_NAME}`,
