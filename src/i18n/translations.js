@@ -32,8 +32,8 @@ export const translations = {
       },
       holidayBand: {
         label: 'Holiday Launch Special',
-        title: 'A one-page website for $850 CAD',
-        sub: 'For local businesses, available until December 15, 2026. Mobile-friendly, with a contact form and a link to your Google Business profile.',
+        title: 'A one-page website for $750 CAD',
+        sub: '25% off our $1,000 Standard Website. For local businesses, available until December 15, 2026. Mobile-friendly, with a contact form and a link to your Google Business profile.',
         cta: 'See the offer',
       },
       flagship: {
@@ -370,8 +370,8 @@ export const translations = {
       title: 'A professional one-page website for local businesses',
       intro: 'If you need a clear, modern page online before the holidays, this is a straightforward offer. No contest, no “you have been selected” — just a set price until the date below.',
       priceLabel: 'One-page website',
-      price: '$850',
-      priceNote: 'CAD. One page, built for a local business.',
+      price: '$750',
+      priceNote: 'CAD, one-time. One page, built for a local business — 25% off our $1,000 Standard Website.',
       until: 'Available until December 15, 2026. After that date, website work is quoted from our regular packages.',
       cta: 'Book a free 10-minute call',
       ctaNote: 'The button opens our contact form, with a note about this offer already filled in. You can edit it before you send.',
@@ -621,8 +621,8 @@ export const translations = {
       },
       holidayBand: {
         label: 'Offre de lancement des fêtes',
-        title: 'Un site d’une page pour 850 $ CAD',
-        sub: 'Pour les entreprises locales, jusqu’au 15 décembre 2026. Adapté au mobile, avec un formulaire de contact et un lien vers votre fiche Google Business.',
+        title: 'Un site d’une page pour 750 $ CAD',
+        sub: '25 % de rabais sur le site Standard de 1 000 $. Pour les entreprises locales, jusqu’au 15 décembre 2026. Adapté au mobile, avec un formulaire de contact et un lien vers votre fiche Google Business.',
         cta: 'Voir l’offre',
       },
       flagship: {
@@ -959,8 +959,8 @@ export const translations = {
       title: 'Un site web professionnel d’une page pour les entreprises locales',
       intro: 'Si vous voulez une page claire et moderne en ligne avant les fêtes, voici une offre simple. Pas de concours, pas de « vous avez été choisi » — un prix fixe jusqu’à la date ci-dessous.',
       priceLabel: 'Site d’une page',
-      price: '850 $',
-      priceNote: 'CAD. Une page, conçue pour une entreprise locale.',
+      price: '750 $',
+      priceNote: 'CAD, prix unique. Une page, conçue pour une entreprise locale — 25 % de rabais sur le site Standard de 1 000 $.',
       until: 'Offerte jusqu’au 15 décembre 2026. Après cette date, les sites sont cotés selon nos forfaits habituels.',
       cta: 'Réserver un appel gratuit de 10 minutes',
       ctaNote: 'Le bouton ouvre notre formulaire, avec une note sur cette offre déjà écrite. Vous pouvez la modifier avant d’envoyer.',
