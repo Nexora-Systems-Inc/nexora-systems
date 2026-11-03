@@ -365,6 +365,11 @@ export const translations = {
         },
       },
     },
+    holidayBanner: {
+      aria: 'Holiday Launch Special',
+      text: 'Holiday Launch Special: a one-page website for $750, until Dec 15',
+      cta: 'See the offer',
+    },
     holiday: {
       label: 'Holiday Launch Special',
       title: 'A professional one-page website for local businesses',
@@ -953,6 +958,11 @@ export const translations = {
           },
         },
       },
+    },
+    holidayBanner: {
+      aria: 'Offre de lancement des fêtes',
+      text: 'Offre de lancement des fêtes : un site d’une page à 750\u00a0$, jusqu’au 15\u00a0déc.',
+      cta: 'Voir l’offre',
     },
     holiday: {
       label: 'Offre de lancement des fêtes',
